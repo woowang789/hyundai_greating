@@ -64,7 +64,7 @@ public class FrontController extends HttpServlet {
         view.render(model, request, response);
     }
 
-
+  
     private Map<String, String> createParamMap(HttpServletRequest request) {
         Map<String, String> paramMap = new HashMap<>();
         request.getParameterNames().asIterator()
