@@ -6,4 +6,4 @@ public interface ControllerInter {
 	
 	String process(Map<String,String> paramMap,Map<String,Object> model);
 }
- 
+  
