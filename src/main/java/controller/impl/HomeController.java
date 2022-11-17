@@ -12,8 +12,6 @@ public class HomeController implements ControllerInter{
 		TestDAO dao = new TestDAO();
 		dao.listMembers();
 		return "home";
-	}
-	
-	
-
+	}	
 }
+  
