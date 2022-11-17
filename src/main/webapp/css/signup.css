@@ -1,0 +1,234 @@
+/* HEADER */
+header{
+  width: 100%;
+}
+header .header__content{
+  width: 1100px;
+  margin: 20px auto;
+}
+header .header__btn{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+header .header__btn ul{
+  display: flex;
+}
+header .header__btn ul li {
+  margin-left: 30px;
+}
+
+header .header__logo{
+  text-align: center;
+  margin-bottom: 25px;
+}
+header .header__bottom{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+header .header__bottom .header__category{
+  margin-right: 40px;
+}
+header .header__bottom .header__category i{
+  font-size: 1.2rem;
+  padding: 0 10px;
+}
+header .header__bottom .header__menu{
+  margin-right: 40px;
+}
+header .header__bottom .header__menu ul {
+  display: flex;
+}
+header .header__bottom .header__menu ul li{
+  padding: 0 10px;
+}
+header .header__bottom .header__search{
+  margin-right: 40px;
+  position: relative;
+}
+header .header__bottom .header__search input{
+  width: 240px;
+  border: none;
+  background-color: #F5F5F5;
+  color: #818181;
+  border-radius: 10px;
+  padding: 7px 10px;
+}
+header .header__bottom .header__search i{
+  position: absolute;
+  right: 10px;
+  top: 4px;
+}
+header .header__bottom .header__shoppingCart i{
+  font-size: 1.5rem;
+}
+header .header__divider{
+  border-top: 1px solid #ccc;
+}
+
+/* main */
+main{
+  width: 750px;
+  margin: 80px auto;
+}
+main .main__header{
+  text-align: center;
+  font-size: 2.1rem;
+  font-weight:900;
+  margin: 50px;
+}
+main .main__content{
+  border-top: 3px solid black;
+}
+main .main__content .content__header{
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 32px 0;
+}
+main .main__content .content__body{
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0  30px 0;
+}
+main .main__content .content__body .input__flex{
+  display: flex;
+  margin: 10px 0;
+}
+main .main__content .content__body .input__flex .head{
+  width: 130px;
+  line-height: 45px;
+}
+main .main__content .content__body .input__flex .tail input{
+  height: 45px;
+  border: 1px solid #ccc;
+  width: 450px;
+  padding-left: 15px;
+  font-size: 1.1rem;
+}
+main .main__content .content__body .input__flex .tail p{
+  color: gray;
+  padding: 10px 0;
+  font-size: 0.97rem;
+}
+main .main__content .content__body .input__flex .tail .checkBtn{
+  display: inline-block;
+  width: 150px;
+  height: 45px;
+  background-color: #918C01;
+  color: white;
+  text-align: center;
+  line-height: 45px;
+  font-size: 1.1rem;
+  margin-left: 10px;
+  cursor: pointer;
+}
+main .main__content .content__body .email__input,
+main .main__content .content__body .birth__input,
+main .main__content .content__body .gender__input{
+  margin-top: 20px;
+}
+main .main__content .content__body .email__input .tail input{
+  width: 140px;
+}
+main .main__content .content__body .email__input .tail select{
+  margin-left: 10px;
+  width: 140px;
+  height: 45px;
+  border: 1px solid #ccc;
+  font-size: 1.1rem;
+  padding-left: 15px;
+}
+main .main__content .content__body .gender__input .head{
+  line-height: normal;
+}
+main .main__content .content__body .gender__input .tail{
+  display: flex
+}
+main .main__content .content__body .gender__input .tail>div{
+  margin-right: 20px;
+  line-height: 1.3rem;
+}
+main .main__content .content__body .gender__input .tail>div i {
+  color: #ccc;
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 1.3rem;
+}
+main .main__btns{
+  margin: 50px 0;
+  display: flex;
+}
+main .main__btns > div{
+  width: 375px;
+  height: 70px;
+  text-align: center;
+  line-height: 70px;
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+main .main__btns .signup__cancel{
+  border: 1px solid #918C01;
+}
+main .main__btns .signup__submit{
+  background-color:#918C01;
+  color: white;
+}
+
+/* Footer */
+footer{
+  width: 100%;
+  margin-top: 50px;
+  background-color: #F5F5F5;
+}
+footer .footer__content{
+  margin: 0 auto;
+  width: 1100px;
+  padding: 20px 0;
+}
+footer .footer__content .footer__btn{
+  display: flex;
+
+}
+footer .footer__content .footer__btn li{
+  margin-right: 45px;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+footer .footer__content .footer__info{
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer__content .footer__info .info__left .left__title{
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+footer .footer__content .footer__info .info__left .left__tel{
+  margin: 15px 0;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #918C01;
+}
+footer .footer__content .footer__info .info__left .left__desc{
+  color: gray;
+  line-height: 1.5rem;
+}
+footer .footer__content .footer__info .info__left .left__icon{
+  margin-top: 20px;
+  display: flex;
+}
+footer .footer__content .footer__info .info__left .left__icon i{
+  color: gray;
+  font-size: 3rem;
+  margin-right: 20px;
+}
+footer .footer__content .footer__info .info__right .right__title{
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+footer .footer__content .footer__info .info__right .right__desc{
+  color: gray;
+  line-height: 1.5rem;
+}
