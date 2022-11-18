@@ -15,6 +15,7 @@ import controller.impl.BestItemListController;
 import controller.impl.HomeController;
 import controller.impl.ItemDetailController;
 import controller.impl.ItemListController;
+import controller.impl.OrderCompleteController;
 import controller.impl.OrderController;
 import controller.impl.OrderListController;
 import controller.impl.ShoppingcartController;
@@ -43,6 +44,8 @@ public class FrontController extends HttpServlet {
         controllerMap.put("/v1/order", new OrderController());
         controllerMap.put("/v1/shoppingcart", new ShoppingcartController());
         controllerMap.put("/v1/orderList", new OrderListController());
+      //임시 테스트용, order 완료 후 redirect로만 접근 가능해야 함
+        controllerMap.put("/v1/orderComplete", new OrderCompleteController());
     }
 
     @Override
