@@ -15,6 +15,7 @@ import controller.impl.BestItemListController;
 import controller.impl.HomeController;
 import controller.impl.ItemDetailController;
 import controller.impl.ItemListController;
+import controller.impl.LikeItemListController;
 import controller.impl.OrderCompleteController;
 import controller.impl.OrderController;
 import controller.impl.OrderListController;
@@ -23,6 +24,7 @@ import controller.impl.SignInController;
 import controller.impl.SignupCompleteController;
 import controller.impl.SignupController;
 import controller.impl.TestController;
+import controller.impl.ViewItemListController;
 
 @WebServlet(urlPatterns = "/v1/*")
 public class FrontController extends HttpServlet {
@@ -46,6 +48,8 @@ public class FrontController extends HttpServlet {
         controllerMap.put("/v1/orderList", new OrderListController());
       //임시 테스트용, order 완료 후 redirect로만 접근 가능해야 함
         controllerMap.put("/v1/orderComplete", new OrderCompleteController());
+        controllerMap.put("/v1/likeItemList", new LikeItemListController());
+        controllerMap.put("/v1/viewItemList", new ViewItemListController());
     }
 
     @Override
