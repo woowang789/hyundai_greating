@@ -16,6 +16,8 @@ import controller.impl.HomeController;
 import controller.impl.ItemDetailController;
 import controller.impl.ItemListController;
 import controller.impl.OrderController;
+import controller.impl.OrderListController;
+import controller.impl.ShoppingcartController;
 import controller.impl.SignInController;
 import controller.impl.SignupCompleteController;
 import controller.impl.SignupController;
@@ -39,6 +41,8 @@ public class FrontController extends HttpServlet {
         controllerMap.put("/v1/itemDetail", new ItemDetailController());
         controllerMap.put("/v1/bestItemList",new BestItemListController());
         controllerMap.put("/v1/order", new OrderController());
+        controllerMap.put("/v1/shoppingcart", new ShoppingcartController());
+        controllerMap.put("/v1/orderList", new OrderListController());
     }
 
     @Override

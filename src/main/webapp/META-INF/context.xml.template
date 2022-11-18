@@ -5,9 +5,9 @@
     auth="Container"
     type="javax.sql.DataSource"
     driverClassName="oracle.jdbc.OracleDriver"
-    url="jdbc:oracle:thin:@edudb_high?TNS_ADMIN=C:\\dev64\\Wallet_edudb"
-    username="testuser"
-    password="Qwerty123456"
+    url="jdbc:oracle:thin:@edudb_high?TNS_ADMIN={C:\\dev64\\Wallet_edudb(전자지갑 경로)}"
+    username="{ID}"
+    password="{PW}"
     maxActive="5"
     maxWait="-1"
      />
