@@ -76,6 +76,7 @@ main{
   width: 264px;
 }
 .main__center .center__body .body__option .option__reset{
+  cursor: pointer;
   margin-right: 30px;
 }
 .main__center .center__body .body__option .option__reset i{
@@ -84,6 +85,7 @@ main{
   color: #818181;
 }
 .main__center .center__body .body__option .search__btn{
+  cursor: pointer;
   width: 105px;
   height: 45px;
   text-align: center;
@@ -112,6 +114,7 @@ main{
   color: #818181;
 }
 .main__center .order__list .order__item .order__head .head__right{
+  cursor: pointer;
   font-size: 1rem;
   font-weight: 500;
   padding: 10px;

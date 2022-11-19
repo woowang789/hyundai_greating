@@ -18,7 +18,6 @@
       <img src="/img/main/main_banner.jpeg" alt="" />
     </div>
 
-    <!-- MAIN -->
     <main>
       <!-- CATEGORYAREA-->
       <div class="categoryArea">

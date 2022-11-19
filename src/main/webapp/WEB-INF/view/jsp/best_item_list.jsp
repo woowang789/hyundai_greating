@@ -16,7 +16,7 @@
     
     <!--Best Category-->
     <ul class="bestCategory">
-      <li><a href="">전체</a></li>
+      <li><a href="" class="active">전체</a></li>
       <li><a href="">건강반찬</a></li>
       <li><a href="">진한 국/찌개</a></li>
       <li><a href="">자연 담은 면</a></li>
@@ -32,7 +32,7 @@
     </ul>
     <!-- BestBanner -->
     <div class="bestBanner">
-      <img src="/img/best_item_list/best_item_list_banner.jpeg" alt="" />
+      <img src="../img/best_item_list/best_item_list_banner.jpeg" alt="" />
     </div>
     <main>
       <!--ITEMSLIT-->
@@ -44,33 +44,9 @@
               Best<span>01</span>
             </div>
             <div class="item__img">
-              <img src="/img//main/main_item_img.jpeg" alt="" />
-              <div class="img__badge">냉장</div>
-            </div>
-            <div class="item__title">
-              <p>집에서 즐기는 베트남식 샌드위치</p>
-              <h1>부드러운 소불고기 반미 샌드</h1>
-            </div>
-            <div class="item__bottom">
-              <h1 class="item__price">2,900원</h1>
-              <div class="item__shoppingcart">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </div>
-            </div>
-            <div class="item__value">
-              <i class="fa-solid fa-award"></i>
-              <span>프리미엄 식재</span>
-            </div>
-          </div>
-        </li>
-		<li>
-          <div class="item">
-            <div class="item__rank">
-              <div class="rank__underline"></div>
-              Best<span>01</span>
-            </div>
-            <div class="item__img">
-              <img src="/img//main/main_item_img.jpeg" alt="" />
+              <a href=""
+                ><img src="../img//main/main_item_img.jpeg" alt=""
+              /></a>
               <div class="img__badge">냉장</div>
             </div>
             <div class="item__title">
@@ -96,7 +72,9 @@
               Best<span>01</span>
             </div>
             <div class="item__img">
-              <img src="/img//main/main_item_img.jpeg" alt="" />
+              <a href=""
+                ><img src="../img//main/main_item_img.jpeg" alt=""
+              /></a>
               <div class="img__badge">냉장</div>
             </div>
             <div class="item__title">
@@ -122,7 +100,9 @@
               Best<span>01</span>
             </div>
             <div class="item__img">
-              <img src="/img//main/main_item_img.jpeg" alt="" />
+              <a href=""
+                ><img src="../img//main/main_item_img.jpeg" alt=""
+              /></a>
               <div class="img__badge">냉장</div>
             </div>
             <div class="item__title">
@@ -148,7 +128,9 @@
               Best<span>01</span>
             </div>
             <div class="item__img">
-              <img src="/img//main/main_item_img.jpeg" alt="" />
+              <a href=""
+                ><img src="../img//main/main_item_img.jpeg" alt=""
+              /></a>
               <div class="img__badge">냉장</div>
             </div>
             <div class="item__title">

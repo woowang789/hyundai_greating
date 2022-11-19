@@ -12,8 +12,7 @@
 	<!-- HEADER Fragnent -->
 	<%@include file="/WEB-INF/component/header.jsp"%>
 	
-	<!-- main -->
-	<main>
+	 <main>
       <h1 class="main__header">장바구니</h1>
       <div class="main__content">
         <div class="price__range">
@@ -28,23 +27,6 @@
             <div class="head__price">판매금액</div>
             <div class="head__qty">수량</div>
             <div class="head__resultPrice">구매금액</div>
-          </li>
-          <li class="list__item">
-            <div class="body__info">
-              <div class="item__img">
-                <img src="../img/shoppingcart/item_img.jpeg" alt="" />
-              </div>
-              <p>[본가스시]제주 청귤 소바(2인분)</p>
-            </div>
-            <div class="body__price">10,500원</div>
-
-            <div class="body__qty">
-              <div class="qty__minus">-</div>
-              <div class="qty">1</div>
-              <div class="qty__plus">+</div>
-            </div>
-            <div class="body__resultPrice">10,500원</div>
-            <i class="fa-solid fa-xmark"></i>
           </li>
           <li class="list__item">
             <div class="body__info">

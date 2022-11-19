@@ -53,6 +53,7 @@ main{
   border-bottom: 1px solid #ccc;
 }
 .main__center .body__header div{
+  cursor: pointer;
   display: flex;
   align-items: center;
 }
@@ -62,6 +63,10 @@ main{
   display: inline-block;
   margin-right: 5px;
 }
+.main__center .body__header .select__all i.active{
+  color: #918C01;
+}
+
 /* itemList */
 main .itemList {
   padding: 40px 0;
@@ -75,12 +80,16 @@ main .itemList .item{
   position: relative;
   border-bottom: 1px solid #ccc;
 }
-main .itemList .item > i{
+main .itemList .item > .check__btn i{
+  cursor: pointer;
   color: white;
   position: absolute;
   font-size: 1.5rem;
   right: 10px;
   top: 10px;
+}
+main .itemList .item > .check__btn i.active{
+  color: #918C01;
 }
 main .itemList .item .item__img{
   margin-bottom: 20px;
@@ -124,6 +133,7 @@ main .itemList .item .item__bottom .item__price{
   font-size: 1.5rem;
 }
 main .itemList .item .item__bottom .item__shoppingcart{
+  cursor: pointer;
   font-size: 1.3rem;
   background-color: #ccc;
   color: white;
@@ -165,4 +175,4 @@ main .pagingArea .paging li a{
   height: 32px;
   border: 1px solid #ccc;
   margin: 0 3px;
-}
+} 

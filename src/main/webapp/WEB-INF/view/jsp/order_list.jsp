@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 	<%@include file="/WEB-INF/component/style.jsp" %>
     <link rel="stylesheet" href="/css/order_list.css" />
+    <script src="/js/order_list.js" defer></script>
 <title>OrderList</title>
 </head>
 <body>
@@ -39,7 +40,6 @@
           </ul>
         </div>
       </div>
-      
       <div class="main__center">
         <div class="center__header"><span>왕종휘</span>님 반갑습니다.</div>
         <div class="center__body">
@@ -50,9 +50,7 @@
               <div class="tail">
                 <select name="" id="">
                   <option value="">주문상태 전체</option>
-                  <option value="">주문취소</option>
                   <option value="">배송준비</option>
-                  <option value="">배송중</option>
                   <option value="">배송완료</option>
                 </select>
               </div>
@@ -71,7 +69,7 @@
           <li class="order__item">
             <div class="order__head">
               <div class="head__left">
-                주문일 : 2022-11-17 <span>상세보기 ></span>
+                주문일 : 2022-11-17 <a href=""><span>상세보기 ></span></a>
               </div>
               <div class="head__right">주문취소</div>
             </div>
@@ -105,7 +103,41 @@
           <li class="order__item">
             <div class="order__head">
               <div class="head__left">
-                주문일 : 2022-11-17 <span>상세보기 ></span>
+                주문일 : 2022-11-17 <a href=""><span>상세보기 ></span></a>
+              </div>
+              <div class="head__right">주문취소</div>
+            </div>
+            <ul class="item__list">
+              <li class="item">
+                <div class="item__img">
+                  <img src="../img/order_list/item__img.jpeg" alt="" />
+                </div>
+                <div class="item__info">
+                  <p class="order__status">입금대기</p>
+                  <h3>베지미트볼 파스타소스</h3>
+                  <p class="desc">베이지트볼 파스타소스 250g</p>
+                  <p class="price">5,500원 / 1개</p>
+                </div>
+              </li>
+              <li class="item">
+                <div class="item__img">
+                  <img src="../img/order_list/item__img.jpeg" alt="" />
+                </div>
+                <div class="item__info">
+                  <p class="order__status">입금대기</p>
+                  <h3>베지미트볼 파스타소스</h3>
+                  <p class="desc">베이지트볼 파스타소스 250g</p>
+                  <p class="price">5,500원 / 1개</p>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="order__list">
+          <li class="order__item">
+            <div class="order__head">
+              <div class="head__left">
+                주문일 : 2022-11-17 <a href=""><span>상세보기 ></span></a>
               </div>
               <div class="head__right">주문취소</div>
             </div>

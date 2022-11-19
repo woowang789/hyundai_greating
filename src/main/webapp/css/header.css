@@ -1,9 +1,12 @@
 /* HEADER */
+header{
+  width: 100%;
+}
 header .header__content{
   width: 1100px;
-  margin: 20px auto;
 }
 header .header__btn{
+  padding:20px 0;
   width: 100%;
   display: flex;
   justify-content: end;
@@ -22,7 +25,7 @@ header .header__logo{
 
 .header__bottom{
   box-shadow: 0px 15px 9px -15px #ccc;
-  z-index: 100;
+  z-index: 10;
   margin: 0 auto;
   width: 100%;
   min-width: 1400px;
@@ -84,7 +87,7 @@ header .header__logo{
 }
 .header__bottom .header__category .hover__menu{
   display: none;
-  padding: 20px;
+  padding: 20px 0;
   padding-right: 0px;
   left: 0;
   top:50px;
@@ -101,15 +104,33 @@ header .header__logo{
   display: block;
 }
 .header__bottom .header__category .hover__menu ul h3{
-  margin: 10px 0;
+  margin: 10px 20px;
   font-weight: 700;
   font-size: 1.3rem;
   text-decoration: underline;
 }
-.header__bottom .header__category .hover__menu ul li a{
+.header__bottom .header__category .hover__menu > ul > li:hover{
+  background-color: #918c012c;
+}
+.header__bottom .header__category .hover__menu  ul > li > a{
+  display: block;
+  padding: 5px 20px;
+  font-size: 1rem;
+}
+.header__bottom .header__category .hover__menu > ul ul a{
+  padding-left: 0px;
+  padding: 10px;
+}
+.header__bottom .header__category .hover__menu > ul > li i{
   display: inline-block;
-  margin: 15px 0;
-  font-size: 1.2rem;
+  width: 25px;
+  height: 25px;
+  margin: 5px 10px 0 0;
+  background-image: url(/img/item_list/category_icon.png);
+  background-repeat: no-repeat;
+  background-size: 300%;
+  background-position-y: -275px;
+  
 }
 .header__bottom .header__category .hover__menu ul li:hover ul{
   display: block;
@@ -118,7 +139,7 @@ header .header__logo{
   box-shadow:0 0 0 1px #ccc;
   padding: 20px;
   height: 100%;
-  width: 150px;
+  width: 200px;
   background-color: #F5F5F5;
   display: none;
   position: absolute;

@@ -7,24 +7,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%@include file="/WEB-INF/component/style.jsp" %>
+    <script src="/js/item_detail.js" defer></script>
     <link rel="stylesheet" href="/css/item_detail.css" />
     <title>ItemDetail</title>
   </head>
   <body>
+    <div class="modal__background"></div>
+      
     <!-- HEADER Fragnent -->
     <%@include file="/WEB-INF/component/header.jsp" %>
     
+    
+    <!--OtionSelect-->
+    <div class="option__select">
+      <div class="select__header">옵션선택</div>
+      <div class="select__body__wrap">
+        <div class="select__body">
+          <ul class="item__list">
+            <li class="item">
+              <p class="item__name">[분다버그]진저비어</p>
+              <div class="item__qty">
+                <div class="qty__minus">-</div>
+                <div class="qty">0</div>
+                <div class="qty__plus">+</div>
+              </div>
+              <p class="item__price">2,900원</p>
+            </li>
+            <li class="item">
+              <p class="item__name">[분다버그]진저비어</p>
+              <div class="item__qty">
+                <div class="qty__minus">-</div>
+                <div class="qty">0</div>
+                <div class="qty__plus">+</div>
+              </div>
+              <p class="item__price">2,900원</p>
+            </li>
+          </ul>
+        </div>
+        <div class="item__totlaPrice">총 상품금액<span>0원</span></div>
+        <div class="select__btn">
+          <div class="item__like">
+            <i class="fa-solid fa-heart"></i>관심상품
+          </div>
+          <div class="item__shoppingcart">장바구니담기</div>
+          <div class="item__order">바로구매</div>
+        </div>
+      </div>
+    </div>
     <div class="itemImgAndInfo">
       <div class="itemImgArea">
         <div class="itemImg">
-          <img src="/img/item_detail/item_img.jpeg" alt="" />
+          <img src="../img/item_detail/item_img.jpeg" alt="" />
         </div>
       </div>
       <div class="itemInfoArea">
         <div class="info__title">
           <div class="subtitleAndLike">
             <p class="subtitle">서산 화식한우로 끓인</p>
-            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-heart"></i>
           </div>
 
           <h1 class="title">[1Table] 화식한우 사골곰국</h1>
@@ -56,14 +96,14 @@
           </div>
         </div>
         <ul class="info__btns">
-          <li class="btn__addShoppingcart"><a href="">장바구니 담기</a></li>
-          <li class="btn__order"><a href="">구매하기</a></li>
+          <li class="btn__addShoppingcart">장바구니 담기</li>
+          <li class="btn__order">구매하기</li>
         </ul>
       </div>
     </div>
     <!-- InfoTabs -->
     <ul class="infoTabs">
-      <li class="infoTab">상품정보</li>
+      <li class="infoTab active">상품정보</li>
       <li class="infoTab">상품후기</li>
       <li class="infoTab">상품문의</li>
       <li class="infoTab">교환반품</li>
@@ -80,7 +120,7 @@
           <ul class="value__icons">
             <li>
               <div class="value__icon">
-                <img src="/img/item_detail/value_ingredient.png" alt="" />
+                <img src="../img/item_detail/value_ingredient.png" alt="" />
               </div>
               <span>프리미엄 식재</span>
             </li>
@@ -90,7 +130,7 @@
           <ul class="simple__icons">
             <li>
               <div class="simple__icon">
-                <img src="/img/item_detail/sime_icon.png" alt="" />
+                <img src="../img/item_detail/sime_icon.png" alt="" />
               </div>
               <span>소</span>
             </li>
@@ -120,7 +160,7 @@
           보세요. <br />
         </div>
         <div class="item__img">
-          <img src="/img/item_detail/item_detail_img1.jpeg" alt="" />
+          <img src="../img/item_detail/item_detail_img1.jpeg" alt="" />
         </div>
 
         <div class="item__area">
@@ -129,7 +169,7 @@
             <p>이렇게 포장됩니다.</p>
           </div>
           <div class="packageImg">
-            <img src="/img/item_detail/item_package.jpeg" alt="" />
+            <img src="../img/item_detail/item_package.jpeg" alt="" />
           </div>
         </div>
 
@@ -140,7 +180,7 @@
           </div>
 
           <div class="IngredientsImg">
-            <img src="/img/item_detail/item_ingredients.jpeg" alt="" />
+            <img src="../img/item_detail/item_ingredients.jpeg" alt="" />
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%@include file="/WEB-INF/component/style.jsp" %>
+    <script src="/js/item_list.js" defer></script>
     <link rel="stylesheet" href="/css/item_list.css" />
     <title>ItemList</title>
   </head>
@@ -75,16 +76,74 @@
       </ul>
       <ul class="subcateList">
         <li><a href="">메인요리</a></li>
-        <li><a href=""></a>밀키트</li>
-        <li><a href=""></a>밑반찬</li>
-        <li><a href=""></a>나물</li>
-        <li><a href=""></a>소스/양념</li>
-        <li><a href=""></a>키즈</li>
+        <li><a href="">밀키트</a></li>
+        <li><a href="">밑반찬</a></li>
+        <li><a href="">나물</a></li>
+        <li><a href="">소스/양념</a></li>
+        <li><a href="">키즈</a></li>
       </ul>
     </div>
     <div class="cate__divider"></div>
     <main>
       <div class="countAndFilter">
+        <div class="filter__window">
+          <div class="filter__close"><i class="fa-regular fa-x"></i></div>
+          <div class="filter__header">
+            <h1>상품검색</h1>
+            원하는 속성을 골라보세요
+          </div>
+          <div class="filter__section">
+            <p>선호하는 재료가 있으신가요?</p>
+            <ul>
+              <li>소고기</li>
+              <li>돼지고기</li>
+              <li>닭고기</li>
+              <li>생선</li>
+              <li>해초</li>
+              <li>해산물</li>
+              <li>콩</li>
+              <li>두부</li>
+              <li>나물</li>
+              <li>아보카도</li>
+            </ul>
+          </div>
+          <div class="filter__section">
+            <p>빼고싶은 재료가 있으신가요?</p>
+            <ul>
+              <li>대두</li>
+              <li>땅콩</li>
+              <li>호두</li>
+              <li>잣</li>
+              <li>밀</li>
+              <li>메밀</li>
+              <li>우유</li>
+              <li>복숭아</li>
+              <li>토마토</li>
+              <li>고등어</li>
+              <li>오징어</li>
+              <li>알류</li>
+              <li>새우</li>
+              <li>게</li>
+              <li>조개류</li>
+              <li>소고기</li>
+              <li>돼지고기</li>
+              <li>닭고기</li>
+            </ul>
+          </div>
+          <div class="filter__section">
+            <p>선호하는 보관방법이 있으신가요?</p>
+            <ul>
+              <li>냉장</li>
+              <li>냉동</li>
+            </ul>
+          </div>
+          <div class="filter__btn">
+            <div class="filter__reset">
+              <i class="fa-solid fa-arrow-rotate-left"></i>초기화
+            </div>
+            <div class="filter__submit">선택완료</div>
+          </div>
+        </div>
         <div class="count">전체상품 <span>110</span></div>
         <div class="filter">
           <div class="soldoutRadio">
@@ -109,7 +168,9 @@
         <li>
           <div class="item">
             <div class="item__img">
-              <img src="/img//main/main_item_img.jpeg" alt="" />
+              <a href="">
+                <img src="../img//main/main_item_img.jpeg" alt="" />
+              </a>
               <div class="img__badge">냉장</div>
             </div>
             <div class="item__title">
@@ -131,7 +192,7 @@
         <li>
           <div class="item">
             <div class="item__img">
-              <img src="/img//main/main_item_img.jpeg" alt="" />
+              <img src="../img//main/main_item_img.jpeg" alt="" />
               <div class="img__badge">냉장</div>
             </div>
             <div class="item__title">
@@ -149,7 +210,7 @@
         <li>
           <div class="item">
             <div class="item__img">
-              <img src="/img//main/main_item_img.jpeg" alt="" />
+              <img src="../img//main/main_item_img.jpeg" alt="" />
               <div class="img__badge">냉장</div>
             </div>
             <div class="item__title">
@@ -167,7 +228,7 @@
         <li>
           <div class="item">
             <div class="item__img">
-              <img src="/img//main/main_item_img.jpeg" alt="" />
+              <img src="../img//main/main_item_img.jpeg" alt="" />
               <div class="img__badge">냉장</div>
             </div>
             <div class="item__title">
@@ -185,7 +246,7 @@
         <li>
           <div class="item">
             <div class="item__img">
-              <img src="/img//main/main_item_img.jpeg" alt="" />
+              <img src="../img//main/main_item_img.jpeg" alt="" />
               <div class="img__badge">냉장</div>
             </div>
             <div class="item__title">

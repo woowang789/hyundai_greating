@@ -43,6 +43,7 @@ main .main__content .price__range .more span{
   font-weight: 700;
 }
 main .main__content .price__range .more__btn{
+  cursor: pointer;
   font-size: 1.1rem;
   padding: 10px 25px;
   border: 1px solid #ccc;
@@ -116,6 +117,7 @@ main .order__item__list .list__item .body__qty div{
 main .order__item__list .list__item .body__qty .qty__plus,
 main .order__item__list .list__item .body__qty .qty__minus{
   background-color: #F5F5F5;
+  cursor: pointer;
 }
 main .order__item__list .list__item .body__qty .qty{
   width: 55px;
@@ -124,7 +126,8 @@ main .order__item__list .list__item .body__resultPrice{
   font-size: 1.4rem;
   font-weight: 700;
 }
-main .order__item__list .list__item  i{
+main .order__item__list .list__item i{
+  cursor: pointer;
   position: absolute;
   right: 10px;
   font-size: 2rem;
@@ -182,6 +185,7 @@ main .main__bottom .bottom__body .result__price .price__underline{
   z-index: -1;
 }
 main .main__bottom .bottom__btn{
+  cursor: pointer;
   width: 618px;
   height: 68px;
   margin: 0 auto;

@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
     <%@include file="/WEB-INF/component/style.jsp" %>
+    <script src="/js/like_item_list.js" defer></script>
     <link rel="stylesheet" href="/css/like_item_list.css" />
 <title>Like Item</title>
 </head>
@@ -12,7 +13,7 @@
     <!-- HEADER Fragnent -->
     <%@include file="/WEB-INF/component/header.jsp" %>
     
-	<!--Main-->
+    <!--Main-->
     <main>
       <div class="main__left">
         <h1>마이페이지</h1>
@@ -44,10 +45,12 @@
         <div class="center__body">
           <div class="body__header">
             <div class="select__all">
-              <i class="fa-regular fa-circle-check"></i><p>전체선택</p>
+              <i class="fa-regular fa-circle-check"></i>
+              <p>전체선택</p>
             </div>
             <div class="delete__selected">
-              <i class="fa-solid fa-trash-can"></i><p>삭제</p>
+              <i class="fa-solid fa-trash-can"></i>
+              <p>삭제</p>
             </div>
           </div>
           <ul class="itemList">
@@ -71,7 +74,9 @@
                   <i class="fa-solid fa-award"></i>
                   <span>프리미엄 식재</span>
                 </div>
-                <i class="fa-solid fa-circle-check"></i>
+                <div class="check__btn">
+                  <i class="fa-solid fa-circle-check"></i>
+                </div>
               </div>
             </li>
             <li>
@@ -94,7 +99,9 @@
                   <i class="fa-solid fa-award"></i>
                   <span>프리미엄 식재</span>
                 </div>
-                <i class="fa-solid fa-circle-check"></i>
+                <div class="check__btn">
+                  <i class="fa-solid fa-circle-check"></i>
+                </div>
               </div>
             </li>
             <li>
@@ -117,7 +124,9 @@
                   <i class="fa-solid fa-award"></i>
                   <span>프리미엄 식재</span>
                 </div>
-                <i class="fa-solid fa-circle-check"></i>
+                <div class="check__btn">
+                  <i class="fa-solid fa-circle-check"></i>
+                </div>
               </div>
             </li>
             <li>
@@ -140,7 +149,9 @@
                   <i class="fa-solid fa-award"></i>
                   <span>프리미엄 식재</span>
                 </div>
-                <i class="fa-solid fa-circle-check"></i>
+                <div class="check__btn">
+                  <i class="fa-solid fa-circle-check"></i>
+                </div>
               </div>
             </li>
             <li>
@@ -163,53 +174,9 @@
                   <i class="fa-solid fa-award"></i>
                   <span>프리미엄 식재</span>
                 </div>
-                <i class="fa-solid fa-circle-check"></i>
-              </div>
-            </li>
-            <li>
-              <div class="item">
-                <div class="item__img">
-                  <img src="../img//main/main_item_img.jpeg" alt="" />
-                  <div class="img__badge">냉장</div>
+                <div class="check__btn">
+                  <i class="fa-solid fa-circle-check"></i>
                 </div>
-                <div class="item__title">
-                  <p>집에서 즐기는 베트남식 샌드위치</p>
-                  <h1>부드러운 소불고기 반미 샌드</h1>
-                </div>
-                <div class="item__bottom">
-                  <h1 class="item__price">2,900원</h1>
-                  <div class="item__shoppingcart">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                  </div>
-                </div>
-                <div class="item__value">
-                  <i class="fa-solid fa-award"></i>
-                  <span>프리미엄 식재</span>
-                </div>
-                <i class="fa-solid fa-circle-check"></i>
-              </div>
-            </li>
-            <li>
-              <div class="item">
-                <div class="item__img">
-                  <img src="../img//main/main_item_img.jpeg" alt="" />
-                  <div class="img__badge">냉장</div>
-                </div>
-                <div class="item__title">
-                  <p>집에서 즐기는 베트남식 샌드위치</p>
-                  <h1>부드러운 소불고기 반미 샌드</h1>
-                </div>
-                <div class="item__bottom">
-                  <h1 class="item__price">2,900원</h1>
-                  <div class="item__shoppingcart">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                  </div>
-                </div>
-                <div class="item__value">
-                  <i class="fa-solid fa-award"></i>
-                  <span>프리미엄 식재</span>
-                </div>
-                <i class="fa-solid fa-circle-check"></i>
               </div>
             </li>
           </ul>
