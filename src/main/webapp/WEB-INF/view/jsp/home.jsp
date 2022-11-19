@@ -5,12 +5,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/home.css" />
-    <!-- fontawesome -->
-    <script
-      src="https://kit.fontawesome.com/f5ed871e11.js"
-      crossorigin="anonymous"></script>
+    <%@include file="/WEB-INF/component/style.jsp" %>
     <title>Document</title>
   </head>
   <body>
@@ -52,7 +48,9 @@
         <li>
           <div class="item">
             <div class="item__img">
-              <img src="/img//main/main_item_img.jpeg" alt="" />
+              <a href=""
+                ><img src="../img//main/main_item_img.jpeg" alt=""
+              /></a>
               <div class="img__badge">냉장</div>
             </div>
             <div class="item__title">
@@ -70,7 +68,7 @@
         <li>
           <div class="item">
             <div class="item__img">
-              <img src="/img//main/main_item_img.jpeg" alt="" />
+              <img src="../img//main/main_item_img.jpeg" alt="" />
               <div class="img__badge">냉장</div>
             </div>
             <div class="item__title">
@@ -88,7 +86,7 @@
         <li>
           <div class="item">
             <div class="item__img">
-              <img src="/img//main/main_item_img.jpeg" alt="" />
+              <img src="../img//main/main_item_img.jpeg" alt="" />
               <div class="img__badge">냉장</div>
             </div>
             <div class="item__title">
@@ -106,7 +104,7 @@
         <li>
           <div class="item">
             <div class="item__img">
-              <img src="/img//main/main_item_img.jpeg" alt="" />
+              <img src="../img//main/main_item_img.jpeg" alt="" />
               <div class="img__badge">냉장</div>
             </div>
             <div class="item__title">
@@ -124,7 +122,7 @@
         <li>
           <div class="item">
             <div class="item__img">
-              <img src="/img//main/main_item_img.jpeg" alt="" />
+              <img src="../img//main/main_item_img.jpeg" alt="" />
               <div class="img__badge">냉장</div>
             </div>
             <div class="item__title">
@@ -141,9 +139,10 @@
         </li>
       </ul>
       <div class="moreBtnArea">
-        <div class="moreBtn">착한 간식/음료 전체보기 ></div>
+        <a href=""><div class="moreBtn">착한 간식/음료 전체보기 ></div></a>
       </div>
     </main>
+
      <!-- Footer Fragnent -->
     <%@include file="/WEB-INF/component/footer.jsp" %>
   </body>

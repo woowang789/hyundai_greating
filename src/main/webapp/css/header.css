@@ -1,0 +1,131 @@
+/* HEADER */
+header .header__content{
+  width: 1100px;
+  margin: 20px auto;
+}
+header .header__btn{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+header .header__btn ul{
+  display: flex;
+}
+header .header__btn ul li {
+  margin-left: 30px;
+}
+
+header .header__logo{
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.header__bottom{
+  box-shadow: 0px 15px 9px -15px #ccc;
+  z-index: 100;
+  margin: 0 auto;
+  width: 100%;
+  min-width: 1400px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+}
+.header__bottom .header__category{
+  padding: 15px 0;
+  margin-right: 40px;
+}
+.header__bottom .header__category i{
+  font-size: 1.2rem;
+  padding: 0 10px;
+}
+.header__bottom .header__menu{
+  width: 680px;
+  -webkit-text-size-adjust: 100%;
+}
+.header__bottom .header__menu ul {
+  width: 100%;
+  display: flex;
+}
+.header__bottom .header__menu ul li{
+  padding: 0 20px;
+}
+.header__bottom .header__search{
+  margin-right: 40px;
+  position: relative;
+}
+.header__bottom .header__search input{
+  font-size: 1rem;
+  width: 240px;
+  border: none;
+  background-color: #F5F5F5;
+  color: #818181;
+  border-radius: 20px;
+  padding: 10px;
+  padding-left: 15px;
+}
+.header__bottom .header__search i{
+  cursor: pointer;
+  position: absolute;
+  right: 13px;
+  top: 10px;
+}
+.header__bottom .header__shoppingCart i{
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.header__bottom .header__category{
+  position: relative;
+}
+.header__bottom .header__category .hover__menu{
+  display: none;
+  padding: 20px;
+  padding-right: 0px;
+  left: 0;
+  top:50px;
+  position: absolute;
+  width: 200px;
+  background-color: white;
+  box-shadow:0 0 0 1px #ccc;
+}
+.header__bottom > div:hover > a,
+.header__bottom > div > ul >li:hover{
+  color: #918C01;
+}
+.header__bottom .header__category:hover .hover__menu{
+  display: block;
+}
+.header__bottom .header__category .hover__menu ul h3{
+  margin: 10px 0;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-decoration: underline;
+}
+.header__bottom .header__category .hover__menu ul li a{
+  display: inline-block;
+  margin: 15px 0;
+  font-size: 1.2rem;
+}
+.header__bottom .header__category .hover__menu ul li:hover ul{
+  display: block;
+}
+.header__bottom .header__category .hover__menu ul li ul{
+  box-shadow:0 0 0 1px #ccc;
+  padding: 20px;
+  height: 100%;
+  width: 150px;
+  background-color: #F5F5F5;
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 200px;
+  font-size: 1.1rem;
+}
+.header__divider{
+  border-top: 1px solid #F5F5F5;
+}

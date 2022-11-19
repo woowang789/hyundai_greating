@@ -4,11 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/css/style.css" />
+<%@include file="/WEB-INF/component/style.jsp" %>
 <link rel="stylesheet" href="/css/shoppingcart.css" />
-<!-- fontawesome -->
-<script src="https://kit.fontawesome.com/f5ed871e11.js"
-	crossorigin="anonymous"></script>
 <title>Shoppingcart</title>
 </head>
 <body>

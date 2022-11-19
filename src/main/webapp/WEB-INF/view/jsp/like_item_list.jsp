@@ -4,10 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-    <script
-      src="https://kit.fontawesome.com/f5ed871e11.js"
-      crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/style.css" />
+    <%@include file="/WEB-INF/component/style.jsp" %>
     <link rel="stylesheet" href="/css/like_item_list.css" />
 <title>Like Item</title>
 </head>
