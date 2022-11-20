@@ -3,7 +3,7 @@ header{
   width: 100%;
 }
 header .header__content{
-  width: 1100px;
+  min-width: 1100px;
 }
 header .header__btn{
   padding:20px 0;

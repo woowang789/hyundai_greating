@@ -6,14 +6,14 @@
       <div class="header__content">
         <div class="header__btn">
           <ul>
-            <li><a href="">로그인</a></li>
-            <li><a href="">회원가입</a></li>
+            <li><a href="/v1/signin">로그인</a></li>
+            <li><a href="/v1/signup">회원가입</a></li>
             <li><a href="">쿠폰/교환권</a></li>
             <li><a href="">고객센터</a></li>
           </ul>
         </div>
         <div class="header__logo">
-          <a href=""><img src="../img/main/greating_logo.png" alt="" /></a>
+          <a href="/v1/"><img src="../img/main/greating_logo.png" alt="" /></a>
         </div>
       </div>
     </header>
@@ -24,21 +24,21 @@
           <ul>
             <h3>건강마켓</h3>
             <li>
-              <a href=""><i></i>건강반찬</a>
+              <a href="/v1/itemList"><i></i>건강반찬</a>
               <ul>
-                <li><a href="">메인요리</a></li>
-                <li><a href="">밀키트</a></li>
-                <li><a href="">밑반찬</a></li>
-                <li><a href="">나물</a></li>
-                <li><a href="">소스/양념</a></li>
-                <li><a href="">키즈</a></li>
+                <li><a href="/v1/itemList">메인요리</a></li>
+                <li><a href="/v1/itemList">밀키트</a></li>
+                <li><a href="/v1/itemList">밑반찬</a></li>
+                <li><a href="/v1/itemList">나물</a></li>
+                <li><a href="/v1/itemList">소스/양념</a></li>
+                <li><a href="/v1/itemList">키즈</a></li>
               </ul>
             </li>
             <li>
-              <a href=""><i></i>진한 국/찌개</a>
+              <a href="/v1/itemList"><i></i>진한 국/찌개</a>
               <ul>
-                <li><a href="">국</a></li>
-                <li><a href="">찌개</a></li>
+                <li><a href="/v1/itemList">국</a></li>
+                <li><a href="/v1/itemList">찌개</a></li>
               </ul>
             </li>
             <li>
@@ -70,7 +70,7 @@
         <ul>
           <li><a href="">브랜드 소개</a></li>
           <li><a href="">케어식단</a></li>
-          <li><a href="">베스트</a></li>
+          <li><a href="/v1/bestItemList">베스트</a></li>
           <li><a href="">할인</a></li>
           <li><a href="">기획전</a></li>
           <li><a href="">이벤트</a></li>

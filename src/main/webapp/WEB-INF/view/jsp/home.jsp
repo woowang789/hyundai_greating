@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/home.css" />
     <%@include file="/WEB-INF/component/style.jsp" %>
-    <title>Document</title>
+    <title>Home</title>
   </head>
   <body>
     <!-- HEADER Fragnent -->
@@ -27,12 +27,12 @@
         </div>
         <div class="categoryList">
           <ul>
-            <li><a href="">건강반찬</a></li>
-            <li><a href="">진한 국/찌개</a></li>
-            <li><a href="">자연 담은 면</a></li>
-            <li><a href="">영양가득 밥/죽</a></li>
-            <li><a href="">샐러드/샌드위치</a></li>
-            <li><a href="">베이커리</a></li>
+            <li><a href="/v1/">건강반찬</a></li>
+            <li><a href="/v1/">진한 국/찌개</a></li>
+            <li><a href="/v1/">자연 담은 면</a></li>
+            <li><a href="/v1/">영양가득 밥/죽</a></li>
+            <li><a href="/v1/">샐러드/샌드위치</a></li>
+            <li><a href="/v1/">베이커리</a></li>
             <li><a href="">착한 간식/음료</a></li>
             <li><a href="">1Table</a></li>
             <li><a href="">안심 키즈</a></li>
@@ -138,7 +138,7 @@
         </li>
       </ul>
       <div class="moreBtnArea">
-        <a href=""><div class="moreBtn">착한 간식/음료 전체보기 ></div></a>
+        <a href="/v1/itemList"><div class="moreBtn">착한 간식/음료 전체보기 ></div></a>
       </div>
     </main>
 
