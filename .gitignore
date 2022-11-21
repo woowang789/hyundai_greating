@@ -1,8 +1,6 @@
 # Created by https://www.toptal.com/developers/gitignore/api/intellij,eclipse,java,macos,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=intellij,eclipse,java,macos,windows
 
-src/main/webapp/META-INF/context.xml
-
 ### Eclipse ###
 .metadata
 bin/

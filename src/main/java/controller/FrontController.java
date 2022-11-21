@@ -38,14 +38,16 @@ public class FrontController extends HttpServlet {
         controllerMap.put("/v1/", new HomeController());
         controllerMap.put("/v1/signin",new SignInController());
         controllerMap.put("/v1/signup", new SignupController());
+        
         //임시 테스트용, signup 완료 후 redirect로만 접근 가능해야 함
-        controllerMap.put("/v1/signupComplete", new SignupCompleteController());  
+        controllerMap.put("/v1/signupComplete", new SignupCompleteController());
         controllerMap.put("/v1/itemList", new ItemListController());
         controllerMap.put("/v1/itemDetail", new ItemDetailController());
         controllerMap.put("/v1/bestItemList",new BestItemListController());
         controllerMap.put("/v1/order", new OrderController());
         controllerMap.put("/v1/shoppingcart", new ShoppingcartController());
         controllerMap.put("/v1/orderList", new OrderListController());
+        
       //임시 테스트용, order 완료 후 redirect로만 접근 가능해야 함
         controllerMap.put("/v1/orderComplete", new OrderCompleteController());
         controllerMap.put("/v1/likeItemList", new LikeItemListController());
