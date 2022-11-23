@@ -1,8 +1,8 @@
-package controller.get;
+package webController.get;
 
 import java.util.Map;
 
-import controller.ControllerInter;
+import webController.ControllerInter;
 
 public class BestProductListController implements ControllerInter{
 

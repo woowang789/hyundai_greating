@@ -1,9 +1,9 @@
-package controller.get;
+package webController.get;
 
 import java.util.Map;
 
-import controller.ControllerInter;
 import dao.TestDao;
+import webController.ControllerInter;
 
 public class HomeController implements ControllerInter{
 

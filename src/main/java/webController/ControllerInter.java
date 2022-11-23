@@ -1,4 +1,4 @@
-package controller;
+package webController;
 
 import java.util.Map;
 

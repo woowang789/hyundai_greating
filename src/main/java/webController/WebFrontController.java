@@ -1,4 +1,4 @@
-package controller;
+package webController;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -11,27 +11,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import controller.get.BestProductListController;
-import controller.get.HomeController;
-import controller.get.ProductDetailController;
-import controller.get.ProductListController;
-import controller.get.LikeProductListController;
-import controller.get.OrderCompleteController;
-import controller.get.OrderController;
-import controller.get.OrderListController;
-import controller.get.CartController;
-import controller.get.SigninController;
-import controller.get.SignupCompleteController;
-import controller.get.SignupController;
-import controller.get.TestController;
-import controller.get.ViewProductListController;
+import webController.get.BestProductListController;
+import webController.get.CartController;
+import webController.get.HomeController;
+import webController.get.LikeProductListController;
+import webController.get.OrderCompleteController;
+import webController.get.OrderController;
+import webController.get.OrderListController;
+import webController.get.ProductDetailController;
+import webController.get.ProductListController;
+import webController.get.SigninController;
+import webController.get.SignupCompleteController;
+import webController.get.SignupController;
+import webController.get.TestController;
+import webController.get.ViewProductListController;
 
 @WebServlet(urlPatterns = "/v1/*")
-public class FrontController extends HttpServlet {
+public class WebFrontController extends HttpServlet {
 
     private Map<String, ControllerInter> controllerMap = new ConcurrentHashMap<>();
 
-    public FrontController() {
+    public WebFrontController() {
     	System.out.println("FrontController 생성자");
         controllerMap.put("/v1/test", new TestController());
         
