@@ -1,14 +1,14 @@
-package controller.impl;
+package controller.get;
 
 import java.util.Map;
 
 import controller.ControllerInter;
 
-public class ViewItemListController implements ControllerInter{
+public class ViewProductListController implements ControllerInter{
 
 	@Override
 	public String process(Map<String, String> paramMap, Map<String, Object> model) {
-		return "view_item_list";
+		return "view_product_list";
 	}
 	
 	

@@ -1,14 +1,14 @@
-package controller.impl;
+package controller.get;
 
 import java.util.Map;
 
 import controller.ControllerInter;
 
-public class OrderController implements ControllerInter{
+public class ProductDetailController implements ControllerInter{
 
 	@Override
 	public String process(Map<String, String> paramMap, Map<String, Object> model) {
-		return "order";
+		return "product_detail";
 	}
 	
 

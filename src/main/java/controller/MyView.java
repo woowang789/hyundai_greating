@@ -32,7 +32,7 @@ public class MyView {
     }
     
     private String getViewPath(String viewName) {
-    	return "/WEB-INF/view/jsp/" + viewName + ".jsp";
+    	return "/WEB-INF/jsp/" + viewName + ".jsp";
     }
    
 }

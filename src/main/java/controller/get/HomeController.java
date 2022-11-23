@@ -1,15 +1,15 @@
-package controller.impl;
+package controller.get;
 
 import java.util.Map;
 
 import controller.ControllerInter;
-import dao.TestDAO;
+import dao.TestDao;
 
 public class HomeController implements ControllerInter{
 
 	@Override
 	public String process(Map<String, String> paramMap, Map<String, Object> model) {
-		TestDAO dao = new TestDAO();
+		TestDao dao = new TestDao();
 		dao.listMembers();
 		return "home";
 	}

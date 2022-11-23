@@ -3,9 +3,9 @@
 	<Resource 
 		name="jdbc/oracleTHIN" 
 		auth="Container"
-		type="javax.sql.DataSource" 
+		type="javax.sql.DataSource"
 		driverClassName="oracle.jdbc.OracleDriver"
-		url="jdbc:oracle:thin:@edudb_high?TNS_ADMIN=C:\\dev64\\Wallet_edudb"
+		url="jdbc:oracle:thin:@edudb_high?TNS_ADMIN=/Users/wangjh789/oracle/Wallet_edudb"
 		username="testuser" 
 		password="Qwerty123456" 
 		maxActive="5" 

@@ -1,15 +1,17 @@
-package controller.impl;
+package controller.get;
 
 import java.util.Map;
 
 import controller.ControllerInter;
 
-public class OrderCompleteController implements ControllerInter{
+public class SignupCompleteController implements ControllerInter{
 
 	@Override
 	public String process(Map<String, String> paramMap, Map<String, Object> model) {
-		return "order_complete";
+
+		return "signup_complete";
 	}
+	
 	
 
 }

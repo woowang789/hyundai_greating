@@ -11,20 +11,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import controller.impl.BestItemListController;
-import controller.impl.HomeController;
-import controller.impl.ItemDetailController;
-import controller.impl.ItemListController;
-import controller.impl.LikeItemListController;
-import controller.impl.OrderCompleteController;
-import controller.impl.OrderController;
-import controller.impl.OrderListController;
-import controller.impl.ShoppingcartController;
-import controller.impl.SignInController;
-import controller.impl.SignupCompleteController;
-import controller.impl.SignupController;
-import controller.impl.TestController;
-import controller.impl.ViewItemListController;
+import controller.get.BestProductListController;
+import controller.get.HomeController;
+import controller.get.ProductDetailController;
+import controller.get.ProductListController;
+import controller.get.LikeProductListController;
+import controller.get.OrderCompleteController;
+import controller.get.OrderController;
+import controller.get.OrderListController;
+import controller.get.CartController;
+import controller.get.SigninController;
+import controller.get.SignupCompleteController;
+import controller.get.SignupController;
+import controller.get.TestController;
+import controller.get.ViewProductListController;
 
 @WebServlet(urlPatterns = "/v1/*")
 public class FrontController extends HttpServlet {
@@ -36,22 +36,22 @@ public class FrontController extends HttpServlet {
         controllerMap.put("/v1/test", new TestController());
         
         controllerMap.put("/v1/", new HomeController());
-        controllerMap.put("/v1/signin",new SignInController());
+        controllerMap.put("/v1/signin",new SigninController());
         controllerMap.put("/v1/signup", new SignupController());
         
         //임시 테스트용, signup 완료 후 redirect로만 접근 가능해야 함
         controllerMap.put("/v1/signupComplete", new SignupCompleteController());
-        controllerMap.put("/v1/itemList", new ItemListController());
-        controllerMap.put("/v1/itemDetail", new ItemDetailController());
-        controllerMap.put("/v1/bestItemList",new BestItemListController());
+        controllerMap.put("/v1/productList", new ProductListController());
+        controllerMap.put("/v1/productDetail", new ProductDetailController());
+        controllerMap.put("/v1/bestProductList",new BestProductListController());
         controllerMap.put("/v1/order", new OrderController());
-        controllerMap.put("/v1/shoppingcart", new ShoppingcartController());
+        controllerMap.put("/v1/cart", new CartController());
         controllerMap.put("/v1/orderList", new OrderListController());
         
       //임시 테스트용, order 완료 후 redirect로만 접근 가능해야 함
         controllerMap.put("/v1/orderComplete", new OrderCompleteController());
-        controllerMap.put("/v1/likeItemList", new LikeItemListController());
-        controllerMap.put("/v1/viewItemList", new ViewItemListController());
+        controllerMap.put("/v1/likeProductList", new LikeProductListController());
+        controllerMap.put("/v1/viewProductList", new ViewProductListController());
     }
 
     @Override
