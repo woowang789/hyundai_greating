@@ -2,7 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=intellij,eclipse,java,macos,windows
 
 src/main/webapp/META-INF/context.xml
-
+imgRepository/
 ### Eclipse ###
 .metadata
 bin/
