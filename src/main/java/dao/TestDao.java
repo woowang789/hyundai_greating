@@ -20,7 +20,7 @@ public class TestDao {
 		try {
 			Context ctx = new InitialContext();
 			Context envContext = (Context) ctx.lookup("java:/comp/env");
-			dataFactory = (DataSource) envContext.lookup("jdbc/oracleOCI");
+			dataFactory = (DataSource) envContext.lookup("jdbc/oracleTHIN");
 
 		} catch (Exception e) {
 			e.printStackTrace();
