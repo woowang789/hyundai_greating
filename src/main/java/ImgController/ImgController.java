@@ -14,7 +14,7 @@ import org.apache.commons.io.IOUtils;
 /**
  * Servlet implementation class ImgController
  */
-@WebServlet("/img/*")
+@WebServlet("/img111/*")
 public class ImgController extends HttpServlet {
 
 	@Override

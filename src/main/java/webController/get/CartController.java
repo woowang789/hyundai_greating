@@ -2,9 +2,9 @@ package webController.get;
 
 import java.util.Map;
 
-import webController.ControllerInter;
+import webController.WebControllerInter;
 
-public class CartController implements ControllerInter{
+public class CartController implements WebControllerInter{
 
 	@Override
 	public String process(Map<String, String> paramMap, Map<String, Object> model) {

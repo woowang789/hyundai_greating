@@ -29,7 +29,7 @@ import webController.get.ViewProductListController;
 @WebServlet(urlPatterns = "/v1/*")
 public class WebFrontController extends HttpServlet {
 
-    private Map<String, ControllerInter> controllerMap = new ConcurrentHashMap<>();
+    private Map<String, WebControllerInter> controllerMap = new ConcurrentHashMap<>();
 
     public WebFrontController() {
     	System.out.println("FrontController 생성자");
@@ -61,7 +61,7 @@ public class WebFrontController extends HttpServlet {
     	
         String requestURI = request.getRequestURI();
 
-        ControllerInter controller = controllerMap.get(requestURI);
+        WebControllerInter controller = controllerMap.get(requestURI);
         if ( controller == null) {
         	System.out.println("NOT FOUND "+requestURI);
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);

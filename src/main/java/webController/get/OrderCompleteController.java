@@ -2,9 +2,9 @@ package webController.get;
 
 import java.util.Map;
 
-import webController.ControllerInter;
+import webController.WebControllerInter;
 
-public class OrderCompleteController implements ControllerInter{
+public class OrderCompleteController implements WebControllerInter{
 
 	@Override
 	public String process(Map<String, String> paramMap, Map<String, Object> model) {
