@@ -1,8 +1,16 @@
 package dao;
 
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import oracle.jdbc.internal.OracleTypes;
+import util.DBConnection;
+import vo.ProductDetailVO;
 import vo.ProductVO;
 
 final public class ProductDAO {
@@ -12,49 +20,75 @@ final public class ProductDAO {
 	public static ProductDAO getInstance() {
 		return instance;
 	}
-	
-	public List<ProductVO> getProdictList(){
-		// 여기에 DB 연결해서 끌어와야 함
+	public ProductDetailVO getProductDetail(String prodId) {
+		ProductDetailVO vo = new ProductDetailVO();
+		String query= "{call get_prod_detail(?,?,?,?)}";
+		try (
+				Connection con = DBConnection.getConn();
+				CallableStatement cstmt = con.prepareCall(query);
+		){
+			cstmt.setString(1, prodId);
+			cstmt.registerOutParameter(2, OracleTypes.CURSOR);
+			cstmt.registerOutParameter(3, OracleTypes.CURSOR);
+			cstmt.registerOutParameter(4, OracleTypes.CURSOR);
+			ResultSet igdtRs = (ResultSet) cstmt.getObject(2);
+			while(igdtRs.next()) {
+				String iconUrl = igdtRs.getString(1);
+				System.out.println(iconUrl);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		return vo;
+	}
+	public List<ProductVO> getProductList(String cateId){
 		List<ProductVO> list = new ArrayList<>();
+		String query = "{call find_prod_by_cate(?,?)}";
+		try (
+				Connection con = DBConnection.getConn();
+				CallableStatement cstmt = con.prepareCall(query);
+		){
+			cstmt.setString(1, cateId);
+			cstmt.registerOutParameter(2, OracleTypes.CURSOR);
+			cstmt.execute();
+			
+			ResultSet rs = (ResultSet) cstmt.getObject(2);
+			while(rs.next()) {
+				int id = rs.getInt(1);
+				String name = rs.getString(2);
+				String thumbUrl = rs.getString(3);
+				String storage = rs.getString(4);
+				String subName = rs.getString(5);
+				int stock = rs.getInt(6);
+				String grts = rs.getString(7);
+				int discnt = rs.getInt(8);
+				int originPrice =rs.getInt(9);
+				int marketPrice = rs.getInt(10);
+				System.out.println(id+" "+name);
+				
+				ProductVO p = new ProductVO();
+				p.setId(id);
+				p.setThumbImgUrl(thumbUrl);
+				p.setName(name);
+				p.setSubName(subName);
+				p.setStorage(storage);
+				p.setOriginPrice(originPrice);
+				p.setStock(stock);
+				p.setMarketPrice(marketPrice);
+				p.setDiscountRate(discnt);
+				p.setGrts(grts);
+				list.add(p);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		
-		ProductVO p = new ProductVO();
-		p.setId(123361);
-		p.setThumbImgUrl("https://image.greating.co.kr/IL/item/202203/10/C_4600DC6363644EF3BD9321FA7704098C.jpg");
-		p.setName("소고기야채죽(1인분)");
-		p.setSubName("간편하게 즐기는");
-		p.setStorage("냉동");
-		p.setOriginPrice(5500);
-		p.setStock(30);
-		p.setMarketPrice(5000);
-		p.setDiscountRate(10);
-		
-		ProductVO p1 = new ProductVO();
-		p1.setId(132577);
-		p1.setThumbImgUrl("https://image.greating.co.kr/IL/item/202210/14/C_020BA851F83F428BA1EE20A48B50ADB6.jpg");
-		p1.setName("코다리조림 밀키트");
-		p1.setSubName("쫄깃한 코다리살이 일품인");
-		p1.setStorage("냉동");
-		p1.setOriginPrice(11800);
-		p1.setStock(30);
-		p1.setMarketPrice(11800);
-		p1.setDiscountRate(10000);
-		
-		ProductVO p2 = new ProductVO();
-		p2.setId(100835);
-		p2.setThumbImgUrl("https://image.greating.co.kr/IL/item/202107/10/C_C4B16799A1184A4099E951AB5523C189.jpg");
-		p2.setName("연잎 오겹수육 (2인분)");
-		p2.setSubName("국산 오겹살로 만든");
-		p2.setStorage("냉장");
-		p2.setOriginPrice(18000);
-		p2.setStock(5);
-		p2.setMarketPrice(18000);
-		p2.setDiscountRate(16200);
-		
-		list.add(p);
-		list.add(p1);
-		list.add(p2);
 		return list;
 	}
+	
 	
 	
 	

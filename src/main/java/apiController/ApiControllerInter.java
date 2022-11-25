@@ -8,5 +8,5 @@ import org.json.simple.parser.ParseException;
 
 public interface ApiControllerInter {
 	
-	void process(String body, Map<String, Object> model) throws ParseException;
+	void process(String body, Map<String,String> paramMap,Map<String, Object> model) throws ParseException;
 }

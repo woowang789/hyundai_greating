@@ -4,7 +4,7 @@ $('.header__bottom .header__category .hover__menu > ul > li i').each(
   }
 );
 
-
+/*
 $(document).ready(() => {
   $.ajax({
     type: 'GET',
@@ -13,6 +13,7 @@ $(document).ready(() => {
   });
   console.log('ttt');
 });
+*/
 
 function reDrawProduct(res) {
   $('.itemList > li').remove();

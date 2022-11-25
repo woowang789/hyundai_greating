@@ -22,7 +22,6 @@ import org.json.simple.parser.ParseException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import apiController.get.GetProductList;
-import apiController.get.TestApi;
 
 
 
@@ -32,8 +31,6 @@ public class ApiFrontController extends HttpServlet {
 	private Map<String, ApiControllerInter> controllerMap = new ConcurrentHashMap<>();
 	
 	public ApiFrontController() {
-		controllerMap.put("/api/test", new TestApi());
-		
 		controllerMap.put("/api/productList", new GetProductList());
 	}
 
@@ -45,31 +42,30 @@ public class ApiFrontController extends HttpServlet {
     	response.setContentType("application/json;charset=UTF-8");
 		
 		PrintWriter writer = response.getWriter();
-		Map<String, Object> map = new HashMap<>();
+		Map<String,String> paramMap = createParamMap(request);
+		Map<String, Object> model = new HashMap<>();
 		
 		ApiControllerInter controllerInter = controllerMap.get(request.getRequestURI());
 		
-		if(controllerInter == null) {
-			map.put("code", 404);
-			map.put("msg", "not found");
-			writer.print(mapper.writeValueAsString(map));
-			return;
-		}
-		String bodyJson = getBodyJson(request);
 		
-		try {
-			controllerInter.process(bodyJson,map);
-		} catch (Exception e) {
-			map.put("code", 405);
-			map.put("msg", "잘못된 파라미터");
-			e.printStackTrace();
+		if(controllerInter == null) {
+			model.put("code", 404);
+			model.put("msg", "not found");
+		}else {
 			
-			writer.print(mapper.writeValueAsString(map));
-			return;
+			String bodyJson = getBodyJson(request);
+			
+			try {
+				controllerInter.process(bodyJson,paramMap,model);
+				model.put("code", 200);
+				model.put("msg","succes");
+			} catch (Exception e) {
+				model.put("code", 405);
+				model.put("msg", "잘못된 파라미터");
+				e.printStackTrace();
+			}
 		}
-		map.put("code", 200);
-		map.put("msg","succes");
-		writer.print(mapper.writeValueAsString(map));
+		writer.print(mapper.writeValueAsString(model));
 	}
 	
 	private String getBodyJson(HttpServletRequest request) {
@@ -95,4 +91,10 @@ public class ApiFrontController extends HttpServlet {
 		bodyJson = stringBuilder.toString();
 		return bodyJson;
 	}
+    private Map<String, String> createParamMap(HttpServletRequest request) {
+        Map<String, String> paramMap = new HashMap<>();
+        request.getParameterNames().asIterator()
+                .forEachRemaining(paramName -> paramMap.put(paramName, request.getParameter(paramName)));
+        return paramMap;
+    }
 }
