@@ -23,7 +23,7 @@ public class GetProductList implements ApiControllerInter{
 	@Override
 	public void process(String body,Map<String,String> paramMap,Map<String, Object> model) {
 		String cateId = paramMap.get("cateId");
-		if(cateId == null) throw new RuntimeException("파라미터 없음");
+		if(cateId == null) cateId= "50";
 		List<ProductVO> list = dao.getProductList(cateId);
 		model.put("list", list);
 		model.put("count", list.size());

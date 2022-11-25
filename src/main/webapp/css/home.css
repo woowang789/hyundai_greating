@@ -43,6 +43,11 @@ main .categoryArea .categoryList ul li a{
   font-size:1.15rem;
   padding: 15px 20px;
 }
+main .categoryArea .categoryList ul li a.active{
+  color: white;
+  background-color: #918C01;
+  border-radius: 30px;
+}
 main .categoryArea .categoryList ul li:hover{
   background-color: #918c012c;
   color: #918C01;

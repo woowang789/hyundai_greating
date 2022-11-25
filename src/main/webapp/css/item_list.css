@@ -24,6 +24,10 @@
   margin: 0 10px 25px;
   text-align: center;
 }
+.cateWithImgArea .cateWithImgList li.active{
+  background-color: #918C01;
+  color: white;
+}
 .cateWithImgArea .cateWithImgList li:hover{
   background-color: #918C01;
   color: white;
@@ -63,6 +67,11 @@
 .cateWithImgArea .subcateList li a{
   padding: 15px 20px;
   display: inline-block;
+}
+.cateWithImgArea .subcateList li a.active{
+  color: white;
+  background-color: #918C01;
+  border-radius: 30px;
 }
 .cateWithImgArea .subcateList li:hover a{
   border-color: #918C01;
