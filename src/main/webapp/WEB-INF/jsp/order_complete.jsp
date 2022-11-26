@@ -6,13 +6,14 @@
 <meta charset="UTF-8">
 <%@include file="/WEB-INF/component/style.jsp" %>
 <link rel="stylesheet" href="/css/order_complete.css" />
-<title>Insert title here</title>
+<script src="/js/order_complete.js" defer></script>
+<title>OrderComplete</title>
 </head>
 <body>
     <!-- HEADER Fragnent -->
     <jsp:include page="../component/header.jsp"></jsp:include>
 	
-	<!-- main -->
+    <!-- main -->
     <main>
       <div class="main__header">
         <h1>주문완료</h1>
@@ -42,15 +43,15 @@
                 <div class="body__right">
                   <div class="info__flex">
                     <p>상품금액</p>
-                    <p>11,500원</p>
+                    <p class="origin_price">11,500원</p>
                   </div>
                   <div class="info__flex">
                     <p>할인 금액</p>
-                    <p>3,450원</p>
+                    <p class="discount">3,450원</p>
                   </div>
                   <div class="info__flex right__resultPrice">
                     <p>결제예정금액</p>
-                    <p>8,050원</p>
+                    <p class="discount_price">8,050원</p>
                   </div>
                 </div>
               </div>
@@ -70,40 +71,42 @@
                 <div class="body__right">
                   <div class="info__flex">
                     <p>상품금액</p>
-                    <p>11,500원</p>
+                    <p class="origin_price">11,500원</p>
                   </div>
                   <div class="info__flex">
                     <p>할인 금액</p>
-                    <p>3,450원</p>
+                    <p class="discount">3,450원</p>
                   </div>
                   <div class="info__flex right__resultPrice">
                     <p>결제예정금액</p>
-                    <p>8,050원</p>
+                    <p class="discount_price">8,050원</p>
                   </div>
                 </div>
               </div>
             </li>
           </ul>
-          <div class="item__bottom"><span>배송비</span> 무료배송</div>
+          <div class="item__bottom">
+            <span>배송비</span> <span class="dep">무료배송</span>
+          </div>
         </section>
         <section class="pay__price">
           <h1 class="info__header">결제금액</h1>
           <div class="info__body">
             <div class="total__itemPrice">
               <p class="head">총 상품금액</p>
-              <p class="tail">11,500원</p>
+              <p class="tail total_price">11,500원</p>
             </div>
             <div class="total__discountPrice">
               <p class="head">총 할인금액</p>
-              <p class="tail">3,450원</p>
+              <p class="tail total_discount">3,450원</p>
             </div>
             <div class="total__deliveryPrice">
               <p class="head">총 배송비</p>
-              <p class="tail">0원</p>
+              <p class="tail dep">0원</p>
             </div>
             <div class="total__resultPrice">
               <p class="head">총 결제 예정 금액</p>
-              <p class="tail">8,050원</p>
+              <p class="tail total_market">8,050원</p>
             </div>
           </div>
         </section>
@@ -126,8 +129,8 @@
         </section>
       </div>
       <div class="main__bottom">
-        <div class="home__btn"><a href="">홈으로</a></div>
-        <div class="orderList__btn"><a href="">주문조회</a></div>
+        <div class="home__btn"><a href="/v1/">홈으로</a></div>
+        <div class="orderList__btn"><a href="/v1/orderList">주문조회</a></div>
       </div>
     </main>
     

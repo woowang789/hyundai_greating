@@ -13,19 +13,19 @@
     <!-- HEADER Fragnent -->
     <jsp:include page="../component/header.jsp"></jsp:include>
 
-	<!-- Main -->
+	    <!-- Main -->
     <main>
-      <div class="main__left">
+       <div class="main__left">
         <h1>마이페이지</h1>
         <div class="left__content">
           <ul class="shopping__log">
             <h3>나의 쇼핑내역</h3>
-            <li><a href="">주문/배송 조회·변경</a></li>
+            <li><a href="/v1/orderList">주문/배송 조회</a></li>
           </ul>
           <ul class="interest_log">
             <h3>나의 관심내역</h3>
-            <li><a href="">최근 본 상품</a></li>
-            <li><a href="">관심상품</a></li>
+            <li><a href="/v1/viewProductList">최근 본 상품</a></li>
+            <li><a href="/v1/likeProductList">관심상품</a></li>
           </ul>
           <ul class="post_log">
             <h3>나의 커뮤니티</h3>
@@ -71,7 +71,6 @@
               <div class="head__left">
                 주문일 : 2022-11-17 <a href=""><span>상세보기 ></span></a>
               </div>
-              <div class="head__right">주문취소</div>
             </div>
             <ul class="item__list">
               <li class="item">
@@ -79,7 +78,7 @@
                   <img src="../img/order_list/item__img.jpeg" alt="" />
                 </div>
                 <div class="item__info">
-                  <p class="order__status">입금대기</p>
+                  <p class="order__status">배송준비</p>
                   <h3>베지미트볼 파스타소스</h3>
                   <p class="desc">베이지트볼 파스타소스 250g</p>
                   <p class="price">5,500원 / 1개</p>
@@ -90,7 +89,7 @@
                   <img src="../img/order_list/item__img.jpeg" alt="" />
                 </div>
                 <div class="item__info">
-                  <p class="order__status">입금대기</p>
+                  <p class="order__status">배송준비</p>
                   <h3>베지미트볼 파스타소스</h3>
                   <p class="desc">베이지트볼 파스타소스 250g</p>
                   <p class="price">5,500원 / 1개</p>
@@ -105,7 +104,6 @@
               <div class="head__left">
                 주문일 : 2022-11-17 <a href=""><span>상세보기 ></span></a>
               </div>
-              <div class="head__right">주문취소</div>
             </div>
             <ul class="item__list">
               <li class="item">
@@ -113,7 +111,7 @@
                   <img src="../img/order_list/item__img.jpeg" alt="" />
                 </div>
                 <div class="item__info">
-                  <p class="order__status">입금대기</p>
+                  <p class="order__status">배송준비</p>
                   <h3>베지미트볼 파스타소스</h3>
                   <p class="desc">베이지트볼 파스타소스 250g</p>
                   <p class="price">5,500원 / 1개</p>
@@ -124,7 +122,7 @@
                   <img src="../img/order_list/item__img.jpeg" alt="" />
                 </div>
                 <div class="item__info">
-                  <p class="order__status">입금대기</p>
+                  <p class="order__status">배송준비</p>
                   <h3>베지미트볼 파스타소스</h3>
                   <p class="desc">베이지트볼 파스타소스 250g</p>
                   <p class="price">5,500원 / 1개</p>
@@ -139,7 +137,6 @@
               <div class="head__left">
                 주문일 : 2022-11-17 <a href=""><span>상세보기 ></span></a>
               </div>
-              <div class="head__right">주문취소</div>
             </div>
             <ul class="item__list">
               <li class="item">
@@ -147,7 +144,7 @@
                   <img src="../img/order_list/item__img.jpeg" alt="" />
                 </div>
                 <div class="item__info">
-                  <p class="order__status">입금대기</p>
+                  <p class="order__status">배송준비</p>
                   <h3>베지미트볼 파스타소스</h3>
                   <p class="desc">베이지트볼 파스타소스 250g</p>
                   <p class="price">5,500원 / 1개</p>
@@ -158,7 +155,7 @@
                   <img src="../img/order_list/item__img.jpeg" alt="" />
                 </div>
                 <div class="item__info">
-                  <p class="order__status">입금대기</p>
+                  <p class="order__status">배송준비</p>
                   <h3>베지미트볼 파스타소스</h3>
                   <p class="desc">베이지트볼 파스타소스 250g</p>
                   <p class="price">5,500원 / 1개</p>
@@ -169,7 +166,6 @@
         </ul>
       </div>
     </main>
-
     <!-- Footer Fragnent -->
     <%@include file="/WEB-INF/component/footer.jsp" %>
 </body>

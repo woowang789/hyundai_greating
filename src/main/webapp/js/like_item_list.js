@@ -16,3 +16,18 @@ $('.select__all').click(() => {
   }
   $('.select__all i').toggleClass('active');
 });
+
+$('.delete__selected').click(function () {
+  $('.itemList .item .check__btn i.active').each(function () {
+    $(this).parent().parent().parent().remove();
+    let prodId = $(this).parent().parent('.item').attr('val');
+    console.log(prodId);
+
+    $.ajax({
+      type: 'POST',
+      url: 'http://localhost/api/removeInterest',
+      data: JSON.stringify({ prodId: prodId }),
+      success: (res) => reDrawProduct(res['list']),
+    });
+  });
+});

@@ -47,46 +47,6 @@
         <div class="hover__menu">
           <ul>
             <h3>건강마켓</h3>
-            <li>
-              <a href="/v1/itemList"><i></i>건강반찬</a>
-              <ul>
-                <li><a href="/v1/itemList">메인요리</a></li>
-                <li><a href="/v1/itemList">밀키트</a></li>
-                <li><a href="/v1/itemList">밑반찬</a></li>
-                <li><a href="/v1/itemList">나물</a></li>
-                <li><a href="/v1/itemList">소스/양념</a></li>
-                <li><a href="/v1/itemList">키즈</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="/v1/itemList"><i></i>진한 국/찌개</a>
-              <ul>
-                <li><a href="/v1/itemList">국</a></li>
-                <li><a href="/v1/itemList">찌개</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href=""><i></i>자연 담은 면</a>
-              <ul>
-                <li><a href="">국수</a></li>
-                <li><a href="">파스타</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href=""><i></i>영양가득 밥/죽</a>
-              <ul>
-                <li><a href="">밥</a></li>
-                <li><a href="">죽</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href=""><i></i>샐러드/샌드위치</a>
-              <ul>
-                <li><a href="">샐러드</a></li>
-                <li><a href="">샌드위치</a></li>
-                <li><a href="">브런치박스</a></li>
-              </ul>
-            </li>
           </ul>
         </div>
       </div>

@@ -13,7 +13,7 @@
     <!-- HEADER Fragnent -->
     <jsp:include page="../component/header.jsp"></jsp:include>
     
-    <!--Main-->
+        <!--Main-->
     <main>
       <div class="main__left">
         <h1>마이페이지</h1>
@@ -80,7 +80,7 @@
               </div>
             </li>
             <li>
-              <div class="item">
+              <div class="item" val="123">
                 <div class="item__img">
                   <img src="../img//main/main_item_img.jpeg" alt="" />
                   <div class="img__badge">냉장</div>
@@ -196,7 +196,6 @@
         </div>
       </div>
     </main>
-
 	<!-- Footer Fragnent -->
     <%@include file="/WEB-INF/component/footer.jsp" %>
 </body>
