@@ -15,8 +15,7 @@
     <div class="modal__background"></div>
       
     <!-- HEADER Fragnent -->
-    <jsp:include page="../component/header.jsp">
-    </jsp:include>
+    <jsp:include page="../component/header.jsp"></jsp:include>
     
     
     <!--OtionSelect-->

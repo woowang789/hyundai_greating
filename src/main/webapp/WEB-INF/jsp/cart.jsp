@@ -10,8 +10,7 @@
 </head>
 <body>
     <!-- HEADER Fragnent -->
-    <jsp:include page="../component/header.jsp">
-    </jsp:include>
+    <jsp:include page="../component/header.jsp"></jsp:include>
 	
 	 <main>
       <h1 class="main__header">장바구니</h1>

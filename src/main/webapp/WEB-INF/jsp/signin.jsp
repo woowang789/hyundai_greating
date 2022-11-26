@@ -1,3 +1,4 @@
+<%@page import="vo.UserVO"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +12,9 @@
     <title>SingIn</title>
   </head>
   <body>
+  <%
+  		
+  %>
     <!-- HEADER Fragnent -->
     <jsp:include page="../component/header.jsp"></jsp:include>
 

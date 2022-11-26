@@ -5,21 +5,12 @@
     
     
     <%
-   
-    	UserVO user = null;
-    	if(session != null){
-    		System.out.println("session exist");
-    		
-    		for(String val : session.getValueNames()){
-    			System.out.println(val);
-    		}
+   		UserVO user = null;
+    	if(session.getAttribute("user") == null){
+    		System.out.println("유저없음");
+    	}else{
     		user = (UserVO) session.getAttribute("user");
-    		if(user!= null){
-    			System.out.println("user exist");
-    			System.out.println(user.getName());
-    		}
     	}
-    
     %>
 
     
@@ -29,19 +20,18 @@
         <div class="header__btn">
           <ul>
           <% 
-          	if (user == null || user.getName() == null){
+          	if (user == null){
           %>
 	            <li><a href="/v1/signin">로그인</a></li>
 	            <li><a href="/v1/signup">회원가입</a></li>
            <%
           	}else{
           	%>
-          		<li><a href="/v1/signin"><%=user.getName() %></a></li>
+          		<li><a href="/v1/cart"><%=user.getName()%></a></li>
+          		<li><a href="/v1/signout">로그아웃</a></li>
           	<%
           	}
           	%>
-        
-           
             <li><a href="">쿠폰/교환권</a></li>
             <li><a href="">고객센터</a></li>
           </ul>

@@ -1,4 +1,4 @@
-package webController;
+package webControllerV2;
 
 import java.io.IOException;
 import java.util.Map;
@@ -15,10 +15,8 @@ public class MyView {
         this.viewName = viewName;
     }
     
-    public void render(Map<String, Object> model, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        modelToRequestAttribute(model, request);
-        
-        if(viewName.startsWith("href:")) {
+    public void render(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	if(viewName.startsWith("href:")) {
         	response.sendRedirect(viewName.substring("href:".length()));
         	return;
         }
@@ -26,10 +24,7 @@ public class MyView {
         RequestDispatcher dispatcher = request.getRequestDispatcher(getViewPath(viewName));
         dispatcher.forward(request, response);
     }
-
-    private void modelToRequestAttribute(Map<String, Object> model, HttpServletRequest request) {
-        model.forEach((key, value) -> request.setAttribute(key, value));
-    }
+    
     
     private String getViewPath(String viewName) {
     	return "/WEB-INF/jsp/" + viewName + ".jsp";

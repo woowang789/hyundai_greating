@@ -13,8 +13,7 @@
   </head>
   <body>
     <!-- HEADER Fragnent -->
-    <jsp:include page="../component/header.jsp">
-    </jsp:include>
+    <jsp:include page="../component/header.jsp"></jsp:include>
     
     <div class="cateWithImgArea">
       <h1 class="cateTitle">건강마켓</h1>

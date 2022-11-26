@@ -6,12 +6,6 @@ $('.filter__close').click(() => {
   $('.filter__window').css('display', 'none');
 });
 
-/* 카테고리 뒷배경 */
-$('.cateWithImgArea .cateWithImgList li a i').each((idx, item) => {
-  if (idx == 1) return;
-  $(item).css('background-position-y', -440 - 40 * (idx - 1) + 'px');
-});
-
 /* 필터 윈도우 */
 $('.filter__section ul li').each((idx, item) => {
   $(item).click(() => {
@@ -23,7 +17,6 @@ $('.filter__reset').click(() => {
     $(item).removeClass('active');
   });
 });
-
 
 class Cate {
   constructor(name, id, sub) {
@@ -119,41 +112,33 @@ function drawCate() {
     $(item).css('background-position-y', -440 - 40 * (idx - 1) + 'px');
   });
 
-  $('.cateWithImgList li a').click(function (e) {
-    $.ajax({
-      type: 'GET',
-      url:
-        'http://localhost/api/productList?' + 'cateId=' + $(this).attr('val'),
-      success: (res) => reDrawProduct(res['list']),
-    });
-    $('.cateWithImgList li').removeClass('active');
-    $(this).parent().addClass('active');
-    e.preventDefault();
-    let idx = $(this).attr('idx');
-    let target = cateList[idx];
-
-    $('.subcateList li').remove();
-    let base = '<li><a href="" val={subVal}>{subName}</a></li>';
-    for (i in target.sub) {
-      let sub = target.sub[i];
-      $('.subcateList').append(
-        base.replace('{subVal}', sub.id).replace('{subName}', sub.name)
-      );
-    }
-    $('.subcateList li a').click((e) => {
-      $('.subcateList li a').removeClass('active');
-      $(e.target).addClass('active');
-      e.preventDefault();
-      $.ajax({
-        type: 'GET',
-        url:
-          'http://localhost/api/productList?' + 'cateId=' + $(this).attr('val'),
-        success: (res) => reDrawProduct(res['list']),
-      });
-    });
-  });
+  $('.cateWithImgList li a').click(clickCate);
 }
-function clickSubCate() {
+function clickCate(e) {
+  $.ajax({
+    type: 'GET',
+    url:
+      'http://localhost/api/productList?' + 'cateId=' + $(this).attr('val'),
+    success: (res) => reDrawProduct(res['list']),
+  });
+  $('.cateWithImgList li').removeClass('active');
+  $(this).parent().addClass('active');
+  e.preventDefault();
+  let idx = $(this).attr('idx');
+  console.log(idx);
+  let target = cateList[idx];
+
+  $('.subcateList li').remove();
+  let base = '<li><a href="" val={subVal}>{subName}</a></li>';
+  for (i in target.sub) {
+    let sub = target.sub[i];
+    $('.subcateList').append(
+      base.replace('{subVal}', sub.id).replace('{subName}', sub.name)
+    );
+  }
+  $('.subcateList li a').click(clickSubCate);
+}
+function clickSubCate(e) {
   $('.subcateList li a').removeClass('active');
   $(this).addClass('active');
   e.preventDefault();
@@ -163,26 +148,31 @@ function clickSubCate() {
     success: (res) => reDrawProduct(res['list']),
   });
 }
+
 $(document).ready(() => {
   drawCate();
-  let hash = $(location).attr('hash').slice(1);
-  for (let i in cateList) {
-    let c = cateList[i];
-    if (c.id == hash) {
-      console.log(i);
-      $(`.cateWithImgList li:nth-child(${i + 1})`).addClass('active');
-      $.ajax({
-        type: 'GET',
-        url: 'http://localhost/api/productList?' + 'cateId=' + c.id,
-        success: (res) => reDrawProduct(res['list']),
-      });
-      break;
+  let hash = $(location).attr('hash').slice(8);
+  console.log(hash);
+  if (typeof hash != undefined) {
+    for (let i in cateList) {
+      if (cateList[i].id == hash) {
+        $(`.cateWithImgList li a[val=${hash}]`).parent().addClass('active');
+        $('.subcateList li').remove();
+        let base = '<li><a href="" val={subVal}>{subName}</a></li>';
+        for (j in cateList[i].sub) {
+          let sub = cateList[i].sub[j];
+          $('.subcateList').append(
+            base.replace('{subVal}', sub.id).replace('{subName}', sub.name)
+          );
+        }
+        break;
+      }
     }
   }
 });
 
 function reDrawProduct(res) {
-  // $('.itemList > li').remove();
+  $('.itemList > li').remove();
   let baseLi = `
   <li>
     <div class="item">
