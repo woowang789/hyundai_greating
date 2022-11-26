@@ -9,8 +9,9 @@
 <title>Shoppingcart</title>
 </head>
 <body>
-	<!-- HEADER Fragnent -->
-	<%@include file="/WEB-INF/component/header.jsp"%>
+    <!-- HEADER Fragnent -->
+    <jsp:include page="../component/header.jsp">
+    </jsp:include>
 	
 	 <main>
       <h1 class="main__header">장바구니</h1>

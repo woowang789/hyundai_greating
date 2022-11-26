@@ -1,13 +1,47 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="vo.UserVO"%>
 <%@ page language="java"
     pageEncoding="UTF-8"%>
+    
+    
+    <%
+   
+    	UserVO user = null;
+    	if(session != null){
+    		System.out.println("session exist");
+    		
+    		for(String val : session.getValueNames()){
+    			System.out.println(val);
+    		}
+    		user = (UserVO) session.getAttribute("user");
+    		if(user!= null){
+    			System.out.println("user exist");
+    			System.out.println(user.getName());
+    		}
+    	}
+    
+    %>
+
     
     <!-- Header -->
     <header>
       <div class="header__content">
         <div class="header__btn">
           <ul>
-            <li><a href="/v1/signin">로그인</a></li>
-            <li><a href="/v1/signup">회원가입</a></li>
+          <% 
+          	if (user == null || user.getName() == null){
+          %>
+	            <li><a href="/v1/signin">로그인</a></li>
+	            <li><a href="/v1/signup">회원가입</a></li>
+           <%
+          	}else{
+          	%>
+          		<li><a href="/v1/signin"><%=user.getName() %></a></li>
+          	<%
+          	}
+          	%>
+        
+           
             <li><a href="">쿠폰/교환권</a></li>
             <li><a href="">고객센터</a></li>
           </ul>

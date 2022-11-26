@@ -12,7 +12,8 @@
   </head>
   <body>
     <!-- HEADER Fragnent -->
-    <%@include file="/WEB-INF/component/header.jsp" %>
+    <jsp:include page="../component/header.jsp">
+    </jsp:include>
     
     <!--Main -->
     <main>

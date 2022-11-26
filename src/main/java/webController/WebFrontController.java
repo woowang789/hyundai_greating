@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import webController.get.BestProductListController;
 import webController.get.CartController;
@@ -25,6 +26,7 @@ import webController.get.SignupCompleteController;
 import webController.get.SignupController;
 import webController.get.TestController;
 import webController.get.ViewProductListController;
+import webController.post.SigninDo;
 
 @WebServlet(urlPatterns = "/v1/*")
 public class WebFrontController extends HttpServlet {
@@ -52,8 +54,11 @@ public class WebFrontController extends HttpServlet {
         controllerMap.put("/v1/orderComplete", new OrderCompleteController());
         controllerMap.put("/v1/likeProductList", new LikeProductListController());
         controllerMap.put("/v1/viewProductList", new ViewProductListController());
+    
+        controllerMap.put("/v1/signin.do",new SigninDo());
     }
 
+    
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	request.setCharacterEncoding("UTF-8");
@@ -72,6 +77,10 @@ public class WebFrontController extends HttpServlet {
         Map<String, Object> model = new HashMap<>(); 
 
         String viewName = controller.process(paramMap, model);
+        if(model.containsKey("user") && request.getSession(false) == null) {
+        	HttpSession session = request.getSession();
+        	session.setAttribute("user", model.get("user"));
+        }
 
         MyView view = new MyView(viewName);
         view.render(model, request, response);

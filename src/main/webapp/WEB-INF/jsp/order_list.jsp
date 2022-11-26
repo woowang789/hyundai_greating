@@ -10,8 +10,9 @@
 <title>OrderList</title>
 </head>
 <body>
-	<!-- HEADER Fragnent -->
-	<%@include file="/WEB-INF/component/header.jsp"%>
+    <!-- HEADER Fragnent -->
+    <jsp:include page="../component/header.jsp">
+    </jsp:include>
 
 	<!-- Main -->
     <main>
