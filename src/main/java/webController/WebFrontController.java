@@ -1,6 +1,7 @@
 package webController;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.SingleOrderDAO;
 import webController.get.BestProductListController;
 import webController.get.CartController;
 import webController.get.HomeController;
@@ -31,7 +33,8 @@ public class WebFrontController extends HttpServlet {
 
     private Map<String, WebControllerInter> controllerMap = new ConcurrentHashMap<>();
 
-    public WebFrontController() {
+    public WebFrontController() throws ParseException {
+    	SingleOrderDAO.getInstance().getOrderlist("angz", "2022-11-24 00:00:00");
     	System.out.println("FrontController 생성자");
         controllerMap.put("/v1/test", new TestController());
         
