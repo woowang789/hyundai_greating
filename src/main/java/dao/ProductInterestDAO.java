@@ -9,83 +9,53 @@ import java.util.List;
 
 import oracle.jdbc.internal.OracleTypes;
 import util.DBConnection;
-import vo.ProductDetailVO;
-import vo.ProductVO;
+import vo.ProductInterestVO;
 
 final public class ProductInterestDAO {
-	private static ProductDAO instance = new ProductDAO();
-	private ProductDAO() {}
+	private static ProductInterestDAO instance = new ProductInterestDAO();
+	private ProductInterestDAO() {}
 	
-	public static ProductDAO getInstance() {
+	public static ProductInterestDAO getInstance() {
 		return instance;
 	}
-	public ProductDetailVO getProductDetail(String prodId) {
-		ProductDetailVO vo = new ProductDetailVO();
-		String query= "{call get_prod_detail(?,?,?,?)}";
+
+	public List<ProductInterestVO> getProductInterestList(String pUserId){
+		List<ProductInterestVO> pilist = new ArrayList<>();
+		String query = "{call P_PROD_INTEREST(?,?)}";
 		try (
 				Connection con = DBConnection.getConn();
 				CallableStatement cstmt = con.prepareCall(query);
 		){
-			cstmt.setString(1, prodId);
-			cstmt.registerOutParameter(2, OracleTypes.CURSOR);
-			cstmt.registerOutParameter(3, OracleTypes.CURSOR);
-			cstmt.registerOutParameter(4, OracleTypes.CURSOR);
-			ResultSet igdtRs = (ResultSet) cstmt.getObject(2);
-			while(igdtRs.next()) {
-				String iconUrl = igdtRs.getString(1);
-				System.out.println(iconUrl);
-			}
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-		
-		return vo;
-	}
-	public List<ProductVO> getProductList(String cateId){
-		List<ProductVO> list = new ArrayList<>();
-		String query = "{call find_prod_by_cate(?,?)}";
-		try (
-				Connection con = DBConnection.getConn();
-				CallableStatement cstmt = con.prepareCall(query);
-		){
-			cstmt.setString(1, cateId);
+			cstmt.setString(1, pUserId);
 			cstmt.registerOutParameter(2, OracleTypes.CURSOR);
 			cstmt.execute();
 			
 			ResultSet rs = (ResultSet) cstmt.getObject(2);
 			while(rs.next()) {
-				int id = rs.getInt(1);
-				String name = rs.getString(2);
-				String thumbUrl = rs.getString(3);
-				String storage = rs.getString(4);
-				String subName = rs.getString(5);
-				int stock = rs.getInt(6);
-				String grts = rs.getString(7);
-				int discnt = rs.getInt(8);
-				int originPrice =rs.getInt(9);
-				int marketPrice = rs.getInt(10);
-				System.out.println(id+" "+name);
+				int prodId = rs.getInt(1);
+				String prodName = rs.getString(2);
+				String subName = rs.getString(3);
+				int discntRate = rs.getInt(4);
+				int discntPrice = rs.getInt(5);
+				int originPrice =rs.getInt(6);
+				String thnlImgURL = rs.getString(7);
+				System.out.println(prodId+" "+prodName);
 				
-				ProductVO p = new ProductVO();
-				p.setId(id);
-				p.setThumbImgUrl(thumbUrl);
-				p.setName(name);
-				p.setSubName(subName);
-				p.setStorage(storage);
-				p.setOriginPrice(originPrice);
-				p.setStock(stock);
-				p.setMarketPrice(marketPrice);
-				p.setDiscountRate(discnt);
-				p.setGrts(grts);
-				list.add(p);
+				ProductInterestVO pi = new ProductInterestVO();
+				pi.setProdId(prodId);
+				pi.setProdName(prodName);
+				pi.setSubName(subName);
+				pi.setDiscntPrice(discntRate);
+				pi.setDiscntPrice(discntPrice);
+				pi.setOriginPrice(originPrice);
+				pi.setThnlImgURL(thnlImgURL);
+				pilist.add(pi);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
-		return list;
+		return pilist;
 	}
 	
 	
