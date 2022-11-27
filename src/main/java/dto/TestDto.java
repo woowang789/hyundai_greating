@@ -7,6 +7,5 @@ public class TestDto {
 
 	private String id;
 	private String pw;
-	
-	
+
 }

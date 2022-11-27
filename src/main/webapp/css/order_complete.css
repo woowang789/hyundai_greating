@@ -1,0 +1,117 @@
+/* main */
+main{
+  width: 1100px;
+  margin: 0 auto;
+}
+main .main__header{
+  padding: 50px 0;
+  text-align: center;
+}
+main .main__header h1{
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+main .main__header h3{
+  padding: 25px 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+main .main__header p{
+  padding-top: 10px;
+}
+main .main__header p span{
+  font-weight: 700;
+}
+main .main__content section{
+  border-top: 3px solid black;
+  margin-bottom: 30px;
+}
+main .main__content section .info__header{
+  font-size: 1.2rem;
+  font-weight: 900;
+  padding: 25px 0;
+  border-bottom: 1px solid #ccc;
+}
+main .main__content section ul li{
+  padding: 25px 0;
+  border-bottom: 1px solid #ccc;
+}
+main .main__content section ul li .item__header{
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin-bottom: 20px;
+}
+main .main__content section ul li .item__body{
+  display: flex;
+  justify-content: space-between;
+}
+.item__body .info__flex{
+  display: flex;
+}
+.item__body .body__left .item__img{
+  width: 120px;
+  height: 120px;
+  margin-right: 20px;
+}
+.item__body .body__left .item__img img{
+  width: 100%;
+  height: 100%;
+}
+.item__body .body__left p{
+  font-weight: 500;
+  padding: 5px 0;
+}
+.item__body .body__right div{
+  padding: 5px 0;
+  width:200px ;
+  justify-content: space-between;
+}
+.item__body .body__right .right__resultPrice{
+  font-weight: 700;
+}
+.item__bottom{
+  text-align: end;
+  padding: 25px 0;
+  border-bottom: 1px solid #ccc;
+}
+.item__bottom span{
+  font-weight: 700;
+}
+.info__body{
+  padding: 20px 0;
+  border-bottom: 1px solid #ccc;
+}
+.info__body div{
+  display: flex;
+  align-items: center;
+}
+.info__body div p.head{
+  width: 240px;
+  font-weight: 700;
+  padding: 7px 0;
+}
+.info__body .total__resultPrice .tail{
+  font-weight: 700;
+}
+main .main__bottom{
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+}
+main .main__bottom div a{
+  display: block;
+  width: 250px;
+  height: 65px;
+  text-align: center;
+  line-height: 65px;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+main .main__bottom .home__btn a{
+  border: 1px solid #ccc;
+}
+main .main__bottom .orderList__btn a{
+  background-color: #918C01;
+  color: white;
+}

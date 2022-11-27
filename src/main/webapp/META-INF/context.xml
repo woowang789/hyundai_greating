@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
-<Resource
-    name="jdbc/oracle07"
-    auth="Container"
-    type="javax.sql.DataSource"
-    driverClassName="oracle.jdbc.OracleDriver"
-    url="jdbc:oracle:thin:@edudb_high?TNS_ADMIN=C:\\dev64\\wallet\\Wallet_edudb"
-    username="testuser"
-    password="Qwerty123456"
-    maxActive="5"
-    maxWait="-1"
-     />
+	<Resource 
+		name="jdbc/oracleTHIN" 
+		auth="Container"
+		type="javax.sql.DataSource"
+		driverClassName="oracle.jdbc.OracleDriver"
+		url="jdbc:oracle:thin:@edudb_high?TNS_ADMIN=/Users/wangjh789/oracle/Wallet_edudb"
+		username="testuser" 
+		password="Qwerty123456" 
+		maxActive="5" 
+		maxWait="-1" 
+	/>
+	<Resource 
+		name="jdbc/oracleOCI" 
+		auth="Container"
+		type="javax.sql.DataSource" 
+		driverClassName="oracle.jdbc.OracleDriver"
+		url="jdbc:oracle:oci8:@edudb_high"
+		username="testuser" 
+		password="Qwerty123456" 
+		maxActive="5" 
+		maxWait="-1" 
+	/>
+
+	<Resource 
+		name="jdbc/oracleLocal" 
+		auth="Container"
+		type="javax.sql.DataSource" 
+		driverClassName="oracle.jdbc.OracleDriver"
+		url="jdbc:oracle:thin:@localhost:1521/xepdb1" 
+		username="testuser"
+		password="Qwerty123456" 
+		maxActive="5" 
+		maxWait="-1" 
+	/>
+
 </Context>
