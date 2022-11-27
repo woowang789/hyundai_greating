@@ -35,19 +35,19 @@ final public class ProductInterestDAO {
 				int prodId = rs.getInt(1);
 				String prodName = rs.getString(2);
 				String subName = rs.getString(3);
-				int discntRate = rs.getInt(4);
-				int discntPrice = rs.getInt(5);
-				int originPrice =rs.getInt(6);
+				int originPrice =rs.getInt(4);
+				int discntRate = rs.getInt(5);
+				int discntPrice = rs.getInt(6);
 				String thnlImgURL = rs.getString(7);
-				System.out.println(prodId+" "+prodName);
+				System.out.println(pUserId+" "+prodName+""+discntPrice);
 				
 				ProductInterestVO pi = new ProductInterestVO();
 				pi.setProdId(prodId);
 				pi.setProdName(prodName);
 				pi.setSubName(subName);
-				pi.setDiscntPrice(discntRate);
-				pi.setDiscntPrice(discntPrice);
 				pi.setOriginPrice(originPrice);
+				pi.setDiscntRate(discntRate);
+				pi.setDiscntPrice(discntPrice);
 				pi.setThnlImgURL(thnlImgURL);
 				pilist.add(pi);
 			}

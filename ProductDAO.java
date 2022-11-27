@@ -2,7 +2,6 @@ package dao;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -67,7 +66,6 @@ final public class ProductDAO {
 				int discnt = rs.getInt(8);
 				int originPrice =rs.getInt(9);
 				int marketPrice = rs.getInt(10);
-				System.out.println(id+" "+name);
 				
 				ProductVO p = new ProductVO();
 				p.setId(id);

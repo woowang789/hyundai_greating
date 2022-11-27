@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.ProductInterestDAO;
 import webController.get.BestProductListController;
 import webController.get.CartController;
 import webController.get.HomeController;
@@ -34,6 +35,7 @@ public class WebFrontController extends HttpServlet {
     public WebFrontController() {
     	System.out.println("FrontController 생성자");
         controllerMap.put("/v1/test", new TestController());
+        ProductInterestDAO.getInstance().getProductInterestList("isshosng");
         
         controllerMap.put("/v1/", new HomeController());
         controllerMap.put("/v1/signin",new SigninController());
