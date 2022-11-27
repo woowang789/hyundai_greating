@@ -1,5 +1,7 @@
+<%@page import="vo.UserVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +14,17 @@
 <body>
     <!-- HEADER Fragnent -->
     <jsp:include page="../component/header.jsp"></jsp:include>
+    
+    <%
+    	String userId = "";
+    	UserVO user =(UserVO) session.getAttribute("user");
+    	if(user != null) userId = user.getId();
+    	
+    %>
+    
+    <script>
+    	let userId = "<%=userId %>"
+    </script>
 	
 	     <main>
       <h1 class="main__header">장바구니</h1>
@@ -32,23 +45,28 @@
             <div class="head__qty">수량</div>
             <div class="head__resultPrice">구매금액</div>
           </li>
-          <li class="list__item" val="123">
+          
+          <c:forEach var="entry" items="${prods}">
+          
+          <li class="list__item" val="${entry.prodOptnId}">
             <div class="body__info">
               <div class="item__img">
-                <img src="../img/shoppingcart/item_img.jpeg" alt="" />
+                <img src="${entry.thumbUrl}" alt="" />
               </div>
-              <p>[본가스시]제주 청귤 소바(2인분)</p>
+              <p>${entry.prodName}</p>
             </div>
-            <div class="body__price">9,500원</div>
+            <div class="body__price">${entry.originPrice}원</div>
 
             <div class="body__qty">
               <div class="qty__minus">-</div>
-              <div class="qty">1</div>
+              <div class="qty">${entry.qty}</div>
               <div class="qty__plus">+</div>
             </div>
-            <div class="body__resultPrice">8,500원</div>
+            <div class="body__resultPrice">${entry.marketPrice}원</div>
             <i class="fa-solid fa-xmark"></i>
           </li>
+          </c:forEach>
+          <!-- 
           <li class="list__item" val="1">
             <div class="body__info">
               <div class="item__img">
@@ -66,6 +84,8 @@
             <div class="body__resultPrice">7,500원</div>
             <i class="fa-solid fa-xmark"></i>
           </li>
+          
+           -->
         </ul>
         <div class="shoppingcart__notice">
           <p>

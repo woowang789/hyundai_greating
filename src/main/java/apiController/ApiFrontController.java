@@ -15,13 +15,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import apiController.get.GetProductList;
+import apiController.post.UpdateCartProduct;
 
 
 
@@ -32,6 +29,8 @@ public class ApiFrontController extends HttpServlet {
 	
 	public ApiFrontController() {
 		controllerMap.put("/api/productList", new GetProductList());
+		
+		controllerMap.put("/api/updateCart", new UpdateCartProduct());
 	}
 
 

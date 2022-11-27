@@ -19,7 +19,8 @@ $('.list__item .qty__plus').click(function () {
   $.ajax({
     type: 'POST',
     url: 'http://localhost/api/updateCart',
-    data: JSON.stringify({ optnId: id, stock: parseInt(count) + 1 }),
+    data: JSON.stringify({ optnId: id, stock: parseInt(count) + 1, userId:userId }),
+    contentType: "application/json; charset=utf-8",
   });
 });
 $('.list__item .qty__minus').click(function () {
@@ -41,7 +42,8 @@ $('.list__item .qty__minus').click(function () {
     $.ajax({
       type: 'POST',
       url: 'http://localhost/api/updateCart',
-      data: JSON.stringify({ optnId: id, stock: parseInt(count) - 1 }),
+      data: JSON.stringify({ optnId: id, stock: parseInt(count) + 1, userId:userId }),
+      contentType: "application/json; charset=utf-8",
     });
   }
 });
