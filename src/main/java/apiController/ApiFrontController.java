@@ -18,6 +18,9 @@ import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import apiController.get.GetProductList;
+import apiController.post.CheckId;
+import apiController.post.RemoveCartProduct;
+import apiController.post.ToggleInterest;
 import apiController.post.UpdateCartProduct;
 
 
@@ -31,6 +34,9 @@ public class ApiFrontController extends HttpServlet {
 		controllerMap.put("/api/productList", new GetProductList());
 		
 		controllerMap.put("/api/updateCart", new UpdateCartProduct());
+		controllerMap.put("/api/removeCart", new RemoveCartProduct());
+		controllerMap.put("/api/toggleInterest", new ToggleInterest());
+		controllerMap.put("/api/checkId", new CheckId());
 	}
 
 

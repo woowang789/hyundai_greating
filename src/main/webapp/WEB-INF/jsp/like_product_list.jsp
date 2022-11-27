@@ -1,5 +1,7 @@
+<%@page import="vo.UserVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +14,16 @@
 <body>
     <!-- HEADER Fragnent -->
     <jsp:include page="../component/header.jsp"></jsp:include>
+    <%
+    	String userId = "";
+    	UserVO user =(UserVO) session.getAttribute("user");
+    	if(user != null) userId = user.getId();
+    	
+    %>
     
+    <script>
+    	let userId = "<%=userId %>"
+    </script>
         <!--Main-->
     <main>
       <div class="main__left">
@@ -41,7 +52,7 @@
         </div>
       </div>
       <div class="main__center">
-        <div class="center__header"><span>왕종휘</span>님 반갑습니다.</div>
+        <div class="center__header"><span><%=user.getName() %></span>님 반갑습니다.</div>
         <div class="center__body">
           <div class="body__header">
             <div class="select__all">
@@ -54,18 +65,20 @@
             </div>
           </div>
           <ul class="itemList">
-            <li>
-              <div class="item">
+          
+          <c:forEach var="el" items="${prods}">
+          <li>
+              <div class="item" val="${el.id}">
                 <div class="item__img">
-                  <img src="../img//main/main_item_img.jpeg" alt="" />
-                  <div class="img__badge">냉장</div>
+                  <img src="${el.thumbImgUrl }" alt="" />
+                  <div class="img__badge">${el.storage }</div>
                 </div>
                 <div class="item__title">
-                  <p>집에서 즐기는 베트남식 샌드위치</p>
-                  <h1>부드러운 소불고기 반미 샌드</h1>
+                  <p>${el.subName }</p>
+                  <h1>${el.name}</h1>
                 </div>
                 <div class="item__bottom">
-                  <h1 class="item__price">2,900원</h1>
+                  <h1 class="item__price">${el.marketPrice }원</h1>
                   <div class="item__shoppingcart">
                     <i class="fa-solid fa-cart-shopping"></i>
                   </div>
@@ -79,6 +92,8 @@
                 </div>
               </div>
             </li>
+          </c:forEach>
+            <!-- 
             <li>
               <div class="item" val="123">
                 <div class="item__img">
@@ -104,81 +119,7 @@
                 </div>
               </div>
             </li>
-            <li>
-              <div class="item">
-                <div class="item__img">
-                  <img src="../img//main/main_item_img.jpeg" alt="" />
-                  <div class="img__badge">냉장</div>
-                </div>
-                <div class="item__title">
-                  <p>집에서 즐기는 베트남식 샌드위치</p>
-                  <h1>부드러운 소불고기 반미 샌드</h1>
-                </div>
-                <div class="item__bottom">
-                  <h1 class="item__price">2,900원</h1>
-                  <div class="item__shoppingcart">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                  </div>
-                </div>
-                <div class="item__value">
-                  <i class="fa-solid fa-award"></i>
-                  <span>프리미엄 식재</span>
-                </div>
-                <div class="check__btn">
-                  <i class="fa-solid fa-circle-check"></i>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="item">
-                <div class="item__img">
-                  <img src="../img//main/main_item_img.jpeg" alt="" />
-                  <div class="img__badge">냉장</div>
-                </div>
-                <div class="item__title">
-                  <p>집에서 즐기는 베트남식 샌드위치</p>
-                  <h1>부드러운 소불고기 반미 샌드</h1>
-                </div>
-                <div class="item__bottom">
-                  <h1 class="item__price">2,900원</h1>
-                  <div class="item__shoppingcart">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                  </div>
-                </div>
-                <div class="item__value">
-                  <i class="fa-solid fa-award"></i>
-                  <span>프리미엄 식재</span>
-                </div>
-                <div class="check__btn">
-                  <i class="fa-solid fa-circle-check"></i>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="item">
-                <div class="item__img">
-                  <img src="../img//main/main_item_img.jpeg" alt="" />
-                  <div class="img__badge">냉장</div>
-                </div>
-                <div class="item__title">
-                  <p>집에서 즐기는 베트남식 샌드위치</p>
-                  <h1>부드러운 소불고기 반미 샌드</h1>
-                </div>
-                <div class="item__bottom">
-                  <h1 class="item__price">2,900원</h1>
-                  <div class="item__shoppingcart">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                  </div>
-                </div>
-                <div class="item__value">
-                  <i class="fa-solid fa-award"></i>
-                  <span>프리미엄 식재</span>
-                </div>
-                <div class="check__btn">
-                  <i class="fa-solid fa-circle-check"></i>
-                </div>
-              </div>
-            </li>
+            -->
           </ul>
           <div class="pagingArea">
             <ul class="paging">

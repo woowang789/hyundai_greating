@@ -86,11 +86,20 @@ main .main__content .content__body .gender__input .tail>div i {
   margin-right: 10px;
   font-size: 1.3rem;
 }
+main .main__content .content__body .gender__input .tail>div i.active{
+  color: #918C01;
+}
 main .main__btns{
   margin: 50px 0;
   display: flex;
 }
-main .main__btns > div{
+button{
+  border: none;
+}
+main .main__btns > div,
+main .main__btns > button{
+  margin: 0;
+  display: block;
   width: 375px;
   height: 70px;
   text-align: center;

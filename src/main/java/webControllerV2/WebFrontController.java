@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import util.SessionUtil;
 import vo.UserVO;
 
 @WebServlet(urlPatterns = "/v1/*")
@@ -40,7 +41,7 @@ public class WebFrontController extends HttpServlet {
         controllerMap.put("/v1/viewProductList", new ShowViewProductList());
     
         controllerMap.put("/v1/signin.do",new DoSignin());
-        controllerMap.put("v1/signout", new DoSignout());
+        controllerMap.put("/v1/signout", new DoSignout());
         controllerMap.put("/v1/order.do", new DoOrder());
     }
 
@@ -51,6 +52,9 @@ public class WebFrontController extends HttpServlet {
     	response.setContentType("text/html;charset=UTF-8");
     	
         String requestURI = request.getRequestURI();
+        
+        String str = SessionUtil.getUserId(request);
+        System.out.println("세션 : "+str);
 
         ControllerInterface controller = controllerMap.get(requestURI);
         if ( controller == null) {

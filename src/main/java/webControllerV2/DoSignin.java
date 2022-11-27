@@ -20,9 +20,13 @@ public class DoSignin implements ControllerInterface{
 		String id = request.getParameter("id");
 		UserVO user = userDao.getUserById(id);
 		if(user == null) return new MyView("href:/v1/signin?error=notfound");
+		 
+		if(request.getSession(false) != null) 
+			request.getSession(false).invalidate();
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("user", user);
+		System.out.println(user.getId());
 		return new MyView("href:/v1/");
 	}
 

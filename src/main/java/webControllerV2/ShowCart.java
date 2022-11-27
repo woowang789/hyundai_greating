@@ -20,7 +20,8 @@ public class ShowCart implements ControllerInterface{
 	public MyView process(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String userId = SessionUtil.getUserId(request);
-		List<CartProductVO> list = cartDao.getCartProductList("angz");
+		List<CartProductVO> list = cartDao.getCartProductList(userId);
+		
 		request.setAttribute("prods", list);
 		return new MyView("cart");
 		

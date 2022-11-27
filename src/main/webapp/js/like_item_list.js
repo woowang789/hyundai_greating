@@ -19,14 +19,15 @@ $('.select__all').click(() => {
 
 $('.delete__selected').click(function () {
   $('.itemList .item .check__btn i.active').each(function () {
-    $(this).parent().parent().parent().remove();
     let prodId = $(this).parent().parent('.item').attr('val');
+    $(this).parent().parent().parent().remove();
     console.log(prodId);
 
     $.ajax({
       type: 'POST',
-      url: 'http://localhost/api/removeInterest',
-      data: JSON.stringify({ prodId: prodId }),
+      url: 'http://localhost/api/toggleInterest',
+      data: JSON.stringify({ prodId: prodId, userId: userId}),
+      contentType: "application/json; charset=utf-8",
       success: (res) => reDrawProduct(res['list']),
     });
   });
