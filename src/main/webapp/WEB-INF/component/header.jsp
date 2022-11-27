@@ -65,7 +65,7 @@
         <i class="fa-solid fa-magnifying-glass"></i>
       </div>
       <div class="header__shoppingCart">
-        <i class="fa-solid fa-cart-shopping"></i>
+        <a href="/v1/cart"><i class="fa-solid fa-cart-shopping"></i></a>
       </div>
     </div>
     <div class="header__divider"></div>

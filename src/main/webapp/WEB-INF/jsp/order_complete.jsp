@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,6 +29,38 @@
         <section class="order__item__info">
           <div class="info__header">주문상품 정보</div>
           <ul class="item__list">
+          <c:forEach var="prod" items="${order.orderProds}">
+            <li class="item">
+              <h1 class="item__header">${prod.prodName}</h1>
+              <div class="item__body">
+                <div class="body__left info__flex">
+                  <div class="item__img">
+                    <img src="${prod.thumbImgUrl}" alt="" />
+                  </div>
+                  <div class="wrap">
+                    <p>옵션: ${prod.optName}</p>
+                    <p>수량: ${prod.qty}개</p>
+                  </div>
+                </div>
+                <div class="body__right">
+                  <div class="info__flex">
+                    <p>상품금액</p>
+                    <p class="origin_price">${prod.originPrice}원</p>
+                  </div>
+                  <div class="info__flex">
+                    <p>할인 금액</p>
+                    <p class="discount">${prod.discountAmount}원</p>
+                  </div>
+                  <div class="info__flex right__resultPrice">
+                    <p>결제예정금액</p>
+                    <p class="discount_price">${prod.marketPrice}원</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            
+            </c:forEach>
+            <!-- 
             <li class="item">
               <h1 class="item__header">[1Table]소곱창 오일 파스타</h1>
               <div class="item__body">
@@ -56,34 +89,9 @@
                 </div>
               </div>
             </li>
-            <li class="item">
-              <h1 class="item__header">[1Table]소곱창 오일 파스타</h1>
-              <div class="item__body">
-                <div class="body__left info__flex">
-                  <div class="item__img">
-                    <img src="../img/order_complete/item_img.jpg" alt="" />
-                  </div>
-                  <div class="wrap">
-                    <p>옵션: [1Table]소곱창 오일 파스타</p>
-                    <p>수량: 1개</p>
-                  </div>
-                </div>
-                <div class="body__right">
-                  <div class="info__flex">
-                    <p>상품금액</p>
-                    <p class="origin_price">11,500원</p>
-                  </div>
-                  <div class="info__flex">
-                    <p>할인 금액</p>
-                    <p class="discount">3,450원</p>
-                  </div>
-                  <div class="info__flex right__resultPrice">
-                    <p>결제예정금액</p>
-                    <p class="discount_price">8,050원</p>
-                  </div>
-                </div>
-              </div>
-            </li>
+            
+             -->
+             
           </ul>
           <div class="item__bottom">
             <span>배송비</span> <span class="dep">무료배송</span>
@@ -115,15 +123,15 @@
           <div class="info__body">
             <div class="receiver__name">
               <p class="head">받는분</p>
-              <p class="tail">왕종휘</p>
+              <p class="tail">${order.receiverName}</p>
             </div>
             <div class="receiver__address">
               <p class="head">주소</p>
-              <p class="tail">(07285) 서울 영등포구 선유로 9나길 8 ...</p>
+              <p class="tail">${order.receiverAddr}</p>
             </div>
             <div class="receiver__request">
-              <p class="head">배송 요청사항</p>
-              <p class="tail">배송 전에 미리 연락 바랍니다.</p>
+              <p class="head">연락처</p>
+              <p class="tail">${order.receiverTel}</p>
             </div>
           </div>
         </section>
