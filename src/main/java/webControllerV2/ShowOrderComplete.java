@@ -1,6 +1,7 @@
 package webControllerV2;
 
 import java.io.IOException;
+import java.sql.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -20,8 +21,8 @@ public class ShowOrderComplete implements ControllerInterface{
 	public MyView process(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String userId = SessionUtil.getUserId(request);
-		String date = "2022-11-24 00:00:00";
-		OrderVO order = orderDao.getOrder("angz", DateParser.strToDateWithTime(date));
+		long dataLong = Long.parseLong(request.getParameter("date"));
+		OrderVO order = orderDao.getOrder(userId, new Date(dataLong));
 		System.out.println(order.getReceiverName());
 		System.out.println(order.getOrderProds().size()+"개의 품목");
 		request.setAttribute("order", order);

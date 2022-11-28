@@ -32,6 +32,17 @@
     	let userId = "<%=userId %>"
     </script>
     
+    <!--  Dialog -->
+    <div class="dialog">
+    	<div class="dialog__content">
+    		장바구니에 담았습니다.</br>
+    		바로 확인하시겠습니까?
+    	</div>
+    	<div class="dialog__btns">
+    		<div class="to__home">쇼핑 계속하기</div>
+    		<div class="to__cart">장바구니로 이동</div>
+    	</div>
+    </div>
     
     <!--OtionSelect-->
     <div class="option__select">
@@ -66,7 +77,13 @@
         <div class="item__totlaPrice">총 상품금액<span>0원</span></div>
         <div class="select__btn">
           <div class="item__like">
-            <i class="fa-solid fa-heart"></i>관심상품
+          <c:if test="${not isInterested}" >
+            <i class="fa-solid fa-heart"></i>
+           </c:if>
+           <c:if test="${ isInterested}" >
+            <i class="fa-solid fa-heart active"></i>
+           </c:if>
+            관심상품
           </div>
           <div class="item__shoppingcart">장바구니담기</div>
           <div class="item__order">바로구매</div>

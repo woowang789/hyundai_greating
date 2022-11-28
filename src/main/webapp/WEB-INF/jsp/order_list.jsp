@@ -48,7 +48,7 @@
 		</div>
 		<div class="main__center">
 			<div class="center__header">
-				<span>왕종휘</span>님 반갑습니다.
+				<span>${sessionScope.user.name}</span>님 반갑습니다.
 			</div>
 			<div class="center__body">
 				<h1>주문내역</h1>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -46,7 +47,7 @@
                 </ul>
                 <div class="input__flex receiver__name">
                   <div class="head">받는 분<span> *</span></div>
-                  <div class="tail"><input type="text" /></div>
+                  <div class="tail"><input type="text" name="rcv_name"/></div>
                 </div>
                 <div class="input__flex loc__detail">
                   <div class="head">주소 <span>*</span></div>
@@ -55,8 +56,8 @@
                       <input type="text" disabled />
                       <div class="search__btn"></div>
                     </div>
-                    <input type="text" disabled />
-                    <input type="text" />
+                    <input type="text" name="rcv_addr1" disabled />
+                    <input type="text" name="rcv_addr2"/>
                   </div>
                 </div>
               </div>
@@ -65,33 +66,40 @@
               <div class="section__header">주문상품 확인</div>
               <div class="section__content">
                 <ul class="itemList">
-                  <li>
+                <c:forEach var="entry" items="${prods}">
+                  <li class="item" optn="${entry.optnId}" prod="${entry.prodId }">
                     <h1 class="item__header">
-                      [vezzly] 새벽 5시에 갓 짠 진짜 우유식빵
+                      ${entry.prodName }
                     </h1>
                     <div class="item__content">
                       <div class="item__left">
                         <div class="item__img">
-                          <img src="/img/order/item_img.jpeg" alt="" />
+                          <img src="${entry.thumbUrl }" alt="" />
                         </div>
-                        수량: <span class="count">1</span>개
+                        <div>
+                          수량: <span class="count">${entry.stock }</span>개 </br>
+                        	옵션: <span class="optnName">${entry.optnName }</span>
+                        </div>
+                      
                       </div>
                       <div class="item__right">
                         <div>
                           <div class="head">상품금액</div>
-                          <div class="tail origin_price">5,400원</div>
+                          <div class="tail origin_price">${entry.originPrice*entry.stock }원</div>
                         </div>
                         <div>
                           <div class="head">할인금액</div>
-                          <div class="tail discount">1,000원</div>
+                          <div class="tail discount">${(entry.marketPrice-entry.originPrice)*entry.stock }원</div>
                         </div>
                         <div>
                           <div class="head">결제예정금액</div>
-                          <div class="tail discount_price">4,400원</div>
+                          <div class="tail discount_price">${entry.marketPrice*entry.stock }원</div>
                         </div>
                       </div>
                     </div>
                   </li>
+                </c:forEach>
+                  <!--  
                   <li>
                     <h1 class="item__header">
                       [vezzly] 새벽 5시에 갓 짠 진짜 우유식빵
@@ -119,6 +127,7 @@
                       </div>
                     </div>
                   </li>
+                   -->
                 </ul>
                 <div class="delivery__price">
                   <p>배송비 <span class="de_p">3,000원</span></p>
@@ -157,6 +166,7 @@
             </section>
           </div>
         </div>
+        <input type='hidden' name="prods"/>
       </form>
     </main>
 
