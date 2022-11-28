@@ -157,6 +157,9 @@ li.item .item__price{
   color: #ccc;
   font-size: 1.7rem;
 }
+.itemImgAndInfo .itemInfoArea .info__title .subtitleAndLike i.active{
+	  color: #FF8A2F;
+}
 .itemImgAndInfo .itemInfoArea .info__title .title{
   font-size: 1.8rem;
   font-weight: 800;

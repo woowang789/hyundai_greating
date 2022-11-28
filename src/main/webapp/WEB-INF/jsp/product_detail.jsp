@@ -1,5 +1,9 @@
+<%@page import="vo.ProductDetailVO"%>
+<%@page import="vo.UserVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,6 +21,17 @@
     <!-- HEADER Fragnent -->
     <jsp:include page="../component/header.jsp"></jsp:include>
     
+    <%
+    	String userId = "";
+    	UserVO user =(UserVO) session.getAttribute("user");
+    	if(user != null) userId = user.getId();
+    	
+    %>
+    
+    <script>
+    	let userId = "<%=userId %>"
+    </script>
+    
     
     <!--OtionSelect-->
     <div class="option__select">
@@ -24,6 +39,18 @@
       <div class="select__body__wrap">
         <div class="select__body">
           <ul class="item__list">
+          <c:forEach var="entry" items="${detail.optnList}">
+            <li class="item" val="${entry.id}">
+              <p class="item__name">${entry.name}</p>
+              <div class="item__qty">
+                <div class="qty__minus">-</div>
+                <div class="qty">0</div>
+                <div class="qty__plus">+</div>
+              </div>
+              <p class="item__price">${detail.prod.marketPrice}원</p>
+            </li>
+          </c:forEach>
+          <!-- 
             <li class="item">
               <p class="item__name">[분다버그]진저비어</p>
               <div class="item__qty">
@@ -33,15 +60,7 @@
               </div>
               <p class="item__price">2,900원</p>
             </li>
-            <li class="item">
-              <p class="item__name">[분다버그]진저비어</p>
-              <div class="item__qty">
-                <div class="qty__minus">-</div>
-                <div class="qty">0</div>
-                <div class="qty__plus">+</div>
-              </div>
-              <p class="item__price">2,900원</p>
-            </li>
+             -->
           </ul>
         </div>
         <div class="item__totlaPrice">총 상품금액<span>0원</span></div>
@@ -57,23 +76,34 @@
     <div class="itemImgAndInfo">
       <div class="itemImgArea">
         <div class="itemImg">
-          <img src="../img/item_detail/item_img.jpeg" alt="" />
+          <img src="${detail.imgUrl }" alt="" />
         </div>
       </div>
       <div class="itemInfoArea">
         <div class="info__title">
           <div class="subtitleAndLike">
-            <p class="subtitle">서산 화식한우로 끓인</p>
-            <i class="fa-solid fa-heart"></i>
+            <p class="subtitle">${detail.prod.subName }</p>
+            <c:if test="${not isInterested}" >
+            	<i class="fa-solid fa-heart"></i>
+            </c:if>
+            <c:if test="${isInterested}" >
+            	<i class="fa-solid fa-heart active"></i>
+            </c:if>
           </div>
 
-          <h1 class="title">[1Table] 화식한우 사골곰국</h1>
-          <p class="origin">원산지 : 상세페이지 참고</p>
+          <h1 class="title">${detail.prod.name }</h1>
+          <p class="origin">원산지 : ${detail.origin}</p>
         </div>
         <div class="info__price">
-          <span class="discountRate">15%</span>
-          <span class="discountPrice">3,750원</span>
-          <span class="originPrice">4,200원</span>
+        <c:if test="${detail.prod.discountRate != 0}">
+          <span class="discountRate">${detail.prod.discountRate }%</span>
+        </c:if>
+        
+          <span class="discountPrice">${detail.prod.marketPrice }원</span>
+          
+        <c:if test="${detail.prod.discountRate != 0}">
+          <span class="originPrice">${detail.prod.originPrice }원</span>
+        </c:if>  
         </div>
         <div class="info__delivery info__flex">
           <div class="head">배송정보</div>
@@ -89,9 +119,9 @@
         <div class="info__seller info__flex">
           <div class="head">판매자</div>
           <div class="tail">
-            <div class="seller__name">그리팅</div>
+            <div class="seller__name">${detail.seller.name}</div>
             <div class="seller__tel">
-              tel. <span class="tel">1800-0700</span>
+              tel. <span class="tel">${detail.seller.tel}</span>
             </div>
           </div>
         </div>
@@ -112,56 +142,71 @@
     <!-- ItemInfo -->
     <div>
       <div class="item__info">
+      <c:if test="${fn:length(detail.grtList) != 0}">
+      
         <div class="info__value">
           <div class="value__title">
             <i class="fa-solid fa-award"></i>greating's value
           </div>
-          <div class="value__itemName">[1Table] 화식한우 사골곰국</div>
+          <div class="value__itemName">${detail.prod.name }</div>
           <ul class="value__icons">
+          <c:forEach var="entry" items="${detail.grtList}">
+          <li>
+              <div class="value__icon">
+                <img src="${entry.iconurl }" alt="" />
+              </div>
+              <span>${entry.name }</span>
+            </li>
+          </c:forEach>
+            <!-- 
             <li>
               <div class="value__icon">
                 <img src="../img/item_detail/value_ingredient.png" alt="" />
               </div>
               <span>프리미엄 식재</span>
             </li>
+             -->
           </ul>
         </div>
+        </c:if>
         <div class="info__simple">
           <ul class="simple__icons">
-            <li>
-              <div class="simple__icon">
-                <img src="../img/item_detail/sime_icon.png" alt="" />
-              </div>
-              <span>소</span>
-            </li>
+          <c:forEach var="entry" items="${detail.igdtList}">
+	          <li>
+	              <div class="simple__icon">
+	                <img src="${entry.iconUrl }" alt="" />
+	              </div>
+	              <span>${entry.name }</span>
+	            </li>
+          </c:forEach>
+            
           </ul>
           <div class="simple__capa simple__flex">
             <div class="head">용량</div>
-            <div class="tail">400ml</div>
+            <div class="tail">${detail.vol }ml</div>
           </div>
           <div class="simple__kcal simple__flex">
             <div class="head">칼로리</div>
-            <div class="tail">955kcal</div>
+            <div class="tail">${detail.cal }kcal</div>
           </div>
           <div class="simple__origin simple__flex">
             <div class="head">원산지</div>
-            <div class="tail">상세페이지 참고</div>
+            <div class="tail">${detail.origin}</div>
           </div>
         </div>
         <div class="info__intro">
-          현대식품관의 건강한 식재료와 유명 맛집의 레시피가 더해진 프리미엄
-          가정식 브랜드, 원테이블(1 Table)의 사골곰국을 소개해요. <br />
-          <br />
-          소의 뼈를 고아 만드는 곰탕은 그 어떤 요리보다 신선한 재료를 사용하는
-          것이 중요한데요. 출하 6개월 전 부터 보리, 볏짚 등 곡물을 끓여 만든
-          화식 사료와 삶지 않은 볏짚 및 목초, 무항생제 사료를 함께 먹고 자라
-          육질이 부드럽고 고소한 맛이 특히 깊은 화식한우로 푹 끓인 곰국이에요.
-          안심하고 먹을 수 있는 원테이블 사골곰국으로 가족의 한 끼 식사를 준비해
-          보세요. <br />
+          ${detail.text }
         </div>
+        <c:forEach var="entry" items="${detail.contextUrls}">
+        <div class="item__img">
+          <img src="${entry}" alt="" />
+        </div>
+        </c:forEach>
+        <!-- 
         <div class="item__img">
           <img src="../img/item_detail/item_detail_img1.jpeg" alt="" />
         </div>
+         -->
 
         <div class="item__area">
           <div class="info__header">
@@ -169,7 +214,7 @@
             <p>이렇게 포장됩니다.</p>
           </div>
           <div class="packageImg">
-            <img src="../img/item_detail/item_package.jpeg" alt="" />
+            <img src="${detail.pkgUrl}" alt="" />
           </div>
         </div>
 

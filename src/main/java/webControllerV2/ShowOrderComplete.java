@@ -21,7 +21,7 @@ public class ShowOrderComplete implements ControllerInterface{
 			throws ServletException, IOException {
 		String userId = SessionUtil.getUserId(request);
 		String date = "2022-11-24 00:00:00";
-		OrderVO order = orderDao.getOrder("angz", DateParser.strToDate(date));
+		OrderVO order = orderDao.getOrder("angz", DateParser.strToDateWithTime(date));
 		System.out.println(order.getReceiverName());
 		System.out.println(order.getOrderProds().size()+"개의 품목");
 		request.setAttribute("order", order);

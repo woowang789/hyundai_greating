@@ -1,7 +1,6 @@
 package webControllerV2;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -10,10 +9,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import util.SessionUtil;
-import vo.UserVO;
 
 @WebServlet(urlPatterns = "/v1/*")
 public class WebFrontController extends HttpServlet {
@@ -41,6 +38,7 @@ public class WebFrontController extends HttpServlet {
         controllerMap.put("/v1/viewProductList", new ShowViewProductList());
     
         controllerMap.put("/v1/signin.do",new DoSignin());
+        controllerMap.put("/v1/signup.do", new DoSignup());
         controllerMap.put("/v1/signout", new DoSignout());
         controllerMap.put("/v1/order.do", new DoOrder());
     }

@@ -7,7 +7,6 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import apiController.ApiControllerInter;
-import dao.CartDAO;
 import dao.InterestDAO;
 
 public class ToggleInterest implements ApiControllerInter {
@@ -21,7 +20,6 @@ public class ToggleInterest implements ApiControllerInter {
 				Integer.parseInt(json.get("prodId").toString());
 		String userId = json.get("userId").toString();
 		interestDao.toggleInterest(userId, prodId);
-
 	}
 
 }

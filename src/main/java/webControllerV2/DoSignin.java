@@ -26,7 +26,11 @@ public class DoSignin implements ControllerInterface{
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("user", user);
-		System.out.println(user.getId());
+		
+//		if(request.getParameter("redirect") != null) {
+//			System.out.print(request.getParameter("redirect")+" redirect addr");
+//			return new MyView("href:/"+request.getParameter("redirect"));
+//		}
 		return new MyView("href:/v1/");
 	}
 

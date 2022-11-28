@@ -99,12 +99,10 @@ final public class OrderDAO {
 				String optnName = rs.getString(4);
 				int marketPrice = rs.getInt(5);
 				int qty = rs.getInt(6);
-				
-				System.out.println(time);
-				System.out.println(prodName);
+			
 				
 				OrderProductVO vo = new OrderProductVO();
-				vo.setOrderDate(DateParser.strToDate(time));
+				vo.setOrderDate(DateParser.strToDateWithTime(time));
 				vo.setProdName(prodName);
 				vo.setThumbImgUrl(thumbImgUrl);
 				vo.setOptName(optnName);
