@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.OrderReviewInsertDAO;
+import dao.OrderReviewDAO;
 
 @WebServlet(urlPatterns = "/v1/*")
 public class WebFrontController extends HttpServlet {
@@ -20,7 +20,8 @@ public class WebFrontController extends HttpServlet {
     public WebFrontController() {
         
         // 프로시저 동작 여부 확인
-        OrderReviewInsertDAO.getInstance().getOrderReviewList(125960);
+//        OrderReviewInsertDAO.getInstance().getOrderReviewInsertList(getServletName(), 0, 0, getServletInfo());
+        OrderReviewDAO.getInstance().getOrderReviewList(125960);
 
     	
 

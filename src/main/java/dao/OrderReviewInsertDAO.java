@@ -23,9 +23,9 @@ final public class OrderReviewInsertDAO {
 		return instance;
 	}
 
-	public List<OrderReviewInsertVO> getOrderReviewList(String pUserId, int pProdId, int pProdOpId, String pOrderDate) {
-		List<OrderReviewInsertVO> orList = new ArrayList<>();
-		String query = "{call p_cmt(?,?)}";
+	public List<OrderReviewInsertVO> getOrderReviewInsertList(String pUserId, int pProdId, int pProdOpId, String pOrderDate) {
+		List<OrderReviewInsertVO> oriList = new ArrayList<>();
+		String query = "{call p_cmt_insert(?,?,?,?)}";
 		try (Connection con = DBConnection.getConn(); CallableStatement cstmt = con.prepareCall(query);) {
 			cstmt.setString(1, pUserId);
 			cstmt.registerOutParameter(2, OracleTypes.CURSOR);
@@ -46,21 +46,21 @@ final public class OrderReviewInsertDAO {
 
 				System.out.println(pUserId + " " + pProdId + "" + pProdOpId + "" + pOrderDate);
 
-				OrderReviewInsertVO or = new OrderReviewInsertVO();
-				or.setCommentTitle(commentTitle);
-				or.setCommentText(commentText);
-				or.setOrderReviewDate(orDate);
-				or.setProdOpId(prodOpId);
-				or.setProdId(prodId);
-				or.setUserId(userId);
-				or.setOrderDate(oDate);
-				orList.add(or);
+				OrderReviewInsertVO ori = new OrderReviewInsertVO();
+				ori.setCommentTitle(commentTitle);
+				ori.setCommentText(commentText);
+				ori.setOrderReviewDate(orDate);
+				ori.setProdOpId(prodOpId);
+				ori.setProdId(prodId);
+				ori.setUserId(userId);
+				ori.setOrderDate(oDate);
+				oriList.add(ori);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 
-		return orList;
+		return oriList;
 	}
 
 }

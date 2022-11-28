@@ -1,0 +1,22 @@
+package vo;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter @Getter
+public class OrderReviewVO {
+	
+	private List<OrderReviewVO> orderReviews = new ArrayList<>();
+	private String commentTitle;
+	private String commentText;
+	private Date orderReviewDate;
+	private String userId;
+
+
+
+	
+}
