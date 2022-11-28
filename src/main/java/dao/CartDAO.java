@@ -67,7 +67,7 @@ final public class CartDAO {
 	}
 	
 	public void updateCartProduct(String userId, int optnId,int stock) {
-		String sql = "{call p_cart_update(?,?,?)}";
+		String sql = "{call P_CART_INSERT(?,?,?)}";
 		try (
 				Connection con = DBConnection.getConn();
 				CallableStatement cstmt = con.prepareCall(sql);
@@ -75,6 +75,24 @@ final public class CartDAO {
 			cstmt.setString(1,userId);
 			cstmt.setInt(2, optnId);
 			cstmt.setInt(3, stock);
+			
+			cstmt.executeUpdate();
+			System.out.println("업데이트 완료");
+			
+		}catch (SQLException e) {
+			System.out.println("업데이트 에러 발생");
+			e.printStackTrace();
+		}
+	}
+
+	public void removeCartProduct(String userId, int optnId) {
+		String sql = "{call P_CART_DELETE(?,?)}";
+		try (
+				Connection con = DBConnection.getConn();
+				CallableStatement cstmt = con.prepareCall(sql);
+		){
+			cstmt.setString(1,userId);
+			cstmt.setInt(2, optnId);
 			
 			cstmt.executeUpdate();
 			System.out.println("업데이트 완료");

@@ -1,7 +1,6 @@
 package webControllerV2;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -10,9 +9,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import vo.UserVO;
+import dao.OrderReviewInsertDAO;
 
 @WebServlet(urlPatterns = "/v1/*")
 public class WebFrontController extends HttpServlet {
@@ -21,7 +19,13 @@ public class WebFrontController extends HttpServlet {
 
     public WebFrontController() {
         
-        controllerMap.put("/v1/", new ShowHome());
+        // 프로시저 동작 여부 확인
+        OrderReviewInsertDAO.getInstance().getOrderReviewList(125960);
+
+    	
+
+    	
+    	controllerMap.put("/v1/", new ShowHome());
         controllerMap.put("/v1/signin",new ShowSignin());
         controllerMap.put("/v1/signup", new ShowSignup());
         

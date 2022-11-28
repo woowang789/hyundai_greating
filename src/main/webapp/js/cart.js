@@ -19,7 +19,7 @@ $('.list__item .qty__plus').click(function () {
   $.ajax({
     type: 'POST',
     url: 'http://localhost/api/updateCart',
-    data: JSON.stringify({ optnId: id, stock: parseInt(count) + 1, userId:userId }),
+    data: JSON.stringify({ optnId: id, stock: 1, userId:userId }),
     contentType: "application/json; charset=utf-8",
   });
 });
@@ -42,11 +42,24 @@ $('.list__item .qty__minus').click(function () {
     $.ajax({
       type: 'POST',
       url: 'http://localhost/api/updateCart',
-      data: JSON.stringify({ optnId: id, stock: parseInt(count) + 1, userId:userId }),
+      data: JSON.stringify({ optnId: id, stock:  -1, userId:userId }),
       contentType: "application/json; charset=utf-8",
     });
   }
 });
+$('i.fa-xmark').click(function(){
+	let id = $(this).parent().attr('val');
+	let prod = $(this).parent();
+	prod.remove();
+	calTotal();
+	$.ajax({
+      type: 'POST',
+      url: 'http://localhost/api/removeCart',
+      data: JSON.stringify({ optnId: id, userId:userId }),
+      contentType: "application/json; charset=utf-8",
+    });
+	
+})
 function wonToInt(s) {
   return parseInt(s.substr(0, s.length - 1).replaceAll(',', ''));
 }

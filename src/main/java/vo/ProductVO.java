@@ -20,5 +20,4 @@ public class ProductVO {
 	private int stock;
 	private String grts;
 	
-	
 }

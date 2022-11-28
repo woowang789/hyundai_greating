@@ -67,7 +67,6 @@ final public class ProductDAO {
 				int discnt = rs.getInt(8);
 				int originPrice =rs.getInt(9);
 				int marketPrice = rs.getInt(10);
-				System.out.println(id+" "+name);
 				
 				ProductVO p = new ProductVO();
 				p.setId(id);

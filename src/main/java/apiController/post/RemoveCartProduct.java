@@ -9,7 +9,7 @@ import org.json.simple.parser.ParseException;
 import apiController.ApiControllerInter;
 import dao.CartDAO;
 
-public class UpdateCartProduct implements ApiControllerInter{
+public class RemoveCartProduct implements ApiControllerInter{
 	private CartDAO cartDao = CartDAO.getInstance();
 	private JSONParser parser = new JSONParser();
 
@@ -18,10 +18,10 @@ public class UpdateCartProduct implements ApiControllerInter{
 		JSONObject json = (JSONObject) parser.parse(body);
 		int optnId = 
 				Integer.parseInt(json.get("optnId").toString());
-		int stock = Integer.parseInt(json.get("stock").toString());
 		String userId = json.get("userId").toString();
-		System.out.println(optnId+" "+stock+" "+userId);
-		cartDao.updateCartProduct(userId, optnId, stock);
+		cartDao.removeCartProduct(userId, optnId);
 	}
+	
+	
 
 }

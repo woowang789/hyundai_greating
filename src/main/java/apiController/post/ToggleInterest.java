@@ -8,20 +8,20 @@ import org.json.simple.parser.ParseException;
 
 import apiController.ApiControllerInter;
 import dao.CartDAO;
+import dao.InterestDAO;
 
-public class UpdateCartProduct implements ApiControllerInter{
-	private CartDAO cartDao = CartDAO.getInstance();
+public class ToggleInterest implements ApiControllerInter {
+	private InterestDAO interestDao = InterestDAO.getInstance();
 	private JSONParser parser = new JSONParser();
 
 	@Override
 	public void process(String body, Map<String, String> paramMap, Map<String, Object> model) throws ParseException {
 		JSONObject json = (JSONObject) parser.parse(body);
-		int optnId = 
-				Integer.parseInt(json.get("optnId").toString());
-		int stock = Integer.parseInt(json.get("stock").toString());
+		int prodId = 
+				Integer.parseInt(json.get("prodId").toString());
 		String userId = json.get("userId").toString();
-		System.out.println(optnId+" "+stock+" "+userId);
-		cartDao.updateCartProduct(userId, optnId, stock);
+		interestDao.toggleInterest(userId, prodId);
+
 	}
 
 }

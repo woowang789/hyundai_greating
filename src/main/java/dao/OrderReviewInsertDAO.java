@@ -10,21 +10,22 @@ import java.util.List;
 
 import oracle.jdbc.internal.OracleTypes;
 import util.DBConnection;
-import vo.OrderReviewVO;
+import util.DateParser;
+import vo.OrderReviewInsertVO;
 
-final public class OrderReviewDAO {
-	private static OrderReviewDAO instance = new OrderReviewDAO();
+final public class OrderReviewInsertDAO {
+	private static OrderReviewInsertDAO instance = new OrderReviewInsertDAO();
 
-	private OrderReviewDAO() {
+	private OrderReviewInsertDAO() {
 	}
 
-	public static OrderReviewDAO getInstance() {
+	public static OrderReviewInsertDAO getInstance() {
 		return instance;
 	}
 
-	public List<OrderReviewVO> getOrderReviewList(String pUserId, int pProdId, int pProdOpId, Date pOrderDate) {
-		List<OrderReviewVO> orList = new ArrayList<>();
-		String query = "{call p_cmt_insert(?,?,?,?)}";
+	public List<OrderReviewInsertVO> getOrderReviewList(String pUserId, int pProdId, int pProdOpId, String pOrderDate) {
+		List<OrderReviewInsertVO> orList = new ArrayList<>();
+		String query = "{call p_cmt(?,?)}";
 		try (Connection con = DBConnection.getConn(); CallableStatement cstmt = con.prepareCall(query);) {
 			cstmt.setString(1, pUserId);
 			cstmt.registerOutParameter(2, OracleTypes.CURSOR);
@@ -34,23 +35,25 @@ final public class OrderReviewDAO {
 			while (rs.next()) {
 				String commentTitle = rs.getString(1);
 				String commentText = rs.getString(2);
-				Date orderReviewDate = rs.getDate(3);
+				String orderReviewDate = rs.getString(3);
 				int prodOpId = rs.getInt(4);
 				int prodId = rs.getInt(5);
 				String userId = rs.getString(6);
-				Date orderDate = rs.getDate(7);
-				
+				String orderDate = rs.getString(7);
+
+				Date orDate = DateParser.strToDate(orderReviewDate);
+				Date oDate = DateParser.strToDate(orderDate);
 
 				System.out.println(pUserId + " " + pProdId + "" + pProdOpId + "" + pOrderDate);
 
-				OrderReviewVO or = new OrderReviewVO();
+				OrderReviewInsertVO or = new OrderReviewInsertVO();
 				or.setCommentTitle(commentTitle);
 				or.setCommentText(commentText);
-				or.setOrderReviewDate(orderReviewDate);
+				or.setOrderReviewDate(orDate);
 				or.setProdOpId(prodOpId);
 				or.setProdId(prodId);
 				or.setUserId(userId);
-				or.setOrderDate(orderDate);
+				or.setOrderDate(oDate);
 				orList.add(or);
 			}
 		} catch (SQLException e) {

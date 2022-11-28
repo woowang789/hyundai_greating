@@ -6,12 +6,9 @@
     
     <%
    		UserVO user = null;
-    	if(session.getAttribute("user") == null){
-    		System.out.println("유저없음");
-    	}else{
+    	if(session.getAttribute("user") != null)
     		user = (UserVO) session.getAttribute("user");
-    	}
-    %>
+   	%>
 
     
     <!-- Header -->

@@ -8,9 +8,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Setter @Getter
-public class OrderReviewVO {
+public class OrderReviewInsertVO {
 	
-	private List<OrderReviewVO> orderReviews = new ArrayList<>();
+	private List<OrderReviewInsertVO> orderReviews = new ArrayList<>();
 	private String commentTitle;
 	private String commentText;
 	private Date orderReviewDate;
