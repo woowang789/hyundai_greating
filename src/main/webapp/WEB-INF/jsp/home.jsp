@@ -7,11 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/home.css" />
-    <script src="/js/home.js" defer></script>
+    <script src="/js/home.js" defer></script> 	
     <%@include file="/WEB-INF/component/style.jsp" %>
     <title>Home</title>
   </head>
   <body>
+  <!--  <div id="div_load_image" style="position:absolute; top:50%; left:50%;width:0px;height:0px; z-index:9999; background:#f0f0f0; filter:alpha(opacity=50); opacity:alpha*0.5; margin:auto; padding:0; text-align:center">
+       <img src="/hyundai_greating/imgRepository/loading.gif" style="width:100px; height:100px;">
+     </div> -->
     <!-- HEADER Fragnent -->
     <jsp:include page="../component/header.jsp"></jsp:include>
     
