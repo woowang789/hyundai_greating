@@ -16,9 +16,9 @@ function reDrawProduct(res) {
   $('.itemList > li').remove();
   let baseLi = `
   <li>
-    <div class="item" val="{prod_id}">
+    <div class="item">
       <div class="item__img">
-        <a href="/v1/productDetail?prodId={prod_id}"
+        <a href=""
           ><img src="{prod_thumb}" alt=""
         /></a>
         <div class="img__badge">{prod_storage}</div>
@@ -39,7 +39,6 @@ function reDrawProduct(res) {
   res.forEach((el) => {
     $('.itemList').append(
       baseLi
-      .replaceAll('{prod_id}', el['id'])
         .replace('{prod_thumb}', el['thumbImgUrl'])
         .replace('{prod_storage}', el['storage'])
         .replace('{prod_subname}', el['subName'])
@@ -60,15 +59,6 @@ $('.categoryList a').click(function (e) {
   });
 
   e.preventDefault();
-  
-  $('.item__shoppingcart').click(function () {
-  $.ajax({
-    type: 'POST',
-    url: 'http://localhost/api/addCart',
-    data: JSON.stringify({ prodId: $('this').attr('val') }),
-    dataType: 'json',
-  });
-});
 });
 
 function getRandomIdx() {
@@ -79,14 +69,11 @@ function editMoreBtn(cateName, cateId) {
   $('.moreBtn').text(cateName + ' 전체보기 >');
   $('.moreBtnArea a').attr('href', `/v1/productList#cateId=` + cateId);
 }
-
 $('.item__shoppingcart').click(function () {
-  let id = $(this).parent().parent().attr('val');
-  console.log(id);
   $.ajax({
     type: 'POST',
     url: 'http://localhost/api/addCart',
-    data: JSON.stringify({ prodId: id }),
+    data: JSON.stringify({ prodId: $('this').attr('val') }),
     dataType: 'json',
   });
 });

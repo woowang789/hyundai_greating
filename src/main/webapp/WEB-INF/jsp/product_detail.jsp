@@ -7,32 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%@include file="/WEB-INF/component/style.jsp" %>
-     <script src="/js/item_detail.js" defer></script>
-     <script src="/js/loading.js" defer></script>
-     <script>
-     window.onload = function () {
-  	   $("#div.loader").hide();
-     	}
-     </script>
+    <script src="/js/item_detail.js" defer></script>
     <link rel="stylesheet" href="/css/item_detail.css" />
-    <link rel="stylesheet" href="/css/loading.css"/>
     <title>ItemDetail</title>
   </head>
   <body>
-  <div class="loader">
-</div>
-
-<!-- <div class="container" style="display:none;">
-  <h1>로딩 후 화면</h1>
-<div> -->
-	<!--  <div id="div_load_image" style="position:absolute; top:50%; left:50%;width:0px;height:0px; z-index:9999; background:#f0f0f0; filter:alpha(opacity=50); opacity:alpha*0.5; margin:auto; padding:0; text-align:center">
-       <img src="/hyundai_greating/imgRepository/loading.gif" style="width:100px; height:100px;">
-     </div> -->
-  
     <div class="modal__background"></div>
       
-    <!-- HEADER Fragment -->
-    <jsp:include page="../component/header.jsp"></jsp:include>
+    <!-- HEADER Fragnent -->
+    <%@include file="/WEB-INF/component/header.jsp" %>
     
     
     <!--OtionSelect-->

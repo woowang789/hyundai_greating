@@ -5,12 +5,10 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import oracle.jdbc.internal.OracleTypes;
 import util.DBConnection;
-import util.DateParser;
 import vo.OrderReviewVO;
 
 final public class OrderReviewDAO {
@@ -35,10 +33,12 @@ final public class OrderReviewDAO {
 			while (rs.next()) {
 				String commentTitle = rs.getString(1);
 				String commentText = rs.getString(2);
-				String orderReviewDate = rs.getString(3);
+//				String orderReviewDate = rs.getString(3)
 				String userId = rs.getString(4);
-
-				Date orDate = DateParser.strToDate(orderReviewDate);
+				
+//				System.out.println("orderReviewDate: " + orderReviewDate);
+//
+//				Date orDate = DateParser.strToDate(orderReviewDate);
 				// String -> Date 형변환
 		
 
@@ -48,7 +48,7 @@ final public class OrderReviewDAO {
 				OrderReviewVO or = new OrderReviewVO();
 				or.setCommentTitle(commentTitle);
 				or.setCommentText(commentText);
-				or.setOrderReviewDate(orDate);
+//				or.setOrderReviewDate(orDate);
 				or.setUserId(userId);
 				orList.add(or);
 			}

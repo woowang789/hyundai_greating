@@ -7,16 +7,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/home.css" />
-    <script src="/js/home.js" defer></script> 	
+    <link rel="stylesheet" href="/css/loading.css"> 
+    <script src="/js/home.js" defer></script>
     <%@include file="/WEB-INF/component/style.jsp" %>
+    <style type="text/css">
+    #loading {
+       height: 150vw;
+    }
+    #loading-image{
+        margin-top: 200pt;
+        height: 100pt;
+        width: 100pt;
+    }
+    </style>
     <title>Home</title>
   </head>
   <body>
-  <!--  <div id="div_load_image" style="position:absolute; top:50%; left:50%;width:0px;height:0px; z-index:9999; background:#f0f0f0; filter:alpha(opacity=50); opacity:alpha*0.5; margin:auto; padding:0; text-align:center">
-       <img src="/hyundai_greating/imgRepository/loading.gif" style="width:100px; height:100px;">
-     </div> -->
     <!-- HEADER Fragnent -->
-    <jsp:include page="../component/header.jsp"></jsp:include>
+    <%@include file="/WEB-INF/component/header.jsp" %>
     
     
     <div class="banner">
@@ -48,8 +56,8 @@
       </div>
       <!--ITEMSLIT-->
       <ul class="itemList">
-         <li>
-          <div class="item" val="123">
+        <li>
+          <div class="item">
             <div class="item__img">
               <a href=""
                 ><img src="../img//main/main_item_img.jpeg" alt=""
@@ -69,11 +77,9 @@
           </div>
         </li>
         <li>
-          <div class="item" val="123">
+          <div class="item">
             <div class="item__img">
-              <a href=""
-                ><img src="../img//main/main_item_img.jpeg" alt=""
-              /></a>
+              <img src="../img//main/main_item_img.jpeg" alt="" />
               <div class="img__badge">냉장</div>
             </div>
             <div class="item__title">
@@ -89,11 +95,45 @@
           </div>
         </li>
         <li>
-          <div class="item" val="123">
+          <div class="item">
             <div class="item__img">
-              <a href=""
-                ><img src="../img//main/main_item_img.jpeg" alt=""
-              /></a>
+              <img src="../img//main/main_item_img.jpeg" alt="" />
+              <div class="img__badge">냉장</div>
+            </div>
+            <div class="item__title">
+              <p>집에서 즐기는 베트남식 샌드위치</p>
+              <h1>부드러운 소불고기 반미 샌드</h1>
+            </div>
+            <div class="item__bottom">
+              <h1 class="item__price">2,900원</h1>
+              <div class="item__shoppingcart">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item">
+            <div class="item__img">
+              <img src="../img//main/main_item_img.jpeg" alt="" />
+              <div class="img__badge">냉장</div>
+            </div>
+            <div class="item__title">
+              <p>집에서 즐기는 베트남식 샌드위치</p>
+              <h1>부드러운 소불고기 반미 샌드</h1>
+            </div>
+            <div class="item__bottom">
+              <h1 class="item__price">2,900원</h1>
+              <div class="item__shoppingcart">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item">
+            <div class="item__img">
+              <img src="../img//main/main_item_img.jpeg" alt="" />
               <div class="img__badge">냉장</div>
             </div>
             <div class="item__title">
@@ -113,6 +153,39 @@
         <a href="/v1/itemList"><div class="moreBtn">착한 간식/음료 전체보기 ></div></a>
       </div>
     </main>
+        <div id="loading">
+        <img src="../img/loading.gif"/>
+         </div>
+    <script>
+    window.onload = function () {
+ 	   $("#loading").hide();
+    	}
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+    	  $('
+    	Loading...
+    	')
+    	    .insertBefore('#content')
+    	    .ajaxStart(function() {
+    	     //호출이시작되면
+    	      $(this).show();
+    	      //보여준다
+    	    }).ajaxStop(function() {
+    	    //호출이 끝나면
+    	      $(this).hide();
+    	      //감춘다.
+    	    });
+    	});</script>
+
+<script>
+$(document).ready(function() {
+	  $('
+	now loading
+
+	')
+	    .insertBefore('#content)
+	});</script>
 
      <!-- Footer Fragnent -->
     <%@include file="/WEB-INF/component/footer.jsp" %>
