@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.UserDAO;
+import util.SHA256;
 import vo.UserVO;
 
 public class DoSignin implements ControllerInterface{
@@ -18,8 +19,11 @@ public class DoSignin implements ControllerInterface{
 	public MyView process(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String id = request.getParameter("id");
+		String pwd = request.getParameter("pwd");
 		UserVO user = userDao.getUserById(id);
-		if(user == null) return new MyView("href:/v1/signin?error=notfound");
+		if(user == null || !user.getEncrypPw().equals(SHA256.encodeSha256(pwd))) {
+			return new MyView("href:/v1/signin?error=notfound");
+		}
 		 
 		if(request.getSession(false) != null) 
 			request.getSession(false).invalidate();
@@ -27,10 +31,10 @@ public class DoSignin implements ControllerInterface{
 		HttpSession session = request.getSession();
 		session.setAttribute("user", user);
 		
-//		if(request.getParameter("redirect") != null) {
-//			System.out.print(request.getParameter("redirect")+" redirect addr");
-//			return new MyView("href:/"+request.getParameter("redirect"));
-//		}
+		if(request.getParameter("redirect") != null) {
+			System.out.println(request.getParameter("redirect"));
+			return new MyView("href:"+request.getParameter("redirect"));
+		}
 		return new MyView("href:/v1/");
 	}
 

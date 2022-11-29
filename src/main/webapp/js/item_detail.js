@@ -63,6 +63,25 @@ $('.item__shoppingcart').click(function() {
 		})
 	}
 })
+$('.item__order').click(function(){
+	let total = wonToInt($('.item__totlaPrice span').text());
+	let prods = [];
+	if(total > 0){
+		$('.item').each(function() {
+			let count = parseInt($(this).children('.item__qty')
+				.children('.qty').text());
+			let id = $(this).attr('val');
+			if (count > 0) {
+				let prod = {"optnId":id, "qty":count};
+				prods.push(prod);
+			}
+		})
+		let param = {
+		"prods" : prods
+		};
+		$(location).attr('href', '/v1/order?isDir=N&prods='+encodeURIComponent(JSON.stringify(param)));
+	}
+})
 $('.to__home').click(function(){
 	$(location).attr('href','/v1/');
 })

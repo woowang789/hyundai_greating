@@ -28,6 +28,7 @@ public class ShowOrder implements ControllerInterface{
 		String prodsStr = request.getParameter("prods");
 		List<OrderProductBeforeVO> list = new ArrayList<>();
 		try {
+			
 			JSONObject obj = (JSONObject) parser.parse(prodsStr);
 			JSONArray prods = (JSONArray) obj.get("prods");
 			for(int i =0;i<prods.size();i++) {

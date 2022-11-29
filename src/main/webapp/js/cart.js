@@ -19,7 +19,7 @@ $('.list__item .qty__plus').click(function () {
   $.ajax({
     type: 'POST',
     url: 'http://localhost/api/updateCart',
-    data: JSON.stringify({ optnId: id, stock: 1, userId:userId }),
+    data: JSON.stringify({ "optnId": id, "stock": 1, "userId":userId }),
     contentType: "application/json; charset=utf-8",
   });
 });
@@ -42,7 +42,7 @@ $('.list__item .qty__minus').click(function () {
     $.ajax({
       type: 'POST',
       url: 'http://localhost/api/updateCart',
-      data: JSON.stringify({ optnId: id, stock:  -1, userId:userId }),
+      data: JSON.stringify({ "optnId": id, "stock":  -1, "userId":userId }),
       contentType: "application/json; charset=utf-8",
     });
   }
@@ -115,8 +115,9 @@ $('.bottom__btn').click(function () {
 		"prods" : prods
 	};
 
-  $(location).attr('href', '/v1/order?isDir=N&prods='+encodeURIComponent(JSON.stringify(param))); // 장바구니에서 꺼내옴
+  $(location).attr('href', '/v1/order?isDir=Y&prods='+encodeURIComponent(JSON.stringify(param))); // 장바구니에서 꺼내옴
 });
+
 $(document).ready(() => {
   calTotal();
 });

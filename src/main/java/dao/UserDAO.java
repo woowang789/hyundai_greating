@@ -9,6 +9,7 @@ import java.util.Date;
 
 import oracle.jdbc.internal.OracleTypes;
 import util.DBConnection;
+import util.SHA256;
 import vo.UserVO;
 
 final public class UserDAO {
@@ -36,10 +37,13 @@ final public class UserDAO {
 				String uid = rs.getString(1);
 				String name = rs.getString(2);
 				String email = rs.getString(3);
+				String pwd = rs.getString(4);
 				
 				if(name == null) return null;
 				vo.setId(uid);
 				vo.setName(name);
+				vo.setEncrypPw(pwd);
+				vo.setEmail(email);
 				return vo;
 			}
 		} catch (SQLException e) {
@@ -61,7 +65,7 @@ final public class UserDAO {
 			cstmt.setString(3, email);
 			cstmt.setTimestamp(4, new Timestamp(birth.getTime())); 
 			cstmt.setString(5, sex);
-			cstmt.setString(6, password);
+			cstmt.setString(6, SHA256.encodeSha256(password));
 			cstmt.executeUpdate();
 			
 			

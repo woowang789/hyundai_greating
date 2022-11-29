@@ -21,16 +21,18 @@
           %>
 	            <li><a href="/v1/signin">로그인</a></li>
 	            <li><a href="/v1/signup">회원가입</a></li>
+	            <li><a href="/v1/viewProductList">최근 본 상품</a></li>
            <%
           	}else{
           	%>
-          		<li><a href="/v1/cart"><%=user.getName()%></a></li>
+          		<li><a href="/v1/orderList"><%=user.getName()%></a></li>
           		<li><a href="/v1/signout">로그아웃</a></li>
+          		<li><a href="/v1/cart">장바구니</a></li>
+	            <li><a href="/v1/viewProductList">최근 본 상품</a></li>
+          		<li><a href="/v1/likeProductList">관심 상품</a></li>
           	<%
           	}
           	%>
-            <li><a href="">쿠폰/교환권</a></li>
-            <li><a href="">고객센터</a></li>
           </ul>
         </div>
         <div class="header__logo">

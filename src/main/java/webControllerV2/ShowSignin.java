@@ -14,6 +14,9 @@ public class ShowSignin implements ControllerInterface{
 	@Override
 	public MyView process(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		if(request.getParameter("redirect") != null) {
+			request.setAttribute("redirect",request.getParameter("redirect"));
+		}
 		return new MyView("signin");
 	}
 
