@@ -153,7 +153,7 @@
         <a href="/v1/itemList"><div class="moreBtn">착한 간식/음료 전체보기 ></div></a>
       </div>
     </main>
-        <div id="loading">
+<!--         <div id="loading">
         <img src="../img/loading.gif"/>
          </div>
     <script>
@@ -185,7 +185,7 @@ $(document).ready(function() {
 
 	')
 	    .insertBefore('#content)
-	});</script>
+	});</script> -->
 
      <!-- Footer Fragnent -->
     <%@include file="/WEB-INF/component/footer.jsp" %>

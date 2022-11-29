@@ -7,6 +7,43 @@
   z-index: 50;
   position: fixed;
 }
+.dialog{
+  display: none;
+  padding : 30px;
+  z-index: 100;
+  width: 500px;
+  position: fixed;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: white;
+  text-align: center;
+}
+.dialog .dialog__content{
+  font-size : 1.2rem;
+  line-height: 1.3rem;
+  margin-bottom : 20px;
+}
+.dialog .dialog__btns {
+	cursor: pointer;
+	display: flex;
+}
+.dialog .dialog__btns div{
+	font-weight: 700;
+	font-size : 1.3rem;
+	align-items : center;
+	width: 220px;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+}
+.dialog .dialog__btns .to__home{
+	border: 1px solid #918C01;
+}
+.dialog .dialog__btns .to__cart{
+	background-color: #918C01;
+	color: white;
+}
 .option__select{
   z-index: 100;
   width: 100%;
@@ -156,6 +193,9 @@ li.item .item__price{
   cursor: pointer;
   color: #ccc;
   font-size: 1.7rem;
+}
+.itemImgAndInfo .itemInfoArea .info__title .subtitleAndLike i.active{
+	  color: #FF8A2F;
 }
 .itemImgAndInfo .itemInfoArea .info__title .title{
   font-size: 1.8rem;
@@ -360,8 +400,11 @@ li.item .item__price{
   margin-bottom: 100px;
 }
 /* infoImg*/
-.item__info .item__img{
-  width: 100%;
+.item__img{
+  width: 700px;
+}
+.item__img img{
+	width:100%;
 }
 .item__info  .item__area{
   margin-top: 80px;

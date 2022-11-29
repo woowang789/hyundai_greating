@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServletResponse;
 
 
 public class ShowSignupComplete implements ControllerInterface{
-	
 
 	@Override
 	public MyView process(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		return new MyView("signup_complete");
 	}
 	

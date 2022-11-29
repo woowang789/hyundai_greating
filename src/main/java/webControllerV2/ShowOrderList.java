@@ -22,8 +22,8 @@ public class ShowOrderList implements ControllerInterface{
 	@Override
 	public MyView process(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String userName = SessionUtil.getUserId(request);
-		List<OrderProductVO> list = orderDao.getOrderList("angz");
+		String userId = SessionUtil.getUserId(request);
+		List<OrderProductVO> list = orderDao.getOrderList(userId);
 		Map<Date, List<OrderProductVO>> map = new HashMap<>();
 		for(OrderProductVO vo : list) {
 			if(!map.containsKey(vo.getOrderDate()))

@@ -99,7 +99,23 @@ $('.more__btn').click(function () {
   $(location).attr('href', '/v1/');
 });
 $('.bottom__btn').click(function () {
-  $(location).attr('href', '/v1/order?isDir=N'); // 장바구니에서 꺼내옴
+	let prods = [];
+	$('.list__item').each(function(){
+		let optnId = parseInt($(this).attr('val'));
+		let qty = parseInt($(this).children('.body__qty')
+		.children('.qty').text());
+		
+		let prod = {
+			"optnId" : optnId,
+			"qty" : qty
+		};
+		prods.push(prod);
+	})
+	let param = {
+		"prods" : prods
+	};
+
+  $(location).attr('href', '/v1/order?isDir=N&prods='+encodeURIComponent(JSON.stringify(param))); // 장바구니에서 꺼내옴
 });
 $(document).ready(() => {
   calTotal();

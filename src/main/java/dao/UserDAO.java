@@ -4,6 +4,8 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.Date;
 
 import oracle.jdbc.internal.OracleTypes;
 import util.DBConnection;
@@ -44,6 +46,28 @@ final public class UserDAO {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public void joinMember(String id, String name, String email, Date birth, String sex, String password) {
+		String query = "{call p_newuser(?,?,?,?,?,?)}";
+		
+		
+		try (
+				Connection con = DBConnection.getConn();
+				CallableStatement cstmt = con.prepareCall(query);
+		){
+			cstmt.setString(1, id);
+			cstmt.setString(2, name);
+			cstmt.setString(3, email);
+			cstmt.setTimestamp(4, new Timestamp(birth.getTime())); 
+			cstmt.setString(5, sex);
+			cstmt.setString(6, password);
+			cstmt.executeUpdate();
+			
+			
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	

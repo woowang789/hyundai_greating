@@ -8,6 +8,7 @@ import org.json.simple.parser.ParseException;
 
 import apiController.ApiControllerInter;
 import dao.UserDAO;
+import vo.UserVO;
 
 public class CheckId implements ApiControllerInter{
 	private JSONParser parser = new JSONParser();
@@ -17,9 +18,8 @@ public class CheckId implements ApiControllerInter{
 	public void process(String body, Map<String, String> paramMap, Map<String, Object> model) throws ParseException {
 		JSONObject json = (JSONObject) parser.parse(body);
 		String id = json.get("userId").toString();
-		System.out.println(id);
-		model.put("flag", true);
-		
+		UserVO findUser = userDao.getUserById(id);
+		model.put("flag", findUser==null);
 	}
 	
 	

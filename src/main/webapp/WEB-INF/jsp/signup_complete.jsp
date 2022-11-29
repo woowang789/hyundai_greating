@@ -1,5 +1,8 @@
+<%@page import="vo.UserVO"%>
+<%@page import="dao.UserDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,19 +17,25 @@
     <!-- HEADER Fragnent -->
     <jsp:include page="../component/header.jsp"></jsp:include>
     
+    <%
+   		UserVO user = null;
+    	if(session.getAttribute("user") != null)
+    		user = (UserVO) session.getAttribute("user");
+   	%>
+    
     <!--Main -->
     <main>
       <div class="main__haeder">가입완료</div>
       <div class="main__content">
         <i class="fa-solid fa-clipboard-check"></i>
-        <p><span>왕종휘</span>님 가입해주셔서 감사합니다.</p>
+        <p><span>${user.name}</span>님 가입해주셔서 감사합니다.</p>
         <div class="content__divider"></div>
         <div class="content__desc">
           <p>지금부터 그리팅몰의 다양한 컨텐츠와 혜택을 누려보세요!</p>
           <p>가입 시 입력한 회원정보는</p>
           <p><span>마이페이지</span>에서 확인 및 수정하실 수 있습니다.</p>
         </div>
-        <div class="content__btn">쇼핑 계속하기</div>
+        <a href="/v1/"><div class="content__btn">쇼핑 계속하기</div></a>
       </div>
     </main>
     

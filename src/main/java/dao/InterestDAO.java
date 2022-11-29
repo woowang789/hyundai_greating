@@ -4,7 +4,6 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +20,27 @@ final public class InterestDAO {
 		return instance;
 	}
 	
+	public boolean exsistInterest(String userId, int prodId) {
+		String sql = "{call P_PROD_INTEREST_IS_EXIST(?,?,?)}";
+		int count = 0;
+		try (
+				Connection con = DBConnection.getConn();
+				CallableStatement cstmt = con.prepareCall(sql);
+		){
+			cstmt.setString(1,userId);
+			cstmt.setInt(2, prodId);
+			cstmt.registerOutParameter(3, OracleTypes.NUMBER);
+			
+			cstmt.executeUpdate();
+			
+			count = cstmt.getInt(3);
+			
+		}catch (SQLException e) {
+			System.out.println("toggleInterest 업데이트 에러 발생");
+			e.printStackTrace();
+		}
+		return count==1;
+	}
 	public void toggleInterest(String userId, int prodId) {
 		String sql = "{call P_PROD_INTEREST_TOGGLE(?,?)}";
 		try (

@@ -17,7 +17,7 @@
     
     <!-- main -->
     <main>
-      <form>
+      <form method="post" action="/v1/signup.do">
         <div class="main__header">정보입력</div>
         <div class="main__content">
           <div class="content__header">회원 정보 입력 (필수)</div>
@@ -60,28 +60,23 @@
               <div class="tail">
                 <input type="text" name="e_h" /> @
                 <input type="text" name="e_t" />
-                <select name="" id="">
-                  <option value="">직접입력</option>
-                  <option value="">gmail.com</option>
-                  <option value="">naver.com</option>
-                  <option value="">daum.net</option>
-                </select>
               </div>
             </div>
             <div class="birth__input input__flex">
               <div class="head">생년월일</div>
               <div class="tail">
-                <input type="text" name="birth" placeholder="예 : 20221231" />
+                <input type="text" name="birth" placeholder="예 : 2022-12-31" />
               </div>
             </div>
             <div class="gender__input input__flex">
+            <input type="hidden" name="gender">
               <div class="head">성별</div>
               <div class="tail">
                 <div class="gender__male">
-                  <i class="fa-regular fa-circle-check"></i>남성
+                  <i class="fa-regular fa-circle-check" val="M"></i>남성
                 </div>
                 <div class="gender__female">
-                  <i class="fa-regular fa-circle-check"></i>여성
+                  <i class="fa-regular fa-circle-check" val="F"></i>여성
                 </div>
               </div>
             </div>
