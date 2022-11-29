@@ -26,6 +26,7 @@ final public class ProductDAO {
 	public static ProductDAO getInstance() {
 		return instance;
 	}
+	
 
 	public ProductDetailVO getProductDetail(int prodId) {
 		ProductDetailVO detail = new ProductDetailVO();
@@ -230,6 +231,57 @@ final public class ProductDAO {
 		return vo;
 	}
 
+	public ProductVO getProduct(int prodId) {
+		String query = "{call p_prod_data(?,?,?,?,?,?,?,?,?,?,?,?)}";
+		try (Connection con = DBConnection.getConn(); CallableStatement cstmt = con.prepareCall(query);) {
+			cstmt.setInt(1, prodId);
+			cstmt.registerOutParameter(2, OracleTypes.VARCHAR);
+			cstmt.registerOutParameter(3, OracleTypes.VARCHAR);
+			cstmt.registerOutParameter(4, OracleTypes.VARCHAR);
+			cstmt.registerOutParameter(5, OracleTypes.VARCHAR);
+			cstmt.registerOutParameter(6, OracleTypes.NUMBER);
+			cstmt.registerOutParameter(7, OracleTypes.NUMBER);
+			cstmt.registerOutParameter(8, OracleTypes.NUMBER);
+			cstmt.registerOutParameter(9, OracleTypes.VARCHAR);
+			cstmt.registerOutParameter(10, OracleTypes.NUMBER);
+			cstmt.registerOutParameter(11, OracleTypes.NUMBER);
+			cstmt.registerOutParameter(12, OracleTypes.NUMBER);
+			
+			cstmt.execute();
+			
+//			int pId = cstmt.getInt(1);
+			String pName = cstmt.getString(2);
+			String thumbUrl = cstmt.getString(3);
+			String storage = cstmt.getString(4);
+			String subName = cstmt.getString(5);
+			int cateId = cstmt.getInt(6);
+			int catePid = cstmt.getInt(7);
+			int stockSum = cstmt.getInt(8);
+			String grtStr = cstmt.getString(9);
+			int maxDiscnt = cstmt.getInt(10);
+			int originPrice = cstmt.getInt(11);
+			int marketPrice = cstmt.getInt(12);
+			
+			ProductVO vo = new ProductVO();
+			vo.setId(prodId);
+			vo.setName(pName);
+			vo.setThumbImgUrl(thumbUrl);
+			vo.setStorage(storage);
+			vo.setSubName(subName);
+			vo.setStock(stockSum);
+			vo.setGrts(grtStr);
+			vo.setDiscountRate(maxDiscnt);
+			vo.setOriginPrice(originPrice);
+			vo.setMarketPrice(marketPrice);
+			
+			return vo;
+		
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	public List<ProductVO> getProductList(String cateId) {
 		List<ProductVO> list = new ArrayList<>();
 		String query = "{call find_prod_by_cate(?,?)}";

@@ -1,16 +1,25 @@
+<%@page import="vo.UserVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 	<%@include file="/WEB-INF/component/style.jsp" %>
-    <link rel="stylesheet" href="/css/like_item_list.css" />
+    <link rel="stylesheet" href="/css/view_item_list.css" />
+    <script src="/js/view_item_list.js" defer></script>
 <title>Like Item</title>
 </head>
 <body>
     <!-- HEADER Fragnent -->
     <jsp:include page="../component/header.jsp"></jsp:include>
+    
+    <%
+   		UserVO user = null;
+    	if(session.getAttribute("user") != null)
+    		user = (UserVO) session.getAttribute("user");
+   	%>
     
 	<!--Main-->
     <main>
@@ -40,7 +49,7 @@
         </div>
       </div>
       <div class="main__center">
-        <div class="center__header"><span>왕종휘</span>님 반갑습니다.</div>
+        <div class="center__header"><span><%=user.getName() %></span>님 반갑습니다.</div>
         <div class="center__body">
           <div class="body__header">
             <div class="select__all">

@@ -31,6 +31,7 @@ public class WebAuthFilter implements Filter{
 		authUrls.add("/v1/orderComplete");
 		authUrls.add("/v1/likeProductList");
 		authUrls.add("/v1/order.do");
+		authUrls.add("/v1/viewProductList");
 	}
 
 	@Override

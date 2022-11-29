@@ -1,6 +1,7 @@
 package webControllerV2;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.InterestDAO;
 import dao.ProductDAO;
+import util.CookieUtil;
 import util.SessionUtil;
 import vo.ProductDetailVO;
 
@@ -41,22 +43,19 @@ public class ShowProductDetail implements ControllerInterface{
 	}
 	
 	private void setCookie(HttpServletRequest request, HttpServletResponse response,int prodId) {
-		for(Cookie c : request.getCookies()) {
-			if(c.getName().equals("viewProds")) {
-				String origin = c.getValue();
-				List<String> list = Arrays
-						.stream(origin.split(",")).collect(Collectors.toList());
-				if(list.contains(prodId+"")) 
-					list.remove(prodId+"");
-				list.add(prodId+"");
-					
-				
-				Cookie cookie = new Cookie("viewProds", list.stream().collect(Collectors.joining(",")));
-				cookie.setMaxAge(60*60*24*7);
-				response.addCookie(c);
-				return;
-			}
+		String value = CookieUtil.getCookie(request, response, "viewProds");
+		List<String> list = new ArrayList<>();
+		if(value != null) {
+			list = Arrays
+					.stream(value.split("/")).collect(Collectors.toList());
+			if(list.contains(prodId+"")) 
+				list.remove(prodId+"");
 		}
+		list.add(prodId+"");
+		
+		Cookie cookie = new Cookie("viewProds", list.stream().collect(Collectors.joining("/")));
+		cookie.setMaxAge(60*60*24*7);
+		response.addCookie(cookie);
 	}
 
 }

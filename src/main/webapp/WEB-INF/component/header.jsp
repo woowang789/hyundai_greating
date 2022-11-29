@@ -21,7 +21,6 @@
           %>
 	            <li><a href="/v1/signin">로그인</a></li>
 	            <li><a href="/v1/signup">회원가입</a></li>
-	            <li><a href="/v1/viewProductList">최근 본 상품</a></li>
            <%
           	}else{
           	%>
