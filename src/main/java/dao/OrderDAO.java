@@ -128,20 +128,26 @@ final public class OrderDAO {
 
 			ResultSet rs = (ResultSet) cstmt.getObject(2);
 			while (rs.next()) {
-				String time = rs.getString(1);
+				Date time = rs.getDate(1);
 				String prodName = rs.getString(2);
 				String thumbImgUrl = rs.getString(3);
 				String optnName = rs.getString(4);
 				int marketPrice = rs.getInt(5);
 				int qty = rs.getInt(6);
-
+				int prodId = rs.getInt(7);
+				int optnId = rs.getInt(8);
+				
 				OrderProductVO vo = new OrderProductVO();
-				vo.setOrderDate(DateParser.strToDateWithTime(time));
+				vo.setOrderDate(time);
+				vo.setOrderDateLong(time.getTime());
+				vo.setOrderDateLong(time.getTime());
 				vo.setProdName(prodName);
 				vo.setThumbImgUrl(thumbImgUrl);
 				vo.setOptName(optnName);
 				vo.setMarketPrice(marketPrice);
 				vo.setQty(qty);
+				vo.setProdId(prodId);
+				vo.setOptnId(optnId);
 
 				list.add(vo);
 			}

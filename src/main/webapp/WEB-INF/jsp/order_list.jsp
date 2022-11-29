@@ -1,3 +1,4 @@
+<%@page import="vo.UserVO"%>
 <%@page import="vo.OrderProductVO"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.Date"%>
@@ -5,6 +6,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,9 +17,37 @@
 <title>OrderList</title>
 </head>
 <body>
+
+	<div class="modal__background"></div>
+
 	<!-- HEADER Fragnent -->
 	<jsp:include page="../component/header.jsp"></jsp:include>
+	
+	<%
+	String userId = "";
+	UserVO user = (UserVO) session.getAttribute("user");
+	if (user != null)
+		userId = user.getId();
+	%>
 
+	<script>
+    	let userId = "<%=userId%>"
+	</script>
+
+	<!-- review input -->
+	<div class="review__input">
+		<div class="dialog__content">
+			<p class="reivew__optn">
+				옵션 : <span>{optn}</span>
+			</p>
+			<input type='text' placeholder="Title" />
+			<textarea placeholder="Content"></textarea>
+		</div>
+		<div class="dialog__btns">
+			<div class="review__cancel">취소</div>
+			<div class="review__com">작성완료</div>
+		</div>
+	</div>
 
 	<!-- Main -->
 	<main>
@@ -80,21 +110,24 @@
 					<li class="order__item">
 						<div class="order__head">
 							<div class="head__left">
-								주문일 : ${entry.key} <a href=""><span>상세보기 ></span></a>
+								주문일 : <span val="${entry.key}">${entry.key}</span> <a href=""><span>상세보기 ></span></a>
 							</div>
 						</div>
 						<ul class="item__list">
 							<c:forEach var="el" items="${entry.value}">
-								<li class="item">
-									<div class="item__img">
-										<img src="${el.thumbImgUrl}" alt="" />
+								<li class="item" prodId="${el.prodId}" optnId="${el.optnId}" >
+									<div class="info">
+										<div class="item__img">
+											<img src="${el.thumbImgUrl}" alt="" />
+										</div>
+										<div class="item__info">
+											<p class="order__status">배송준비</p>
+											<h3>${el.prodName}</h3>
+											<p class="desc">${el.optName}</p>
+											<p class="price">${el.marketPrice}원/${el.qty}개</p>
+										</div>
 									</div>
-									<div class="item__info">
-										<p class="order__status">배송준비</p>
-										<h3>${el.prodName}</h3>
-										<p class="desc">${el.optName}</p>
-										<p class="price">${el.marketPrice}원/ ${el.qty}개</p>
-									</div>
+									<div class='input__btn'>리뷰쓰기</div>
 								</li>
 							</c:forEach>
 						</ul>
@@ -102,7 +135,7 @@
 				</ul>
 			</c:forEach>
 
-<!-- 
+			<!-- 
 			<ul class="order__list">
 				<li class="order__item">
 					<div class="order__head">

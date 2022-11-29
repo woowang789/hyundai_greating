@@ -24,11 +24,11 @@ public class ShowOrderList implements ControllerInterface{
 			throws ServletException, IOException {
 		String userId = SessionUtil.getUserId(request);
 		List<OrderProductVO> list = orderDao.getOrderList(userId);
-		Map<Date, List<OrderProductVO>> map = new HashMap<>();
+		Map<Long, List<OrderProductVO>> map = new HashMap<>();
 		for(OrderProductVO vo : list) {
-			if(!map.containsKey(vo.getOrderDate()))
-				map.put(vo.getOrderDate(),new ArrayList<>());
-			map.get(vo.getOrderDate()).add(vo);
+			if(!map.containsKey(vo.getOrderDate().getTime()))
+				map.put(vo.getOrderDate().getTime(),new ArrayList<>());
+			map.get(vo.getOrderDate().getTime()).add(vo);
 		}
 		request.setAttribute("orders", map);
 		return new MyView("order_list");

@@ -21,14 +21,16 @@ $('.delete__selected').click(function () {
   $('.itemList .item .check__btn i.active').each(function () {
     let prodId = $(this).parent().parent('.item').attr('val');
     $(this).parent().parent().parent().remove();
-    console.log(prodId);
-
-    $.ajax({
-      type: 'POST',
-      url: 'http://localhost/api/toggleInterest',
-      data: JSON.stringify({ prodId: prodId, userId: userId}),
-      contentType: "application/json; charset=utf-8",
-      success: (res) => reDrawProduct(res['list']),
-    });
+	deleteCookie(prodId);
   });
 });
+function deleteCookie(key){
+	let cookie = $.cookie('viewProds');
+	if(cookie == undefined) return;
+	let array = cookie.split('/');
+	
+	const idx = array.indexOf(key);
+	if(idx != -1) array.splice(idx,1);
+	$.cookie('viewProds',array.join('\/'));
+	
+}

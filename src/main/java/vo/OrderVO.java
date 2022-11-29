@@ -1,7 +1,7 @@
 package vo;
 
+import java.sql.Date;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import lombok.Getter;
@@ -12,6 +12,7 @@ public class OrderVO {
 	
 	private List<OrderProductVO> orderProds = new ArrayList<>();
 	private Date orderDate;
+	private long orderDateLong;
 	private int totalOriginPrice;
 	private int totalDiscountAmount;
 	private int totalMarketPrice;

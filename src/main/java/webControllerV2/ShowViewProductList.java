@@ -23,7 +23,7 @@ public class ShowViewProductList implements ControllerInterface{
 		List<ProductVO> list = new ArrayList<>();
 		if(value!= null) {
 			String[] arr =  value.split("/");
-			for(int i =arr.length-1;i>0;i--) {
+			for(int i =arr.length-1;i>=0;i--) {
 				ProductVO vo = prodDao.getProduct(Integer.parseInt(arr[i]));
 				System.out.println(vo.getName());
 				list.add(vo);
