@@ -13,16 +13,29 @@
     <%@include file="/WEB-INF/component/style.jsp" %>
     <script src="/js/item_detail.js" defer></script>
     <link rel="stylesheet" href="/css/item_detail.css" />
+    <link rel="stylesheet" href="/css/loading.css">
+       <style type="text/css">
+    #loading {
+       height: 150vw;
+    }
+    #loading-image{
+        margin-top: 200pt;
+        height: 100pt;
+        width: 100pt;
+    }
+    </style>
+  
     <title>ItemDetail</title>
   </head>
   <body>
     <div class="modal__background"></div>
       
     <!-- HEADER Fragnent -->
-    <%@include file="/WEB-INF/component/header.jsp" %>
+    <jsp:include page="../component/header.jsp"></jsp:include>
     
     <%
     	String userId = "";
+    	UserVO user =(UserVO) session.getAttribute("user");
     	if(user != null) userId = user.getId();
     	
     %>
@@ -218,12 +231,6 @@
           <img src="${entry}" alt="" />
         </div>
         </c:forEach>
-        <!-- 
-        <div class="item__img">
-          <img src="../img/item_detail/item_detail_img1.jpeg" alt="" />
-        </div>
-         -->
-
         <div class="item__area">
           <div class="info__header">
             <h1><span>greating's packaging</span></h1>
@@ -245,8 +252,17 @@
           </div>
         </div>
       </div>
-    </div>
-
+      <div id="loading">
+        <img id="loading-image" src="../img/loading.gif"/>
+         </div>
+         <script src="/js/loading.js" defer></script>
+    <script>
+    window.onload = function () {
+ 	   $("#loading").hide();
+    	}
+    </script>
+   
+   
     <!-- Footer Fragnent -->
     <%@include file="/WEB-INF/component/footer.jsp" %>
   </body>

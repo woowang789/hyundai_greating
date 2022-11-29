@@ -4,31 +4,36 @@ import java.io.IOException;
 import java.net.URLDecoder;
 import java.sql.Date;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.io.IOUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import dao.CartDAO;
 import dao.OrderDAO;
 import util.SessionUtil;
 import vo.OrderProductInsertVO;
 
 public class DoOrder implements ControllerInterface{
 	private OrderDAO orderDao = OrderDAO.getInstance();
+	private CartDAO cartDao = CartDAO.getInstance();
 	private JSONParser parser = new JSONParser();
 	
 	@Override
 	public MyView process(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		boolean isDir = false;
+		if(request.getParameter("isDir") != null) 
+			isDir = request.getParameter("isDir").toString().equals("N")?
+					false:true;
+		
+		
 		String userId = SessionUtil.getUserId(request);
 //		String name = request.getParameter("name");
 		String email = request.getParameter("email_h")+
@@ -37,7 +42,6 @@ public class DoOrder implements ControllerInterface{
 		String address = request.getParameter("rcv_addr1")+" "+
 				request.getParameter("rcv_addr2");
 		String jsonStr = URLDecoder.decode(request.getParameter("prods"),"UTF-8");
-		System.out.println(rcvName+" 받는 사람");
 		List<OrderProductInsertVO> list = new ArrayList<>();
 		try {
 			JSONObject obj = (JSONObject) parser.parse(jsonStr);
@@ -60,6 +64,8 @@ public class DoOrder implements ControllerInterface{
 		}
 		
 		Date date = orderDao.insertOrder(userId, email, address, rcvName,list);
+		if(!isDir) 
+			cartDao.emptyCart(userId);
 		return new MyView("href:/v1/orderComplete?date="+date.getTime());
 	}
 	

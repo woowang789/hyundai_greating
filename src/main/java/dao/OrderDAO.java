@@ -1,16 +1,12 @@
 package dao;
 
-import java.sql.Array;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Struct;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import oracle.jdbc.internal.OracleTypes;
 import util.DBConnection;
@@ -47,7 +43,7 @@ final public class OrderDAO {
 			for(OrderProductInsertVO vo : list) 
 				insertOrderProd(userId, date, vo);
 
-
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -69,7 +65,6 @@ final public class OrderDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
 	}
 
 	public OrderVO getOrder(String userId, Date date) {
@@ -88,8 +83,8 @@ final public class OrderDAO {
 				String prodthnlimgurl = rs.getString(4);
 				int quantity = rs.getInt(5);
 				int prodprice = rs.getInt(6);
-				int marketprice = rs.getInt(7);
-				int discntprice = rs.getInt(8);
+				int marketprice = rs.getInt(8);
+				int discntprice = rs.getInt(7);
 				int totalprodprice = rs.getInt(9);
 				int totaldiscntprice = rs.getInt(10);
 				int totalcusprice = rs.getInt(11);
@@ -104,7 +99,7 @@ final public class OrderDAO {
 				prodVO.setThumbImgUrl(prodthnlimgurl);
 				prodVO.setQty(quantity);
 				prodVO.setMarketPrice(marketprice);
-				prodVO.setOriginPrice(prodprice * quantity);
+				prodVO.setOriginPrice(prodprice);
 				prodVO.setDiscountAmount(discntprice);
 
 				orderVo.setStatus(status);
