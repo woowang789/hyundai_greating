@@ -14,16 +14,7 @@
     <script src="/js/item_detail.js" defer></script>
     <link rel="stylesheet" href="/css/item_detail.css" />
     <link rel="stylesheet" href="/css/loading.css">
-       <style type="text/css">
-    #loading {
-       height: 150vw;
-    }
-    #loading-image{
-        margin-top: 200pt;
-        height: 100pt;
-        width: 100pt;
-    }
-    </style>
+     
   
     <title>ItemDetail</title>
   </head>
@@ -252,16 +243,17 @@
           </div>
         </div>
       </div>
-      <div id="loading">
+     <div id="loading">
         <img id="loading-image" src="../img/loading.gif"/>
          </div>
-         <script src="/js/loading.js" defer></script>
-    <script>
+        
+   <script>
     window.onload = function () {
  	   $("#loading").hide();
     	}
     </script>
-   
+    
+
    
     <!-- Footer Fragnent -->
     <%@include file="/WEB-INF/component/footer.jsp" %>

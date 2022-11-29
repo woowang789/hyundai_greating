@@ -10,16 +10,6 @@
     <link rel="stylesheet" href="/css/loading.css"> 
     <script src="/js/home.js" defer></script>
     <%@include file="/WEB-INF/component/style.jsp" %>
-    <style type="text/css">
-    #loading {
-       height: 150vw;
-    }
-    #loading-image{
-        margin-top: 200pt;
-        height: 100pt;
-        width: 100pt;
-    }
-    </style>
     <title>Home</title>
   </head>
   <body>
@@ -153,39 +143,16 @@
         <a href="/v1/itemList"><div class="moreBtn">착한 간식/음료 전체보기 ></div></a>
       </div>
     </main>
-<!--         <div id="loading">
-        <img src="../img/loading.gif"/>
+   <div id="loading">
+        <img id="loading-image" src="../img/loading.gif"/>
          </div>
-    <script>
+        
+   <script>
     window.onload = function () {
  	   $("#loading").hide();
     	}
     </script>
-    <script type="text/javascript">
-    $(document).ready(function() {
-    	  $('
-    	Loading...
-    	')
-    	    .insertBefore('#content')
-    	    .ajaxStart(function() {
-    	     //호출이시작되면
-    	      $(this).show();
-    	      //보여준다
-    	    }).ajaxStop(function() {
-    	    //호출이 끝나면
-    	      $(this).hide();
-    	      //감춘다.
-    	    });
-    	});</script>
 
-<script>
-$(document).ready(function() {
-	  $('
-	now loading
-
-	')
-	    .insertBefore('#content)
-	});</script> -->
 
      <!-- Footer Fragnent -->
     <%@include file="/WEB-INF/component/footer.jsp" %>

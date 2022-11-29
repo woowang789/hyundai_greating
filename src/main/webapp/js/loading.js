@@ -1,6 +1,4 @@
-/*
-
-function wrapWindowByMask() {
+/*function wrapWindowByMask() {
  
        
 
@@ -40,8 +38,7 @@ function wrapWindowByMask() {
 
         $('#loading-image').show();
  
-    }
- */
+    }*/
 /*
 <script>
 function test(imageName) {
@@ -51,7 +48,7 @@ function test(imageName) {
  
 function LoadingWithMask(gif) {
     //화면의 높이와 너비를 구합니다.
-    var maskHeight = $(document).height();
+    var maskHeight = $(document).height();	
     var maskWidth  = window.document.body.clientWidth;
      
     //화면에 출력할 마스크를 설정해줍니다.
@@ -85,10 +82,5 @@ function closeLoadingWithMask() {
 }*/
 
 
-var _showPage = function() {
-  var loader = $("div.loader");
-  var container = $("div.container");
-  loader.css("display","none");
-  container.css("display","block");
-};
+
 
