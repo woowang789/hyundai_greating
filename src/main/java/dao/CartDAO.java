@@ -21,6 +21,20 @@ final public class CartDAO {
 		return instance;
 	}
 	
+	public void emptyCart(String userId) {
+		String query = "{call P_CART_RESET(?)}";
+		try (
+				Connection con = DBConnection.getConn();
+				CallableStatement cstmt = con.prepareCall(query);
+		){
+			cstmt.setString(1,userId);
+			cstmt.executeUpdate();
+			
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public List<CartProductVO> getCartProductList(String userId){
 		List<CartProductVO> list = new ArrayList<>();
 		String query= "{call p_cart(?,?)}";

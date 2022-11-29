@@ -130,7 +130,7 @@
               <p class="tail">${order.receiverAddr}</p>
             </div>
             <div class="receiver__request">
-              <p class="head">연락처</p>
+              <p class="head">이메일</p>
               <p class="tail">${order.receiverTel}</p>
             </div>
           </div>
