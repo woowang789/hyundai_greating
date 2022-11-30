@@ -10,15 +10,15 @@
   box-shadow:0 0 0 1px #ccc;
   text-align: center;
 }
-.bestCategory li a{
-  display: block;
+.bestCategory li div{
+  cursor: pointer;
   padding: 14px 0;
   height: 100%;
   height: 100%;
   font-weight: 700;
   font-size: 1.1rem;
 }
-.bestCategory li a.active{
+.bestCategory li div.active{
   background-color: #918C01;
   color: white;
 }
@@ -103,6 +103,14 @@ main .itemList .item .item__bottom{
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.item__bottom .discnt_rate{
+  font-size: 1.1rem;
+  color: orange;
+  font-weight: 700;
+}
+.item__bottom .origin_prcie{
+  text-decoration: line-through;
 }
 main .itemList .item .item__bottom .item__price{
   font-weight: bolder;

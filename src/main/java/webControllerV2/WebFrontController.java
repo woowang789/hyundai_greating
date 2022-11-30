@@ -34,6 +34,7 @@ public class WebFrontController extends HttpServlet {
         controllerMap.put("/v1/orderComplete", new ShowOrderComplete());
         controllerMap.put("/v1/likeProductList", new ShowLikeProductList());
         controllerMap.put("/v1/viewProductList", new ShowViewProductList());
+        controllerMap.put("/v1/searchProductList", new ShowSearchProductList());
     
         controllerMap.put("/v1/signin.do",new DoSignin());
         controllerMap.put("/v1/signup.do", new DoSignup());

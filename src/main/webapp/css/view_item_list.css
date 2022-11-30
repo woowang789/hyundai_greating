@@ -132,6 +132,14 @@ main .itemList .item .item__bottom .item__price{
   font-weight: bolder;
   font-size: 1.5rem;
 }
+.discnt_rate {
+	color: orange;
+	font-weight: 700;
+	font-size: 1.1rem;
+}
+.origin_prcie{
+	text-decoration: line-through;
+}
 main .itemList .item .item__bottom .item__shoppingcart{
   cursor: pointer;
   font-size: 1.3rem;

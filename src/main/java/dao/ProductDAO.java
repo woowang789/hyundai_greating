@@ -284,7 +284,8 @@ final public class ProductDAO {
 	public List<ProductVO> getProductList(String cateId) {
 		List<ProductVO> list = new ArrayList<>();
 		String query = "{call PKG_PROD.p_find_prod_by_cate(?,?)}";
-		try (Connection con = DBConnection.getConn(); CallableStatement cstmt = con.prepareCall(query);) {
+		try (Connection con = DBConnection.getConn(); 
+				CallableStatement cstmt = con.prepareCall(query);) {
 			cstmt.setString(1, cateId);
 			cstmt.registerOutParameter(2, OracleTypes.CURSOR);
 			cstmt.execute();
@@ -321,5 +322,84 @@ final public class ProductDAO {
 
 		return list;
 	}
+	public List<ProductVO> getProductListByKeyWord(String keyword){
+		List<ProductVO> list = new ArrayList<>();
+		String query = "{call p_find_prod_by_keyword(?,?)}";
+		try (Connection con = DBConnection.getConn(); 
+			CallableStatement cstmt = con.prepareCall(query);) {
+			cstmt.setString(1, keyword);
+			cstmt.registerOutParameter(2, OracleTypes.CURSOR);
+			cstmt.execute();
+			
+			ResultSet rs = (ResultSet) cstmt.getObject(2);
+			while (rs.next()) {
+				int id = rs.getInt(1);
+				String name = rs.getString(2);
+				String thumbUrl = rs.getString(3);
+				String storage = rs.getString(4);
+				String subName = rs.getString(5);
+				int stock = rs.getInt(6);
+				String grts = rs.getString(7);
+				int discnt = rs.getInt(8);
+				int originPrice = rs.getInt(9);
+				int marketPrice = rs.getInt(10);
 
+				ProductVO p = new ProductVO();
+				p.setId(id);
+				p.setThumbImgUrl(thumbUrl);
+				p.setName(name);
+				p.setSubName(subName);
+				p.setStorage(storage);
+				p.setOriginPrice(originPrice);
+				p.setStock(stock);
+				p.setMarketPrice(marketPrice);
+				p.setDiscountRate(discnt);
+				p.setGrts(grts);
+				list.add(p);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	public List<ProductVO> getProductListByOrderQty(String cateId) {
+		List<ProductVO> list = new ArrayList<>();
+		String query = "{call p_best(?,?)}";
+		try (Connection con = DBConnection.getConn(); CallableStatement cstmt = con.prepareCall(query);) {
+			cstmt.setString(1, cateId);
+			cstmt.registerOutParameter(2, OracleTypes.CURSOR);
+			cstmt.execute();
+
+			ResultSet rs = (ResultSet) cstmt.getObject(2);
+			while (rs.next()) {
+				int id = rs.getInt(1);
+				String name = rs.getString(2);
+				String thumbUrl = rs.getString(3);
+				String storage = rs.getString(4);
+				String subName = rs.getString(5);
+				int stock = rs.getInt(6);
+				String grts = rs.getString(7);
+				int discnt = rs.getInt(8);
+				int originPrice = rs.getInt(9);
+				int marketPrice = rs.getInt(10);
+
+				ProductVO p = new ProductVO();
+				p.setId(id);
+				p.setThumbImgUrl(thumbUrl);
+				p.setName(name);
+				p.setSubName(subName);
+				p.setStorage(storage);
+				p.setOriginPrice(originPrice);
+				p.setStock(stock);
+				p.setMarketPrice(marketPrice);
+				p.setDiscountRate(discnt);
+				p.setGrts(grts);
+				list.add(p);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 }

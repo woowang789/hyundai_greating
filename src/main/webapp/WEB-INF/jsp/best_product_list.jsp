@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%@include file="/WEB-INF/component/style.jsp" %>
     <link rel="stylesheet" href="/css/best_item_list.css" />
+     <script src="/js/best_item_list.js" defer></script>
     <title>BestItemList</title>
   </head>
   <body>
@@ -16,19 +17,18 @@
     
     <!--Best Category-->
     <ul class="bestCategory">
-      <li><a href="" class="active">전체</a></li>
-      <li><a href="">건강반찬</a></li>
-      <li><a href="">진한 국/찌개</a></li>
-      <li><a href="">자연 담은 면</a></li>
-      <li><a href="">영양가득 밥/죽</a></li>
-      <li><a href="">샐러드/샌드위치</a></li>
-      <li><a href="">베이커리</a></li>
-      <li><a href="">착한 간식/음료</a></li>
-      <li><a href="">1Table</a></li>
-      <li><a href="">안심 키즈</a></li>
-      <li><a href="">시니어 건강</a></li>
-      <li><a href="">비건/순식물성</a></li>
-      <li><a href="">라이프</a></li>
+      <li><div  class="active">전체</div></li>
+      <li><div val='55'>건강반찬</div></li>
+      <li><div val='1058'>진한 국/찌개</div></li>
+      <li><div val='3058'>자연 담은 면</div></li>
+      <li><div val='719'>영양가득 밥/죽</div></li>
+      <li><div val='718'>샐러드/샌드위치</div></li>
+      <li><div val='1198'>베이커리</div></li>
+      <li><div val='1699'>착한 간식/음료</div></li>
+      <li><div val='1139'>1Table</div></li>
+      <li><div val='2598'>안심 키즈</div></li>
+      <li><div val='818'>시니어 건강</div></li>
+      <li><div val='2018'>비건/순식물성</div></li>
     </ul>
     <!-- BestBanner -->
     <div class="bestBanner">
@@ -37,118 +37,7 @@
     <main>
       <!--ITEMSLIT-->
       <ul class="itemList">
-        <li>
-          <div class="item">
-            <div class="item__rank">
-              <div class="rank__underline"></div>
-              Best<span>01</span>
-            </div>
-            <div class="item__img">
-              <a href=""
-                ><img src="../img//main/main_item_img.jpeg" alt=""
-              /></a>
-              <div class="img__badge">냉장</div>
-            </div>
-            <div class="item__title">
-              <p>집에서 즐기는 베트남식 샌드위치</p>
-              <h1>부드러운 소불고기 반미 샌드</h1>
-            </div>
-            <div class="item__bottom">
-              <h1 class="item__price">2,900원</h1>
-              <div class="item__shoppingcart">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </div>
-            </div>
-            <div class="item__value">
-              <i class="fa-solid fa-award"></i>
-              <span>프리미엄 식재</span>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="item">
-            <div class="item__rank">
-              <div class="rank__underline"></div>
-              Best<span>01</span>
-            </div>
-            <div class="item__img">
-              <a href=""
-                ><img src="../img//main/main_item_img.jpeg" alt=""
-              /></a>
-              <div class="img__badge">냉장</div>
-            </div>
-            <div class="item__title">
-              <p>집에서 즐기는 베트남식 샌드위치</p>
-              <h1>부드러운 소불고기 반미 샌드</h1>
-            </div>
-            <div class="item__bottom">
-              <h1 class="item__price">2,900원</h1>
-              <div class="item__shoppingcart">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </div>
-            </div>
-            <div class="item__value">
-              <i class="fa-solid fa-award"></i>
-              <span>프리미엄 식재</span>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="item">
-            <div class="item__rank">
-              <div class="rank__underline"></div>
-              Best<span>01</span>
-            </div>
-            <div class="item__img">
-              <a href=""
-                ><img src="../img//main/main_item_img.jpeg" alt=""
-              /></a>
-              <div class="img__badge">냉장</div>
-            </div>
-            <div class="item__title">
-              <p>집에서 즐기는 베트남식 샌드위치</p>
-              <h1>부드러운 소불고기 반미 샌드</h1>
-            </div>
-            <div class="item__bottom">
-              <h1 class="item__price">2,900원</h1>
-              <div class="item__shoppingcart">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </div>
-            </div>
-            <div class="item__value">
-              <i class="fa-solid fa-award"></i>
-              <span>프리미엄 식재</span>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="item">
-            <div class="item__rank">
-              <div class="rank__underline"></div>
-              Best<span>01</span>
-            </div>
-            <div class="item__img">
-              <a href=""
-                ><img src="../img//main/main_item_img.jpeg" alt=""
-              /></a>
-              <div class="img__badge">냉장</div>
-            </div>
-            <div class="item__title">
-              <p>집에서 즐기는 베트남식 샌드위치</p>
-              <h1>부드러운 소불고기 반미 샌드</h1>
-            </div>
-            <div class="item__bottom">
-              <h1 class="item__price">2,900원</h1>
-              <div class="item__shoppingcart">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </div>
-            </div>
-            <div class="item__value">
-              <i class="fa-solid fa-award"></i>
-              <span>프리미엄 식재</span>
-            </div>
-          </div>
-        </li>
+      
       </ul>
     </main>
 
