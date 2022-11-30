@@ -21,7 +21,7 @@ final public class UserDAO {
 	}
 	
 	public UserVO getUserById(String id) {
-		String query = "{call find_user_by_id(?,?)}";
+		String query = "{call PKG_USER.p_find_user_by_id(?,?)}";
 		
 		try (
 				Connection con = DBConnection.getConn();
@@ -53,7 +53,7 @@ final public class UserDAO {
 	}
 	
 	public void joinMember(String id, String name, String email, Date birth, String sex, String password) {
-		String query = "{call p_newuser(?,?,?,?,?,?)}";
+		String query = "{call PKG_USER.p_newuser(?,?,?,?,?,?)}";
 		
 		
 		try (

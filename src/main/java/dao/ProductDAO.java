@@ -30,7 +30,7 @@ final public class ProductDAO {
 
 	public ProductDetailVO getProductDetail(int prodId) {
 		ProductDetailVO detail = new ProductDetailVO();
-		String query = "{call find_prod_by_id(?,?)}";
+		String query = "{call PKG_PROD.p_find_prod_by_id(?,?)}";
 		try (Connection con = DBConnection.getConn(); CallableStatement cstmt = con.prepareCall(query);) {
 			cstmt.setInt(1, prodId);
 			cstmt.registerOutParameter(2, OracleTypes.CURSOR);
@@ -108,7 +108,7 @@ final public class ProductDAO {
 
 	private List<IgdtVO> getIgdtList(int prodId) {
 		List<IgdtVO> igdts = new ArrayList<>();
-		String query = "{call p_prod_igdt(?,?)}";
+		String query = "{call PKG_PROD.p_prod_igdt(?,?)}";
 		try (Connection con = DBConnection.getConn(); CallableStatement cstmt = con.prepareCall(query);) {
 			cstmt.setInt(1, prodId);
 			cstmt.registerOutParameter(2, OracleTypes.CURSOR);
@@ -134,7 +134,7 @@ final public class ProductDAO {
 
 	private List<GrtVO> getGrtList(int prodId) {
 		List<GrtVO> grts = new ArrayList<>();
-		String query = "{call p_prod_grt(?,?)}";
+		String query = "{call PKG_PROD.p_prod_grt(?,?)}";
 		try (Connection con = DBConnection.getConn(); CallableStatement cstmt = con.prepareCall(query);) {
 			cstmt.setInt(1, prodId);
 			cstmt.registerOutParameter(2, OracleTypes.CURSOR);
@@ -160,7 +160,7 @@ final public class ProductDAO {
 
 	private List<ProductOptionVO> getOptnList(int prodId) {
 		List<ProductOptionVO> optns = new ArrayList<>();
-		String query = "{call p_prod_optn(?,?)}";
+		String query = "{call PKG_PROD.p_prod_optn(?,?)}";
 		try (Connection con = DBConnection.getConn(); CallableStatement cstmt = con.prepareCall(query);) {
 			cstmt.setInt(1, prodId);
 			cstmt.registerOutParameter(2, OracleTypes.CURSOR);
@@ -186,7 +186,7 @@ final public class ProductDAO {
 
 	public OrderProductBeforeVO getOrderProduct(int optnId) {
 		OrderProductBeforeVO vo = new OrderProductBeforeVO();
-		String query = "{call p_get_prod_before_order(?,?,?,?,?,?,?,?,?,?,?)}";
+		String query = "{call PKG_PROD.p_get_prod_before_order(?,?,?,?,?,?,?,?,?,?,?)}";
 		try (Connection con = DBConnection.getConn(); CallableStatement cstmt = con.prepareCall(query);) {
 			cstmt.setInt(1, optnId);
 			cstmt.registerOutParameter(2, OracleTypes.NUMBER);
@@ -231,7 +231,7 @@ final public class ProductDAO {
 	}
 
 	public ProductVO getProduct(int prodId) {
-		String query = "{call p_prod_data(?,?,?,?,?,?,?,?,?,?,?,?)}";
+		String query = "{call PKG_PROD.p_prod_data(?,?,?,?,?,?,?,?,?,?,?,?)}";
 		try (Connection con = DBConnection.getConn(); CallableStatement cstmt = con.prepareCall(query);) {
 			cstmt.setInt(1, prodId);
 			cstmt.registerOutParameter(2, OracleTypes.VARCHAR);
@@ -283,7 +283,7 @@ final public class ProductDAO {
 	
 	public List<ProductVO> getProductList(String cateId) {
 		List<ProductVO> list = new ArrayList<>();
-		String query = "{call find_prod_by_cate(?,?)}";
+		String query = "{call PKG_PROD.p_find_prod_by_cate(?,?)}";
 		try (Connection con = DBConnection.getConn(); CallableStatement cstmt = con.prepareCall(query);) {
 			cstmt.setString(1, cateId);
 			cstmt.registerOutParameter(2, OracleTypes.CURSOR);

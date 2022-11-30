@@ -22,7 +22,7 @@ final public class CartDAO {
 	}
 	
 	public void emptyCart(String userId) {
-		String query = "{call P_CART_RESET(?)}";
+		String query = "{call PKG_CART.P_CART_RESET(?)}";
 		try (
 				Connection con = DBConnection.getConn();
 				CallableStatement cstmt = con.prepareCall(query);
@@ -37,7 +37,7 @@ final public class CartDAO {
 	
 	public List<CartProductVO> getCartProductList(String userId){
 		List<CartProductVO> list = new ArrayList<>();
-		String query= "{call p_cart(?,?)}";
+		String query= "{call PKG_CART.P_CART(?,?)}";
 		try (
 				Connection con = DBConnection.getConn();
 				CallableStatement cstmt = con.prepareCall(query);
@@ -81,7 +81,7 @@ final public class CartDAO {
 	}
 	
 	public void updateCartProduct(String userId, int optnId,int stock) {
-		String sql = "{call P_CART_INSERT(?,?,?)}";
+		String sql = "{call PKG_CART.P_CART_INSERT(?,?,?)}";
 		try (
 				Connection con = DBConnection.getConn();
 				CallableStatement cstmt = con.prepareCall(sql);
@@ -100,7 +100,7 @@ final public class CartDAO {
 	}
 
 	public void removeCartProduct(String userId, int optnId) {
-		String sql = "{call P_CART_DELETE(?,?)}";
+		String sql = "{call PKG_CART.P_CART_DELETE(?,?)}";
 		try (
 				Connection con = DBConnection.getConn();
 				CallableStatement cstmt = con.prepareCall(sql);

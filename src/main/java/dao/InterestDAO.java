@@ -21,7 +21,7 @@ final public class InterestDAO {
 	}
 	
 	public boolean exsistInterest(String userId, int prodId) {
-		String sql = "{call P_PROD_INTEREST_IS_EXIST(?,?,?)}";
+		String sql = "{call PKG_INT.P_PROD_INTEREST_IS_EXIST(?,?,?)}";
 		int count = 0;
 		try (
 				Connection con = DBConnection.getConn();
@@ -42,7 +42,7 @@ final public class InterestDAO {
 		return count==1;
 	}
 	public void toggleInterest(String userId, int prodId) {
-		String sql = "{call P_PROD_INTEREST_TOGGLE(?,?)}";
+		String sql = "{call PKG_INT.P_PROD_INTEREST_TOGGLE(?,?)}";
 		try (
 				Connection con = DBConnection.getConn();
 				CallableStatement cstmt = con.prepareCall(sql);
@@ -58,7 +58,7 @@ final public class InterestDAO {
 		}
 	}
 	public List<ProductVO> getInterestProductList(String userId){
-		String query = "{call P_PROD_INTEREST(?,?)}";
+		String query = "{call PKG_INT.P_PROD_INTEREST(?,?)}";
 		List<ProductVO> list = new ArrayList<>();
 		try (
 				Connection con = DBConnection.getConn();

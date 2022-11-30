@@ -24,7 +24,7 @@ final public class CommentDAO {
 	public void insertComment(
 			String userId, int prodId, int optnId, 
 			Date orderDate, String title,String text) {
-		String query = "{call p_cmt_insert1(?,?,?,?,?,?)}";
+		String query = "{call PKG_CMT.p_cmt_insert(?,?,?,?,?,?)}";
 		try (	Connection con = DBConnection.getConn(); 
 				CallableStatement cstmt = con.prepareCall(query);) {
 			cstmt.setString(1, title);
@@ -45,7 +45,7 @@ final public class CommentDAO {
 	
 	public List<CommentVO> getCommentList(String prodId){
 		List<CommentVO> list = new ArrayList<>();
-		String query = "{ call p_cmt(?,?) }";
+		String query = "{ call PKG_CMT.p_cmt(?,?) }";
 		try (	Connection con = DBConnection.getConn(); 
 				CallableStatement cstmt = con.prepareCall(query);) {
 			cstmt.setString(1, prodId);

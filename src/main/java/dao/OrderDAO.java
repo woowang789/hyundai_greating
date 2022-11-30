@@ -27,7 +27,7 @@ final public class OrderDAO {
 
 	public Date insertOrder(String userId, String rcvEmail, String rcvAddr, String rcvName,
 			List<OrderProductInsertVO> list) {
-		String query = "{call p_insert_order(?,?,?,?,?)}";
+		String query = "{call PKG_order.p_order_insert(?,?,?,?,?)}";
 		Date date = null;
 		try (	Connection con = DBConnection.getConn(); 
 				CallableStatement cstmt = con.prepareCall(query);) {
@@ -50,7 +50,7 @@ final public class OrderDAO {
 		return date;
 	}
 	private void insertOrderProd(String userId,Date date,OrderProductInsertVO op) {
-		String query = "{call p_insert_order_prod(?,?,?,?,?,?)}";
+		String query = "{call PKG_order.p_order_prod_insert(?,?,?,?,?,?)}";
 		try (	Connection con = DBConnection.getConn(); 
 				CallableStatement cstmt = con.prepareCall(query);) {
 			cstmt.setInt(1, op.getOptnId());
@@ -68,7 +68,7 @@ final public class OrderDAO {
 	}
 
 	public OrderVO getOrder(String userId, Date date) {
-		String query = "{call p_single_order(?,?,?)}";
+		String query = "{call PKG_order.p_single_order(?,?,?)}";
 		OrderVO orderVo = new OrderVO();
 		try (Connection con = DBConnection.getConn(); CallableStatement cstmt = con.prepareCall(query);) {
 			cstmt.setString(1, userId);
@@ -119,7 +119,7 @@ final public class OrderDAO {
 
 	public List<OrderProductVO> getOrderList(String userId) {
 		List<OrderProductVO> list = new ArrayList<>();
-		String query = "{call p_order_list(?,?)}";
+		String query = "{call PKG_order.p_order_list(?,?)}";
 
 		try (Connection con = DBConnection.getConn(); CallableStatement cstmt = con.prepareCall(query);) {
 			cstmt.setString(1, userId);
