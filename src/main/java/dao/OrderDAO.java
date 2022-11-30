@@ -10,7 +10,7 @@ import java.util.List;
 
 import oracle.jdbc.internal.OracleTypes;
 import util.DBConnection;
-import util.DateParser;
+import vo.CommentVO;
 import vo.OrderProductInsertVO;
 import vo.OrderProductVO;
 import vo.OrderVO;
@@ -137,6 +137,10 @@ final public class OrderDAO {
 				int prodId = rs.getInt(7);
 				int optnId = rs.getInt(8);
 				
+				String cmtTitle = rs.getString(9);
+				String cmtText = rs.getString(10);
+				Date cmtDate = rs.getDate(11);
+				
 				OrderProductVO vo = new OrderProductVO();
 				vo.setOrderDate(time);
 				vo.setOrderDateLong(time.getTime());
@@ -148,6 +152,17 @@ final public class OrderDAO {
 				vo.setQty(qty);
 				vo.setProdId(prodId);
 				vo.setOptnId(optnId);
+				
+				if(cmtDate != null) {
+					CommentVO cmt = new CommentVO();
+					cmt.setTitle(cmtTitle);
+					cmt.setText(cmtText);
+					cmt.setCommentDate(cmtDate);
+					cmt.setOptnId(optnId);
+					cmt.setProdId(prodId);
+					cmt.setOrderDate(time);
+					vo.setComment(cmt);
+				}
 
 				list.add(vo);
 			}

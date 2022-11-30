@@ -23,8 +23,13 @@ $('.search__btn').click(function () {
 function orderList(res) {}
 
 
+$('.input__btn.go_detail').click(function(){
+	
+})
+
+
 ///api/insertComment
-$('.input__btn').click(function(){
+$('.input__btn.open_form').click(function(){
 	let optnName = $(this).siblings('.info').children('.item__info').children('.desc').text();
 	$('.reivew__optn span').text(optnName);
 	$('.review__input').css('display','block')
@@ -35,6 +40,10 @@ $('.input__btn').click(function(){
 	let orderDate = $(this).parent().parent()
 		.siblings('.order__head').children().children('span').text();
 	
+	$('.review__input').attr('prodId',prodId);
+	$('.review__input').attr('optnId',optnId);
+	$('.review__input').attr('orderDate',orderDate);
+	
 	let title = $('.dialog__content input').val()
 	let content = $('.dialog__content textarea').val();
 	
@@ -44,6 +53,13 @@ $('.review__cancel').click(function(){
 	$('.review__input').css('display','none')
 	$('.modal__background').css('display','none')	
 })
+/*
+$('.input__btn.has_review').click(function(){
+	console.log('ttt');
+	let prodId = $(this).parent().attr('prodId');
+	$(location).attr('href','/v1/productDetail?prodId='+prodId);
+})
+*/
 
 $('.review__com').click(function(){
 	let title = $('.dialog__content input').val()
@@ -56,12 +72,11 @@ $('.review__com').click(function(){
 	$('.dialog__content input').val('')
 	$('.dialog__content textarea').val('')
 
-	let prodId = $('.input__btn').parent().attr('prodId');
-	let optnId = $('.input__btn').parent().attr('optnId');
-	let orderDateLong = $('.input__btn').parent().parent()
-		.siblings('.order__head').children().children('span').attr('val');
-	console.log(title, text, prodId,
-	 optnId, orderDateLong, userId);
+	let prodId = $(this).parent().parent().attr('prodId');
+	let optnId = $(this).parent().parent().attr('optnId');
+	let orderDateLong = $(this).parent().parent().attr('orderDate');
+	
+	console.log(title, text, prodId,optnId, orderDateLong, userId);
 	
 	
 	$.ajax({
@@ -71,8 +86,14 @@ $('.review__com').click(function(){
     					"orderDateLong":orderDateLong, "title":title, "text":text  }),
     dataType: 'json',
     contentType: "application/json; charset=utf-8",
+  /* 
+    success: 
+    function(){
+		let btn = $(`.item[prodId=${prodId}][optnId=${optnId}] div.input__btn`);
+		btn.removeClass('open_form');
+		btn.addClass('has_review');
+		btn.text('리뷰확인');
+}
+*/
 	});
-	
-	
-
 })

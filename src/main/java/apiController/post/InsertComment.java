@@ -25,7 +25,5 @@ public class InsertComment implements ApiControllerInter{
 		Date orderDate = new Date(Long.parseLong(json.get("orderDateLong").toString()));
 		commentDAO.insertComment(userId, prodId, optnId, orderDate, title, text);
 	}
-	
-	
 
 }

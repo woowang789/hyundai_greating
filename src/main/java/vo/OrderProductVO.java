@@ -24,4 +24,6 @@ public class OrderProductVO {
 	private int optnId;
 	
 	private int qty;
+	
+	private CommentVO comment;
 }

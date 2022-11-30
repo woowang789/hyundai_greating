@@ -36,4 +36,29 @@ final public class CommentDAO {
 			e.printStackTrace();
 		}
 	}
+	
+	
+//	public List<CommentVO> getCommentList(String prodId){
+//		List<CommentVO> list = new ArrayList<>();
+//		String query = "{call p_cmt(?,?)}";
+//		try (	Connection con = DBConnection.getConn(); 
+//				CallableStatement cstmt = con.prepareCall(query);) {
+//			cstmt.setString(1, prodId);
+//			cstmt.registerOutParameter(2, OracleTypes.REF_CURSOR);
+//			
+//			cstmt.execute();
+//			ResultSet rs = (ResultSet) cstmt.getObject(2);
+//			while(rs.next()) {
+//				
+//			}
+//			
+//			
+//		}catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//		
+//		
+//		
+//		return list;
+//	}
 }

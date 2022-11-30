@@ -52,7 +52,7 @@
         <ul>
           <li><a href="">브랜드 소개</a></li>
           <li><a href="">케어식단</a></li>
-          <li><a href="/v1/bestItemList">베스트</a></li>
+          <li><a href="/v1/bestProductList">베스트</a></li>
           <li><a href="">할인</a></li>
           <li><a href="">기획전</a></li>
           <li><a href="">이벤트</a></li>

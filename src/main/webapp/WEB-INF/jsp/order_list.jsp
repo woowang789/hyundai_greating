@@ -127,7 +127,12 @@
 											<p class="price">${el.marketPrice}원/${el.qty}개</p>
 										</div>
 									</div>
-									<div class='input__btn'>리뷰쓰기</div>
+									<c:if test="${not empty el.comment}">
+									 <div class='input__btn has_reivew'>리뷰확인</div>
+									</c:if>
+									<c:if test="${empty el.comment}">
+									 <div class='input__btn open_form'>리뷰작성</div>
+									</c:if>
 								</li>
 							</c:forEach>
 						</ul>
