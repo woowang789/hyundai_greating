@@ -3,6 +3,7 @@ $(document).ready(() => {
   let target = $(`.categoryList li:nth-child(${idx}) a`);
   target.addClass('active');
   editMoreBtn(target.text(), target.attr('val'));
+  
   $.ajax({
     type: 'GET',
     url:
@@ -10,11 +11,13 @@ $(document).ready(() => {
       $(`.categoryList li:nth-child(${idx}) a`).attr('val'),
     success: (res) => reDrawProduct(res['list']),
   });
+  
 });
+
 
 function reDrawProduct(res) {
   $('.itemList > li').remove();
-  let baseLi = `
+  let p = `
   <li>
     <div class="item" val="{prod_id}">
       <div class="item__img">
@@ -27,26 +30,36 @@ function reDrawProduct(res) {
         <p>{prod_subname}</p>
         <h1>{prod_name}</h1>
       </div>
-      <div class="item__bottom">
-        <h1 class="item__price">{prod_marketPrice}원</h1>
-        <div class="item__shoppingcart">
-          <i class="fa-solid fa-cart-shopping"></i>
-        </div>
+        <div class="item__bottom">
+           <div class='price_wrap'>
+    `;
+    let mid = `<span class='discnt_rate'>{prod_discnt}%</span>
+    			<span class='origin_prcie'>{prod_originPrice}원</span>`
+
+    let f=`
+             <h1 class="item__price">{prod_marketPrice}원</h1>      
+         </div>
       </div>
     </div>
   </li>
 `;
   res.forEach((el) => {
+	let tmp = '';
+	if(el['discountRate'] == 0) tmp = p+f;
+	else  tmp = p+mid+f;
     $('.itemList').append(
-      baseLi
+	tmp  
       .replaceAll('{prod_id}', el['id'])
         .replace('{prod_thumb}', el['thumbImgUrl'])
         .replace('{prod_storage}', el['storage'])
         .replace('{prod_subname}', el['subName'])
         .replace('{prod_name}', el['name'])
-        .replace('{prod_marketPrice}', el['marketPrice'])
+        .replace('{prod_marketPrice}', el['marketPrice'].toLocaleString())
+        .replace('{prod_discnt}', el['discountRate'])
+        .replace('{prod_originPrice}',el['originPrice'].toLocaleString())
     );
   });
+ 
 }
 
 $('.categoryList a').click(function (e) {

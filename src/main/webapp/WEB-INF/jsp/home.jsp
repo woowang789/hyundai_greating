@@ -70,7 +70,11 @@
               <h1>부드러운 소불고기 반미 샌드</h1>
             </div>
             <div class="item__bottom">
-              <h1 class="item__price">2,900원</h1>
+            <div class='price_wrap'>
+              <span class='discnt_rate'>10%</span>
+              <span class='origin_prcie'>11,800원</span>
+              <h1 class="item__price">2,900원</h1>      
+            </div>
               <div class="item__shoppingcart">
                 <i class="fa-solid fa-cart-shopping"></i>
               </div>

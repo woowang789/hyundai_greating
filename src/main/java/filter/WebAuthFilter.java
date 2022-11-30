@@ -42,7 +42,6 @@ public class WebAuthFilter implements Filter{
 		if(authUrls.contains(requestUri)) {
 			String redirect = requestUri +"?"+ req.getParameterMap().entrySet().stream()
 			.map(i-> i.getKey()+"="+i.getValue()[0]).collect(Collectors.joining("&"));
-			System.out.println(redirect);
 			HttpSession session = req.getSession(false);
 			if(session == null || session.getAttribute("user") == null) {
 				HttpServletResponse res = (HttpServletResponse) response;

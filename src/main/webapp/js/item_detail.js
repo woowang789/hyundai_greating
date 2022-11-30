@@ -53,16 +53,32 @@ $('.item__shoppingcart').click(function() {
 			let id = $(this).attr('val');
 			console.log(count);
 			if (count > 0) {
+				console.log(userId);
+				if(userId == null || userId=='' || userId == undefined){
+					$(location).attr('href','/v1/signin?redirect=/v1/productDetail?prodId='+getParam('prodId'));
+					return;
+				}
 				$.ajax({
 					type: 'POST',
 					url: 'http://localhost/api/updateCart',
-					data: JSON.stringify({ optnId: id, stock: count, userId: userId }),
+					data: JSON.stringify({ 'optnId': id, 'stock': count, 'userId': userId }),
 					contentType: "application/json; charset=utf-8",
 				});
 			}
 		})
 	}
 })
+function getParam(sname) {
+    var params = location.search.substr(location.search.indexOf("?") + 1);
+    var sval = "";
+    params = params.split("&");
+    for (var i = 0; i < params.length; i++) {
+        temp = params[i].split("=");
+        if ([temp[0]] == sname) { sval = temp[1]; }
+    }
+    return sval;
+}
+
 $('.item__order').click(function(){
 	let total = wonToInt($('.item__totlaPrice span').text());
 	let prods = [];

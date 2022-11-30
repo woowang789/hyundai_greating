@@ -253,13 +253,30 @@
 	<div class="item__review">
 		<div class="review__head">
 			<div class='head__left'>
-				전체<span>(2190)</span>
+				전체<span>??</span>
 			</div>
 			<div class='head__right'>※ 일부 효능/효과 관련 후기는 구매자의 주관적인 소견이며 개인별로
 				상이할 수 있습니다.</div>
 		</div>
 
 		<div class='reviews'>
+		<c:forEach var="com" items="${comments}">
+		    <div class='review__wrap'>
+				<div class='wrap__top'>
+					<div class='reivew__title'>${com.title}</div>
+					<span class='review__nick'>${com.userIdWithMask}</span> | <span
+						class='review__date'>${com.commentDate }</span>
+				</div>
+				<div class='wrap__bottom'>
+					<div class='review__opt'>옵션 : ${com.optnName }</div>
+					<div class='review__body'>
+						${com.text}
+					</div>
+				</div>
+			</div>
+		</c:forEach>
+			
+		<!-- 
 			<div class='review__wrap'>
 				<div class='wrap__top'>
 					<div class='reivew__title'>배송은 끝내줍니다..</div>
@@ -273,34 +290,8 @@
 					</div>
 				</div>
 			</div>
+			 -->
 
-			<div class='review__wrap'>
-				<div class='wrap__top'>
-					<div class='reivew__title'>배송은 끝내줍니다..</div>
-					<span class='review__nick'>mom***</span> | <span
-						class='review__date'>2022.06.0412:21:42</span>
-				</div>
-				<div class='wrap__bottom'>
-					<div class='review__opt'>옵션 : [본가스시]제주청귤소바(2인분)</div>
-					<div class='review__body'>
-						그리팅 포장이 많이 과한거 같아요. <br> 한번 주문에 아이스 박스가 가득이라 늘처치 곤란입니다.
-					</div>
-				</div>
-			</div>
-
-			<div class='review__wrap'>
-				<div class='wrap__top'>
-					<div class='reivew__title'>배송은 끝내줍니다..</div>
-					<span class='review__nick'>mom***</span> | <span
-						class='review__date'>2022.06.04 12:21:42</span>
-				</div>
-				<div class='wrap__bottom'>
-					<div class='review__opt'>옵션 : [본가스시]제주청귤소바(2인분)</div>
-					<div class='review__body'>
-						그리팅 포장이 많이 과한거 같아요. <br> 한번 주문에 아이스 박스가 가득이라 늘처치 곤란입니다.
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 	<!-- Footer Fragnent -->

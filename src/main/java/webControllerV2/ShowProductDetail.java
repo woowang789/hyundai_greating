@@ -11,14 +11,17 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.CommentDAO;
 import dao.InterestDAO;
 import dao.ProductDAO;
 import util.CookieUtil;
 import util.SessionUtil;
+import vo.CommentVO;
 import vo.ProductDetailVO;
 
 public class ShowProductDetail implements ControllerInterface{
 	private ProductDAO productDao = ProductDAO.getInstance();
+	private CommentDAO commentDao = CommentDAO.getInstance();
 	private InterestDAO interDao = InterestDAO.getInstance();
 
 	
@@ -28,11 +31,13 @@ public class ShowProductDetail implements ControllerInterface{
 		int prodId = Integer.parseInt(request.getParameter("prodId"));
 		boolean isInterested = false;
 		ProductDetailVO detail =  productDao.getProductDetail(prodId);
+		List<CommentVO> comments = commentDao.getCommentList(Integer.toString(prodId));
+		
+		request.setAttribute("comments", comments);
 	
 		// 쿠키 셋팅
 		setCookie(request,response, prodId);
-		
-		
+
 		String userId = SessionUtil.getUserId(request);
 		if(userId != null)
 			isInterested = interDao.exsistInterest(userId, prodId);

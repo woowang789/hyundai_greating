@@ -149,7 +149,6 @@ final public class ProductDAO {
 				vo.setId(id);
 				vo.setIconurl(iconUrl);
 				vo.setName(name);
-				System.out.println(id + " " + name);
 
 				grts.add(vo);
 			}

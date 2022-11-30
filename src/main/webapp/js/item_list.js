@@ -116,12 +116,18 @@ function reDrawProduct(res) {
         <h1>{prod_name}</h1>
       </div>
       <div class="item__bottom">
-        <h1 class="item__price">{prod_marketPrice}</h1>
-        <div class="item__shoppingcart">
-          <i class="fa-solid fa-cart-shopping"></i>
-        </div>
-      </div>
+        <div class='price_wrap'>
      `;
+    let mid = `<span class='discnt_rate'>{prod_discnt}%</span>
+    			<span class='origin_prcie'>{prod_originPrice}원</span>`
+   let f=`
+             <h1 class="item__price">{prod_marketPrice}원</h1>      
+         </div>
+      </div>
+   `;
+   
+      if(el['discountRate'] != 0) baseLi += mid;
+      baseLi+= f;
      if(el['grts'] != null){
 		baseLi += 
 		`<div class="item__value">
@@ -140,6 +146,8 @@ function reDrawProduct(res) {
         .replace('{prod_subname}', el['subName'])
         .replace('{prod_name}', el['name'])
         .replace('{prod_marketPrice}', el['marketPrice'])
+        .replace('{prod_discnt}', el['discountRate'])
+        .replace('{prod_originPrice}',el['originPrice'])
         .replace('{grts}',el['grts'])
     );
   });

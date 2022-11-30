@@ -53,13 +53,12 @@ $('.review__cancel').click(function(){
 	$('.review__input').css('display','none')
 	$('.modal__background').css('display','none')	
 })
-/*
+
 $('.input__btn.has_review').click(function(){
 	console.log('ttt');
 	let prodId = $(this).parent().attr('prodId');
 	$(location).attr('href','/v1/productDetail?prodId='+prodId);
 })
-*/
 
 $('.review__com').click(function(){
 	let title = $('.dialog__content input').val()

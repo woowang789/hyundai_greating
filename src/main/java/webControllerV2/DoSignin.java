@@ -1,6 +1,7 @@
 package webControllerV2;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -32,8 +33,17 @@ public class DoSignin implements ControllerInterface{
 		session.setAttribute("user", user);
 		
 		if(request.getParameter("redirect") != null) {
-			System.out.println(request.getParameter("redirect"));
-			return new MyView("href:"+request.getParameter("redirect"));
+			String tmp[] = request.getParameter("redirect").split("\\?");
+			String baseUrl = tmp[0]+"?";
+			String[] token = tmp[1].split("&");
+			for(int i =0;i<token.length;i++) {
+				String[] t = token[i].split("=");
+				baseUrl += t[0]+"="+URLEncoder.encode(t[1],"UTF-8");
+				if(i < token.length -1) 
+					baseUrl+= "&";				
+			}
+			return new MyView("href:"+baseUrl);
+			
 		}
 		return new MyView("href:/v1/");
 	}

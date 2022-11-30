@@ -72,7 +72,14 @@ main .itemList .item .item__img .img__badge{
   bottom: 5px;
   left: 5px;
 }
-
+.discnt_rate {
+	color: orange;
+	font-weight: 700;
+	font-size: 1.1rem;
+}
+.origin_prcie{
+	text-decoration: line-through;
+}
 main .itemList .item .item__title p{
   font-size: 1rem;
 }
@@ -94,6 +101,7 @@ main .itemList .item .item__bottom .item__price{
   font-size: 1.4rem;
 }
 main .itemList .item .item__bottom .item__shoppingcart{
+  display : block;
   cursor: pointer;
   font-size: 1.1rem;
   background-color: #F5F5F5;

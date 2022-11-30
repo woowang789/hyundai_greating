@@ -9,7 +9,11 @@ import lombok.Setter;
 public class CommentVO {
 	private int prodId;
 	private int optnId;
+	private String optnName;
 	private Date orderDate;
+	
+	private String userId;
+	private String userIdWithMask;
 	
 	private String title;
 	private String text;
