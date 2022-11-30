@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/home.css" />
     <script src="/js/home.js" defer></script>
+    <script src="/js/slideShow.js" defer></script>
     <%@include file="/WEB-INF/component/style.jsp" %>
     <title>Home</title>
   </head>
@@ -16,9 +17,20 @@
     <jsp:include page="../component/header.jsp"></jsp:include>
     
     
-    <div class="banner">
-      <img src="/img/main/main_banner.jpeg" alt="" />
-    </div>
+ <div class="banner">
+    <div class="container">
+        <div class="img_wrap">
+            <ul class="rollimgs">
+               <li><img src="/img/main/main_banner.jpeg" alt=""></li>
+     			<li><img src="/img/main/main_banner2.jpg" alt=""></li>
+     			<li><img src="/img/main/main_banner3.jpg" alt=""></li>
+     			<li><img src="/img/main/main_banner4.jpg" alt=""></li>
+     			<li><img src="/img/main/main_banner5.jpg" alt=""></li>
+          	  </ul>
+         </div>
+      </div>
+  </div>
+
 
     <main>
       <!-- CATEGORYAREA-->

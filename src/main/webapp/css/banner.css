@@ -1,0 +1,55 @@
+/* BANNER */
+.banner{
+	margin: auto;
+    width: 1260px;
+    height: 328px;
+    margin-bottom: 50px;
+}
+.container{
+    margin: 0 auto;
+    width: 1260px;
+    height: 328px;
+    overflow: hidden;
+}
+.img_wrap{
+    width: 1260px;
+    height: 328px;
+    position: absolute;
+    overflow: hidden;
+}
+
+.rollimgs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rollimgs li{
+    position: absolute;
+    width: 1260px;
+    height: 328px;
+    left: 1260px;
+}
+.rollimgs li img{
+    width: 1260px;
+    height: 328px;
+}
+.rollimgs li.currentroll{
+    left: 0;
+    transition: left .5s ease-in-out, right .5s ease-in-out;
+}
+.rollimgs li.prevroll{
+    left: -1260px;
+    transition: left .5s ease-in-out, right .5s ease-in-out;
+}
+.rollimgs.reverse li.prevroll{
+    transition: none;
+}
+.rollimgs li.nextroll{
+    left: 1260px;
+    display: block;
+    transition: none;
+}
+.rollimgs.reverse li.nextroll{
+    transition: left .5s ease-in-out, right .5s ease-in-out;
+}

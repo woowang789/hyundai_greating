@@ -1,14 +1,3 @@
-/* Banner */
-.banner{
-  margin: 0 auto;
-  width: 1260px;
-  height: 328px;
-  margin-bottom: 50px;
-}
-.banner img{
-  height: 100%;
-  width: 100%;
-}
 
 /* Main */
 main{

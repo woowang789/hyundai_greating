@@ -90,3 +90,4 @@ $('.item__shoppingcart').click(function () {
     dataType: 'json',
   });
 });
+
