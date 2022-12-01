@@ -41,3 +41,15 @@ let banner = {
 document.addEventListener('DOMContentLoaded', function(){
     banner.rollInit(4000);
 });
+
+
+// floatbanner
+
+$(window).scroll(function() {
+  
+    var current = $(window).scrollTop();
+    var bannerTop = current + 300 + "px";
+
+    $(".floatbanner").stop().animate({"top" : bannerTop}, 500);
+
+}).scroll();
