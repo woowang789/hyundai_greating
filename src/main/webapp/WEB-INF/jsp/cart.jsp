@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,14 +58,15 @@
               </div>
               <p>${entry.prodName}</p>
             </div>
-            <div class="body__price">${entry.originPrice}원</div>
+            <div class="body__price">
+            <fmt:formatNumber value="${entry.originPrice}" pattern="#,###" />원</div>
 
             <div class="body__qty">
               <div class="qty__minus">-</div>
               <div class="qty">${entry.qty}</div>
               <div class="qty__plus">+</div>
             </div>
-            <div class="body__resultPrice">${entry.marketPrice}원</div>
+            <div class="body__resultPrice"><fmt:formatNumber value="${entry.marketPrice}" pattern="#,###" />원</div>
             <i class="fa-solid fa-xmark"></i>
           </li>
           </c:forEach>

@@ -50,17 +50,15 @@
       </div>
       <div class="header__menu">
         <ul>
-          <li><a href="">브랜드 소개</a></li>
-          <li><a href="">케어식단</a></li>
           <li><a href="/v1/bestProductList">베스트</a></li>
           <li><a href="">할인</a></li>
-          <li><a href="">기획전</a></li>
-          <li><a href="">이벤트</a></li>
         </ul>
       </div>
       <div class="header__search">
-        <input type="text" placeholder="검색어를 입력해주세요" />
-        <i class="fa-solid fa-magnifying-glass"></i>
+      	<form action="/v1/searchProductList">
+        <input type="text" name="keyword" placeholder="검색어를 입력해주세요" />
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
       </div>
       <div class="header__shoppingCart">
         <a href="/v1/cart"><i class="fa-solid fa-cart-shopping"></i></a>

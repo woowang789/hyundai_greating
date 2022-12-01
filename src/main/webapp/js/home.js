@@ -37,12 +37,12 @@ function reDrawProduct(res) {
     			<span class='origin_prcie'>{prod_originPrice}원</span>`
 
     let f=`
-             <h1 class="item__price">{prod_marketPrice}원</h1>      
-         </div>
-      </div>
-    </div>
-  </li>
-`;
+	             <h1 class="item__price">{prod_marketPrice}원</h1>      
+	         </div>
+	      </div>
+	    </div>
+	  </li>
+	`;
   res.forEach((el) => {
 	let tmp = '';
 	if(el['discountRate'] == 0) tmp = p+f;

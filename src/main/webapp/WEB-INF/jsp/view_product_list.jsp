@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -79,15 +80,21 @@
                   <h1>${el.name}</h1>
                 </div>
                 <div class="item__bottom">
-                  <h1 class="item__price">${el.marketPrice }원</h1>
-                  <div class="item__shoppingcart">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                  </div>
+	                <div class='price_wrap'>
+	                <c:if test="${el.discountRate != 0}">
+	                  <span class='discnt_rate'>${el.discountRate}%</span>
+	    			  <span class='origin_prcie'>${el.originPrice}원</span>
+	                </c:if>
+	                  <h1 class="item__price">
+	                  <fmt:formatNumber value="${el.marketPrice}" pattern="#,###" />원</h1>
+	                </div>
                 </div>
+                <c:if test="${not empty el.grts}">
                 <div class="item__value">
                   <i class="fa-solid fa-award"></i>
-                  <span>프리미엄 식재</span>
+                  <span>${el.grts }</span>
                 </div>
+                </c:if>
                 <div class="check__btn">
                   <i class="fa-solid fa-circle-check"></i>
                 </div>

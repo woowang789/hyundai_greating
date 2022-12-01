@@ -10,16 +10,18 @@ import javax.servlet.http.HttpServletResponse;
 import dao.ProductDAO;
 import vo.ProductVO;
 
-
-public class ShowBestProductList implements ControllerInterface{
+public class ShowSearchProductList implements ControllerInterface{
 	private ProductDAO prodDao = ProductDAO.getInstance();
 
-	
 	@Override
 	public MyView process(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		return new MyView("best_product_list");
+		String keyword = request.getParameter("keyword");
+		List<ProductVO> list = prodDao.getProductListByKeyWord(keyword);
+		request.setAttribute("list", list);
+		return new MyView("search_product_list");
 	}
+	
 	
 
 }

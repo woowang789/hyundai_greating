@@ -4,6 +4,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,7 +58,8 @@
 								<div class="qty">0</div>
 								<div class="qty__plus">+</div>
 							</div>
-							<p class="item__price">${detail.prod.marketPrice}원</p>
+							<p class="item__price">
+							<fmt:formatNumber value="${detail.prod.marketPrice}" pattern="#,###" />원</p>
 						</li>
 					</c:forEach>
 					<!-- 
@@ -117,10 +119,12 @@
 					<span class="discountRate">${detail.prod.discountRate }%</span>
 				</c:if>
 
-				<span class="discountPrice">${detail.prod.marketPrice }원</span>
+				<span class="discountPrice">
+				<fmt:formatNumber value="${detail.prod.marketPrice}" pattern="#,###" />원</span>
 
 				<c:if test="${detail.prod.discountRate != 0}">
-					<span class="originPrice">${detail.prod.originPrice }원</span>
+					<span class="originPrice">
+					<fmt:formatNumber value="${detail.prod.originPrice }" pattern="#,###" />원</span>
 				</c:if>
 			</div>
 			<div class="info__delivery info__flex">

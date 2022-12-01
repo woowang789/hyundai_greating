@@ -57,70 +57,7 @@
       </div>
       <!--ITEMSLIT-->
       <ul class="itemList">
-         <li>
-          <div class="item" val="123">
-            <div class="item__img">
-              <a href=""
-                ><img src="../img//main/main_item_img.jpeg" alt=""
-              /></a>
-              <div class="img__badge">냉장</div>
-            </div>
-            <div class="item__title">
-              <p>집에서 즐기는 베트남식 샌드위치</p>
-              <h1>부드러운 소불고기 반미 샌드</h1>
-            </div>
-            <div class="item__bottom">
-            <div class='price_wrap'>
-              <span class='discnt_rate'>10%</span>
-              <span class='origin_prcie'>11,800원</span>
-              <h1 class="item__price">2,900원</h1>      
-            </div>
-              <div class="item__shoppingcart">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="item" val="123">
-            <div class="item__img">
-              <a href=""
-                ><img src="../img//main/main_item_img.jpeg" alt=""
-              /></a>
-              <div class="img__badge">냉장</div>
-            </div>
-            <div class="item__title">
-              <p>집에서 즐기는 베트남식 샌드위치</p>
-              <h1>부드러운 소불고기 반미 샌드</h1>
-            </div>
-            <div class="item__bottom">
-              <h1 class="item__price">2,900원</h1>
-              <div class="item__shoppingcart">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="item" val="123">
-            <div class="item__img">
-              <a href=""
-                ><img src="../img//main/main_item_img.jpeg" alt=""
-              /></a>
-              <div class="img__badge">냉장</div>
-            </div>
-            <div class="item__title">
-              <p>집에서 즐기는 베트남식 샌드위치</p>
-              <h1>부드러운 소불고기 반미 샌드</h1>
-            </div>
-            <div class="item__bottom">
-              <h1 class="item__price">2,900원</h1>
-              <div class="item__shoppingcart">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </div>
-            </div>
-          </div>
-        </li>
+       
       </ul>
       <div class="moreBtnArea">
         <a href="/v1/itemList"><div class="moreBtn">착한 간식/음료 전체보기 ></div></a>
