@@ -34,6 +34,7 @@ public class DoSignin implements ControllerInterface{
 		
 		if(request.getParameter("redirect") != null) {
 			String tmp[] = request.getParameter("redirect").split("\\?");
+			if(tmp.length == 1) return new MyView("href:"+tmp[0]);
 			String baseUrl = tmp[0]+"?";
 			String[] token = tmp[1].split("&");
 			for(int i =0;i<token.length;i++) {

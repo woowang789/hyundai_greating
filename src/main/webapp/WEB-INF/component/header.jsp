@@ -51,7 +51,7 @@
       <div class="header__menu">
         <ul>
           <li><a href="/v1/bestProductList">베스트</a></li>
-          <li><a href="">할인</a></li>
+          <li><a href="/v1/discountProductList">할인</a></li>
         </ul>
       </div>
       <div class="header__search">

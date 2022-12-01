@@ -7,7 +7,7 @@ $(document).ready(() => {
   $.ajax({
     type: 'GET',
     url:
-      'http://localhost/api/bestProductList?cateId=50',
+      'http://localhost/api/discountProductList?discntId=50',
     success: (res) => reDrawProduct(res['list']),
   });
 });
@@ -17,10 +17,6 @@ function reDrawProduct(res) {
   let p = `
        <li>
           <div class="item" val="{prod_id}">
-            <div class="item__rank">
-              <div class="rank__underline"></div>
-              Best<span>{idx}</span>
-            </div>
             <div class="item__img">
               <a href="/v1/productDetail?prodId={prod_id}"
                 ><img src="{prod_thumb}" alt=""
@@ -79,7 +75,7 @@ $('.bestCategory div').click(function(){
 	$.ajax({
     type: 'GET',
     url:
-      'http://localhost/api/bestProductList?cateId='+val,
+      'http://localhost/api/discountProductList?discntId='+val,
     success: (res) => reDrawProduct(res['list']),
   });
 	

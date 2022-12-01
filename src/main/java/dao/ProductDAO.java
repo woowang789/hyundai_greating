@@ -382,6 +382,7 @@ final public class ProductDAO {
 				int discnt = rs.getInt(8);
 				int originPrice = rs.getInt(9);
 				int marketPrice = rs.getInt(10);
+				String imgUrl = rs.getString(12);
 
 				ProductVO p = new ProductVO();
 				p.setId(id);
@@ -394,9 +395,52 @@ final public class ProductDAO {
 				p.setMarketPrice(marketPrice);
 				p.setDiscountRate(discnt);
 				p.setGrts(grts);
+				p.setProdImgUrl(imgUrl);
 				list.add(p);
 			}
 		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	public List<ProductVO> getProductListByDiscnt(String discntId) {
+		List<ProductVO> list = new ArrayList<>();
+		String query = "{call P_EXP_DISCNT_PAGE(?,?)}";
+		try (Connection con = DBConnection.getConn(); 
+				CallableStatement cstmt = con.prepareCall(query);) {
+			cstmt.setString(1, discntId);
+			cstmt.registerOutParameter(2, OracleTypes.CURSOR);
+			cstmt.execute();
+			
+			ResultSet rs = (ResultSet) cstmt.getObject(2);
+			while(rs.next()) {
+				int prodId = rs.getInt(1);
+				String prodName = rs.getString(2);
+				String prodSubName = rs.getString(3);
+				String prodImgUrl = rs.getString(4);
+				String storage = rs.getString(5);
+				int originPrice = rs.getInt(6);
+				int marketPrice = rs.getInt(7);
+				int discntRate = rs.getInt(8);
+				String grts = rs.getString(9);
+				
+				ProductVO vo = new ProductVO();
+				vo.setId(prodId);
+				vo.setSubName(prodSubName);
+				vo.setName(prodName);
+				vo.setProdImgUrl(prodImgUrl);
+				vo.setStorage(storage);
+				vo.setOriginPrice(originPrice);
+				vo.setMarketPrice(marketPrice);
+				vo.setDiscountRate(discntRate);
+				vo.setGrts(grts);
+				
+				System.out.println(prodName+" "+prodSubName);
+				list.add(vo);
+			}
+
+		}catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return list;
