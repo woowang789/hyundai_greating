@@ -13,12 +13,12 @@ import util.SessionUtil;
 import vo.ProductVO;
 
 
-public class ShowLikeProductList implements ControllerInterface{
+public class ShowLikeProductList implements Action{
 	private InterestDAO interestDao = InterestDAO.getInstance();
 	
 
 	@Override
-	public MyView process(HttpServletRequest request, HttpServletResponse response)
+	public MyView execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String userId = SessionUtil.getUserId(request).toString();
 		List<ProductVO> list = interestDao.getInterestProductList(userId);

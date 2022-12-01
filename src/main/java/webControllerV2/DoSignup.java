@@ -12,12 +12,12 @@ import dao.UserDAO;
 import util.DateParser;
 import vo.UserVO;
 
-public class DoSignup implements ControllerInterface{
+public class DoSignup implements Action{
 	private UserDAO userDao = UserDAO.getInstance();
 	
 	
 	@Override
-	public MyView process(HttpServletRequest request, HttpServletResponse response)
+	public MyView execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String name = request.getParameter("name").toString();
 		String id = request.getParameter("id").toString();

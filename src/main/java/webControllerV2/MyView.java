@@ -15,7 +15,9 @@ public class MyView {
         this.viewName = viewName;
     }
     
-    public void render(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void render(HttpServletRequest request, HttpServletResponse response) 
+    		throws ServletException, IOException {
+    	
     	if(viewName.startsWith("href:")) {
         	response.sendRedirect(viewName.substring("href:".length()));
         	return;
@@ -25,9 +27,7 @@ public class MyView {
         dispatcher.forward(request, response);
     }
     
-    
     private String getViewPath(String viewName) {
     	return "/WEB-INF/jsp/" + viewName + ".jsp";
     }
-   
 }

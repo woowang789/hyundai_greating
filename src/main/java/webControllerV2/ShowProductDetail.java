@@ -19,14 +19,14 @@ import util.SessionUtil;
 import vo.CommentVO;
 import vo.ProductDetailVO;
 
-public class ShowProductDetail implements ControllerInterface{
+public class ShowProductDetail implements Action{
 	private ProductDAO productDao = ProductDAO.getInstance();
 	private CommentDAO commentDao = CommentDAO.getInstance();
 	private InterestDAO interDao = InterestDAO.getInstance();
 
 	
 	@Override
-	public MyView process(HttpServletRequest request, HttpServletResponse response)
+	public MyView execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		int prodId = Integer.parseInt(request.getParameter("prodId"));
 		boolean isInterested = false;

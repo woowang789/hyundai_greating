@@ -7,10 +7,10 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import apiController.ApiControllerInter;
+import apiController.ApiAction;
 import dao.CommentDAO;
 
-public class InsertComment implements ApiControllerInter{
+public class InsertComment implements ApiAction{
 	private JSONParser parser = new JSONParser();
 	private CommentDAO commentDAO = CommentDAO.getInstance();
 	@Override

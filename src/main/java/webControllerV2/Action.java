@@ -6,7 +6,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public interface ControllerInterface {
+public interface Action {
 
-    MyView process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
+    MyView execute(HttpServletRequest request, HttpServletResponse response) 
+    		throws ServletException, IOException;
 }

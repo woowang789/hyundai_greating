@@ -6,11 +6,11 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import apiController.ApiControllerInter;
+import apiController.ApiAction;
 import dao.UserDAO;
 import vo.UserVO;
 
-public class CheckId implements ApiControllerInter{
+public class CheckId implements ApiAction{
 	private JSONParser parser = new JSONParser();
 	private UserDAO userDao = UserDAO.getInstance();
 

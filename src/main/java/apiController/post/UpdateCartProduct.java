@@ -6,10 +6,10 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import apiController.ApiControllerInter;
+import apiController.ApiAction;
 import dao.CartDAO;
 
-public class UpdateCartProduct implements ApiControllerInter{
+public class UpdateCartProduct implements ApiAction{
 	private CartDAO cartDao = CartDAO.getInstance();
 	private JSONParser parser = new JSONParser();
 

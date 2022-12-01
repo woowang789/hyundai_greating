@@ -16,11 +16,11 @@ import util.SessionUtil;
 import vo.OrderProductVO;
 
 
-public class ShowOrderList implements ControllerInterface{
+public class ShowOrderList implements Action{
 	private OrderDAO orderDao = OrderDAO.getInstance();
 
 	@Override
-	public MyView process(HttpServletRequest request, HttpServletResponse response)
+	public MyView execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String userId = SessionUtil.getUserId(request);
 		List<OrderProductVO> list = orderDao.getOrderList(userId);

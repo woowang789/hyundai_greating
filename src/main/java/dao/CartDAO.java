@@ -23,16 +23,14 @@ final public class CartDAO {
 	
 	public void emptyCart(String userId) {
 		String query = "{call PKG_CART.P_CART_RESET(?)}";
-		try (
-				Connection con = DBConnection.getConn();
-				CallableStatement cstmt = con.prepareCall(query);
-		){
-			cstmt.setString(1,userId);
-			cstmt.executeUpdate();
-			
-		}catch (SQLException e) {
-			e.printStackTrace();
-		}
+		JdbcContent.template(query,new Context() {
+			@Override
+			public void act(CallableStatement cstmt) throws SQLException {
+				cstmt.setString(1,userId);
+				cstmt.executeUpdate();
+			}
+		});
+		
 	}
 	
 	public List<CartProductVO> getCartProductList(String userId){

@@ -31,7 +31,7 @@ import apiController.post.UpdateCartProduct;
 @WebServlet("/api/*")
 public class ApiFrontController extends HttpServlet {
 	private ObjectMapper mapper = new ObjectMapper();
-	private Map<String, ApiControllerInter> controllerMap = new ConcurrentHashMap<>();
+	private Map<String, ApiAction> controllerMap = new ConcurrentHashMap<>();
 	
 	public ApiFrontController() {
 		controllerMap.put("/api/productList", new GetProductList());
@@ -57,7 +57,7 @@ public class ApiFrontController extends HttpServlet {
 		Map<String,String> paramMap = createParamMap(request);
 		Map<String, Object> model = new HashMap<>();
 		
-		ApiControllerInter controllerInter = controllerMap.get(request.getRequestURI());
+		ApiAction controllerInter = controllerMap.get(request.getRequestURI());
 		
 		
 		if(controllerInter == null) {

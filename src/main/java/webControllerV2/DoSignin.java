@@ -12,13 +12,14 @@ import dao.UserDAO;
 import util.SHA256;
 import vo.UserVO;
 
-public class DoSignin implements ControllerInterface{
+public class DoSignin extends PostAction{
 	private UserDAO userDao = UserDAO.getInstance();
 	
 
 	@Override
 	public MyView process(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
 		UserVO user = userDao.getUserById(id);
@@ -48,7 +49,4 @@ public class DoSignin implements ControllerInterface{
 		}
 		return new MyView("href:/v1/");
 	}
-
-	
-	
 }

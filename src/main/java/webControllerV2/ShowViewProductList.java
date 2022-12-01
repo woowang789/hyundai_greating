@@ -13,11 +13,11 @@ import util.CookieUtil;
 import vo.ProductVO;
 
 
-public class ShowViewProductList implements ControllerInterface{
+public class ShowViewProductList implements Action{
 	private ProductDAO prodDao = ProductDAO.getInstance();
 
 	@Override
-	public MyView process(HttpServletRequest request, HttpServletResponse response)
+	public MyView execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String value = CookieUtil.getCookie(request, response, "viewProds");
 		List<ProductVO> list = new ArrayList<>();

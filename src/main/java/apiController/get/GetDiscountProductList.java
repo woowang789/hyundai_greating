@@ -5,11 +5,11 @@ import java.util.Map;
 
 import org.json.simple.parser.ParseException;
 
-import apiController.ApiControllerInter;
+import apiController.ApiAction;
 import dao.ProductDAO;
 import vo.ProductVO;
 
-public class GetDiscountProductList implements ApiControllerInter{
+public class GetDiscountProductList implements ApiAction{
 	private ProductDAO dao = ProductDAO.getInstance();
 	
 	@Override

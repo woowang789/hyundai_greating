@@ -6,10 +6,10 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import apiController.ApiControllerInter;
+import apiController.ApiAction;
 import dao.InterestDAO;
 
-public class ToggleInterest implements ApiControllerInter {
+public class ToggleInterest implements ApiAction {
 	private InterestDAO interestDao = InterestDAO.getInstance();
 	private JSONParser parser = new JSONParser();
 

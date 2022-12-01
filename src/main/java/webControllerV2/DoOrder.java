@@ -20,7 +20,7 @@ import dao.OrderDAO;
 import util.SessionUtil;
 import vo.OrderProductInsertVO;
 
-public class DoOrder implements ControllerInterface{
+public class DoOrder extends PostAction{
 	private OrderDAO orderDao = OrderDAO.getInstance();
 	private CartDAO cartDao = CartDAO.getInstance();
 	private JSONParser parser = new JSONParser();

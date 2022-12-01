@@ -13,12 +13,12 @@ import util.SessionUtil;
 import vo.OrderVO;
 
 
-public class ShowOrderComplete implements ControllerInterface{
+public class ShowOrderComplete implements Action{
 	private OrderDAO orderDao = OrderDAO.getInstance();
 	
 
 	@Override
-	public MyView process(HttpServletRequest request, HttpServletResponse response)
+	public MyView execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String userId = SessionUtil.getUserId(request);
 		long dataLong = Long.parseLong(request.getParameter("date"));

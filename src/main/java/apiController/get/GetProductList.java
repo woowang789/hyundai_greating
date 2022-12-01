@@ -3,11 +3,11 @@ package apiController.get;
 import java.util.List;
 import java.util.Map;
 
-import apiController.ApiControllerInter;
+import apiController.ApiAction;
 import dao.ProductDAO;
 import vo.ProductVO;
 
-public class GetProductList implements ApiControllerInter{
+public class GetProductList implements ApiAction{
 	private ProductDAO dao = ProductDAO.getInstance();
 
 	@Override

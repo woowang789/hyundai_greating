@@ -10,11 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 import dao.ProductDAO;
 import vo.ProductVO;
 
-public class ShowSearchProductList implements ControllerInterface{
+public class ShowSearchProductList implements Action{
 	private ProductDAO prodDao = ProductDAO.getInstance();
 
 	@Override
-	public MyView process(HttpServletRequest request, HttpServletResponse response)
+	public MyView execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String keyword = request.getParameter("keyword");
 		List<ProductVO> list = prodDao.getProductListByKeyWord(keyword);

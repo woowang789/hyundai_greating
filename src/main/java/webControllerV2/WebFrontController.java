@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = "/v1/*")
 public class WebFrontController extends HttpServlet {
 
-    private Map<String, ControllerInterface> controllerMap = new ConcurrentHashMap<>();
+    private Map<String, Action> controllerMap = new ConcurrentHashMap<>();
 
     public WebFrontController() {
         
@@ -51,14 +51,17 @@ public class WebFrontController extends HttpServlet {
     	
         String requestURI = request.getRequestURI();
 
-        ControllerInterface controller = controllerMap.get(requestURI);
+        Action controller = controllerMap.get(requestURI);
+        
         if ( controller == null) {
         	System.out.println("NOT FOUND "+requestURI);
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
 
-        MyView view = controller.process(request, response);
+        MyView view = controller.execute(request, response);
+        if(view == null) return;
+        
         view.render(request, response);
     }
 }

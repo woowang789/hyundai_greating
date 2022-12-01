@@ -17,13 +17,13 @@ import dao.ProductDAO;
 import vo.OrderProductBeforeVO;
 
 
-public class ShowOrder implements ControllerInterface{
+public class ShowOrder implements Action{
 	private ProductDAO prodDao = ProductDAO.getInstance();
 	private JSONParser parser = new JSONParser();
 	
 
 	@Override
-	public MyView process(HttpServletRequest request, HttpServletResponse response)
+	public MyView execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String prodsStr = request.getParameter("prods");
 		List<OrderProductBeforeVO> list = new ArrayList<>();

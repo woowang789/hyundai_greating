@@ -11,12 +11,12 @@ import dao.ProductDAO;
 import vo.ProductVO;
 
 
-public class ShowBestProductList implements ControllerInterface{
+public class ShowBestProductList implements Action{
 	private ProductDAO prodDao = ProductDAO.getInstance();
 
 	
 	@Override
-	public MyView process(HttpServletRequest request, HttpServletResponse response)
+	public MyView execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		return new MyView("best_product_list");
 	}
