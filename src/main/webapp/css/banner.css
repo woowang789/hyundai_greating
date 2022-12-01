@@ -1,5 +1,6 @@
 /* BANNER */
 .banner{
+	z-index: 1000;
 	margin: auto;
     width: 1260px;
     height: 328px;
@@ -62,9 +63,9 @@
   height: 250px;
   top: 550px;
   right: 65px;
+  cursor: pointer;
 }
 
 li {
-	list-style:none:
-}
+	list-style:none;
 }

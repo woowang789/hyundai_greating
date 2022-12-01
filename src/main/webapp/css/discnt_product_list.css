@@ -3,7 +3,7 @@
   width: calc(1100px - 1*4px);
   margin: 50px auto 20px auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap:1px;
 }
 .bestCategory li{
@@ -40,7 +40,7 @@ main{
 /* itemList */
 main .itemList {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 main .itemList .item{
   margin-bottom: 40px;

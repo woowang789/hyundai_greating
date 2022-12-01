@@ -33,8 +33,7 @@
 
   <div class="floatbanner">
   	<ul>
-     	<li><img src="/img/main/main_float.png" alt=""></li>
-     	<!-- 이벤트페이지 href 추가하세요 -->
+     	<li><a href="/v1/discountProductList"><img src="/img/main/main_float.png" alt=""></a></li>
      </ul>
   </div>
 
