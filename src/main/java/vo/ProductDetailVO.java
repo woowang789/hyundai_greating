@@ -25,7 +25,27 @@ public class ProductDetailVO {
 	private String imgUrl;
 	private String pkgUrl;
 	private String type;
+	private String nutriImgUrl;
+	
 	private List<String> contextUrls = new ArrayList<>();
+	
+	public void setNutriImgUrl(String url) {
+		this.nutriImgUrl = "http://localhost/image" + url;
+	}
+	
+	public void setImgUrl(String url) {
+		this.imgUrl = "http://localhost/image" + url;
+	}
+	
+	public void setPkgUrl (String url) {
+		this.pkgUrl = "http://localhost/image"+url;
+	}
+	public void setcontextUrls(String urls) {
+		String[] urlArr = urls.split(",");
+		for(String url : urlArr) 
+			this.contextUrls.add("http://localhost/image"+url);
+		
+	}
 	
 	
 }

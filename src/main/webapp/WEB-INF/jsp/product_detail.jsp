@@ -243,7 +243,7 @@
 				</div>
 
 				<div class="IngredientsImg">
-					<img src="../img/item_detail/item_ingredients.jpeg" alt="" />
+					<img src="${detail.nutriImgUrl}" alt="" />
 				</div>
 			</div>
 		</div>

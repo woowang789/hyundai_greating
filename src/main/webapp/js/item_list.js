@@ -141,7 +141,7 @@ function reDrawProduct(res) {
     $('.itemList').append(
       baseLi
         .replaceAll('{prod_id}', el['id'])
-        .replace('{prod_thumb}', el['thumbImgUrl'])
+        .replace('{prod_thumb}', el['prodImgUrl'])
         .replace('{prod_storage}', el['storage'])
         .replace('{prod_subname}', el['subName'])
         .replace('{prod_name}', el['name'])

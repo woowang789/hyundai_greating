@@ -15,4 +15,7 @@ public class OrderProductBeforeVO {
 	private int discountRate;
 	private int originPrice;
 	private int marketPrice;
+	public void setThumbUrl(String url) {
+		this.thumbUrl = "http://localhost/image"+url;
+	}
 }

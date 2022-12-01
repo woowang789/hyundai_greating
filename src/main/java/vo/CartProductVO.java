@@ -15,4 +15,8 @@ public class CartProductVO {
 	private int discntRate;
 	private int qty;
 	private int stock;
+	
+	public void setThumbUrl(String url) {
+		this.thumbUrl = "http://localhost/image" +url;
+	}
 }

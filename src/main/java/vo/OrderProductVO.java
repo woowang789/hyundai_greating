@@ -26,4 +26,8 @@ public class OrderProductVO {
 	private int qty;
 	
 	private CommentVO comment;
+	
+	public void setThumbImgUrl(String url) {
+		this.thumbImgUrl = "http://localhost/image" + url;
+	}
 }

@@ -79,6 +79,7 @@ final public class InterestDAO {
 				String thumUrl = rs.getString(7);
 				String storage = rs.getString(8);
 				int stock = rs.getInt(9);
+				String imgUrl = rs.getString(10);
 				
 				ProductVO vo = new ProductVO();
 				vo.setId(id);
@@ -90,6 +91,7 @@ final public class InterestDAO {
 				vo.setOriginPrice(originPrice);
 				vo.setDiscountRate(discountAmount);
 				vo.setMarketPrice(marketPrice);
+				vo.setProdImgUrl(imgUrl);
 				
 				list.add(vo);
 			}

@@ -70,7 +70,7 @@
           <li>
               <div class="item" val="${el.id}">
                 <div class="item__img">
-                  <img src="${el.thumbImgUrl }" alt="" />
+                  <img src="${el.prodImgUrl }" alt="" />
                   <div class="img__badge">${el.storage }</div>
                 </div>
                 <div class="item__title">

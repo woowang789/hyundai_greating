@@ -59,6 +59,7 @@ final public class ProductDAO {
 				String prodPkgImgUrl = rs.getString(16);
 				String type = rs.getString(17);
 				String contextImgUrl = rs.getString(18);
+				String nutriImgUrl = rs.getString(19);
 
 				ProductVO prod = new ProductVO();
 				prod.setId(pId);
@@ -77,13 +78,9 @@ final public class ProductDAO {
 				detail.setImgUrl(prodImgUrl);
 				detail.setPkgUrl(prodPkgImgUrl);
 				detail.setType(type);
+				detail.setNutriImgUrl(nutriImgUrl);
 
-				if (contextImgUrl.contains(",")) {
-					String[] strs = contextImgUrl.split(",");
-					for (String s : strs)
-						detail.getContextUrls().add(s);
-				} else
-					detail.getContextUrls().add(contextImgUrl);
+				detail.setcontextUrls(contextImgUrl);
 
 				SellerVO seller = new SellerVO();
 				seller.setName(sellerName);
@@ -250,7 +247,7 @@ final public class ProductDAO {
 			
 //			int pId = cstmt.getInt(1);
 			String pName = cstmt.getString(2);
-			String thumbUrl = cstmt.getString(3);
+			String imgUrl = cstmt.getString(3);
 			String storage = cstmt.getString(4);
 			String subName = cstmt.getString(5);
 			int cateId = cstmt.getInt(6);
@@ -264,7 +261,7 @@ final public class ProductDAO {
 			ProductVO vo = new ProductVO();
 			vo.setId(prodId);
 			vo.setName(pName);
-			vo.setThumbImgUrl(thumbUrl);
+			vo.setProdImgUrl(imgUrl);
 			vo.setStorage(storage);
 			vo.setSubName(subName);
 			vo.setStock(stockSum);
@@ -301,6 +298,7 @@ final public class ProductDAO {
 				int discnt = rs.getInt(8);
 				int originPrice = rs.getInt(9);
 				int marketPrice = rs.getInt(10);
+				String imgUrl = rs.getString(11);
 
 				ProductVO p = new ProductVO();
 				p.setId(id);
@@ -313,6 +311,7 @@ final public class ProductDAO {
 				p.setMarketPrice(marketPrice);
 				p.setDiscountRate(discnt);
 				p.setGrts(grts);
+				p.setProdImgUrl(imgUrl);
 				list.add(p);
 			}
 		} catch (SQLException e) {
