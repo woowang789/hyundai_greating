@@ -20,4 +20,7 @@ public class ProductVO {
 	private int stock;
 	private String grts;
 	
+	public void setThumbImgUrl (String thumbUrl) {
+		this.thumbImgUrl += "/image"+thumbUrl;
+	}
 }
