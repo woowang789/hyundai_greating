@@ -53,3 +53,18 @@
 .rollimgs.reverse li.nextroll{
     transition: left .5s ease-in-out, right .5s ease-in-out;
 }
+
+/*floatbanner*/
+
+.floatbanner {
+  position: absolute;
+  width: 98px;
+  height: 250px;
+  top: 550px;
+  right: 65px;
+}
+
+li {
+	list-style:none:
+}
+}

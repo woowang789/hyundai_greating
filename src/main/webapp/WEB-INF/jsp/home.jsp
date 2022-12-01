@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/home.css" />
     <script src="/js/home.js" defer></script>
-    <script src="/js/slideShow.js" defer></script>
+    <script src="/js/banner.js" defer></script>
     <%@include file="/WEB-INF/component/style.jsp" %>
     <title>Home</title>
   </head>
@@ -29,6 +29,13 @@
           	  </ul>
          </div>
       </div>
+  </div>
+
+  <div class="floatbanner">
+  	<ul>
+     	<li><img src="/img/main/main_float.png" alt=""></li>
+     	<!-- 이벤트페이지 href 추가하세요 -->
+     </ul>
   </div>
 
 
