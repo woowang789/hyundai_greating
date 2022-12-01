@@ -145,9 +145,9 @@ function reDrawProduct(res) {
         .replace('{prod_storage}', el['storage'])
         .replace('{prod_subname}', el['subName'])
         .replace('{prod_name}', el['name'])
-        .replace('{prod_marketPrice}', el['marketPrice'])
+        .replace('{prod_marketPrice}', el['marketPrice'].toLocaleString())
         .replace('{prod_discnt}', el['discountRate'])
-        .replace('{prod_originPrice}',el['originPrice'])
+        .replace('{prod_originPrice}',el['originPrice'].toLocaleString())
         .replace('{grts}',el['grts'])
     );
   });
