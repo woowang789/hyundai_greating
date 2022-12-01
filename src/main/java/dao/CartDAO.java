@@ -23,14 +23,13 @@ final public class CartDAO {
 	
 	public void emptyCart(String userId) {
 		String query = "{call PKG_CART.P_CART_RESET(?)}";
-		JdbcContent.template(query,new Context() {
+		JdbcContent.template(query, new Context() {
 			@Override
 			public void act(CallableStatement cstmt) throws SQLException {
 				cstmt.setString(1,userId);
 				cstmt.executeUpdate();
 			}
 		});
-		
 	}
 	
 	public List<CartProductVO> getCartProductList(String userId){
@@ -80,39 +79,30 @@ final public class CartDAO {
 	
 	public void updateCartProduct(String userId, int optnId,int stock) {
 		String sql = "{call PKG_CART.P_CART_INSERT(?,?,?)}";
-		try (
-				Connection con = DBConnection.getConn();
-				CallableStatement cstmt = con.prepareCall(sql);
-		){
-			cstmt.setString(1,userId);
-			cstmt.setInt(2, optnId);
-			cstmt.setInt(3, stock);
-			
-			cstmt.executeUpdate();
-			System.out.println("업데이트 완료");
-			
-		}catch (SQLException e) {
-			System.out.println("업데이트 에러 발생");
-			e.printStackTrace();
-		}
+		JdbcContent.template(sql, new Context() {
+			@Override
+			public void act(CallableStatement cstmt) throws SQLException {
+				cstmt.setString(1,userId);
+				cstmt.setInt(2, optnId);
+				cstmt.setInt(3, stock);
+				
+				cstmt.executeUpdate();
+				System.out.println("업데이트 완료");
+			}
+		});
 	}
 
 	public void removeCartProduct(String userId, int optnId) {
 		String sql = "{call PKG_CART.P_CART_DELETE(?,?)}";
-		try (
-				Connection con = DBConnection.getConn();
-				CallableStatement cstmt = con.prepareCall(sql);
-		){
-			cstmt.setString(1,userId);
-			cstmt.setInt(2, optnId);
-			
-			cstmt.executeUpdate();
-			System.out.println("업데이트 완료");
-			
-		}catch (SQLException e) {
-			System.out.println("업데이트 에러 발생");
-			e.printStackTrace();
-		}
+		JdbcContent.template(sql, new Context() {
+			@Override
+			public void act(CallableStatement cstmt) throws SQLException {
+				cstmt.setString(1,userId);
+				cstmt.setInt(2, optnId);
+				
+				cstmt.executeUpdate();
+			}
+		});
 	}
 	
 	

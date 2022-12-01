@@ -12,7 +12,6 @@ import util.DBConnection;
 public class JdbcContent {
 	
 	public static void template(String query,Context context){
-		
 		try (
 				Connection con = DBConnection.getConn();
 				CallableStatement cstmt = con.prepareCall(query);
@@ -23,5 +22,5 @@ public class JdbcContent {
 		}
 	    
 	}
-
 }
+
