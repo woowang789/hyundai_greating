@@ -27,6 +27,12 @@ $('.input__btn.go_detail').click(function(){
 	
 })
 
+$('.item__img').click(function(){
+	console.log('t')
+	let prodId = $(this).parent().parent().attr("prodId")
+	$(location).attr('href',"/v1/productDetail?prodId="+prodId);
+})
+
 
 ///api/insertComment
 $('.input__btn.open_form').click(function(){

@@ -22,10 +22,11 @@ public class ShowViewProductList implements Action{
 		String value = CookieUtil.getCookie(request, response, "viewProds");
 		List<ProductVO> list = new ArrayList<>();
 		if(value!= null) {
-			String[] arr =  value.split("/");
+			String[] arr =  value.split("-");
 			for(int i =arr.length-1;i>=0;i--) {
+				System.out.println(arr[i]);
 				ProductVO vo = prodDao.getProduct(Integer.parseInt(arr[i]));
-				System.out.println(vo.getName());
+				if(vo != null)
 				list.add(vo);
 			}
 		}

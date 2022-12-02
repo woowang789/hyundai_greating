@@ -79,14 +79,13 @@
                 </div>
                 <div class="item__bottom">
                   <h1 class="item__price">${el.marketPrice }원</h1>
-                  <div class="item__shoppingcart">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                  </div>
                 </div>
+                <c:if test="${ not empty el.grts }">
                 <div class="item__value">
                   <i class="fa-solid fa-award"></i>
-                  <span>프리미엄 식재</span>
+                  <span>${el.grts }</span>
                 </div>
+                </c:if>
                 <div class="check__btn">
                   <i class="fa-solid fa-circle-check"></i>
                 </div>
@@ -121,6 +120,8 @@
             </li>
             -->
           </ul>
+          
+          <!-- 
           <div class="pagingArea">
             <ul class="paging">
               <li><a href="">1</a></li>
@@ -134,6 +135,7 @@
               <li><a href="">>></a></li>
             </ul>
           </div>
+ 			-->
         </div>
       </div>
     </main>

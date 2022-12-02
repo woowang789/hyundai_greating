@@ -28,6 +28,7 @@ public class DoOrder extends PostAction{
 	@Override
 	public MyView process(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		boolean isDir = false;
 		if(request.getParameter("isDir") != null) 
 			isDir = request.getParameter("isDir").toString().equals("N")?
@@ -41,6 +42,8 @@ public class DoOrder extends PostAction{
 		String rcvName = request.getParameter("rcv_name");
 		String address = request.getParameter("rcv_addr1")+" "+
 				request.getParameter("rcv_addr2");
+		
+		System.out.println(rcvName+" "+address);
 		String jsonStr = URLDecoder.decode(request.getParameter("prods"),"UTF-8");
 		List<OrderProductInsertVO> list = new ArrayList<>();
 		try {

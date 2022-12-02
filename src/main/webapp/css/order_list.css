@@ -212,6 +212,7 @@ main{
 	display:flex;
 }
 .main__center .order__list .order__item .item__list .item .item__img{
+  cursor: pointer;
   width: 100px;
   height: 100px;
   margin-right: 20px;

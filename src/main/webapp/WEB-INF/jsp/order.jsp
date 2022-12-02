@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +18,7 @@
      <!-- Main -->
     <main>
       <div class="main__header">주문결제</div>
-      <form method="post" action="/v1/order.do">
+      <form method="post" action="/v1/order.do" accept-charset="UTF-8">
         <div class="main__content">
           <div class="main__left">
             <section class="client__sec">

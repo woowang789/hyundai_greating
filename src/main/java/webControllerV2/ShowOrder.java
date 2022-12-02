@@ -38,8 +38,7 @@ public class ShowOrder implements Action{
 				
 				OrderProductBeforeVO op = prodDao.getOrderProduct(optnId);
 				System.out.println(op.getOptnName()+" "+op.getStock());
-				if(op.getStock() < qty) 
-					throw new RuntimeException("재고가 부족합니다.");
+
 				op.setStock(qty);
 				list.add(op);
 			}

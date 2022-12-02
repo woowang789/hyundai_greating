@@ -27,10 +27,10 @@ $('.delete__selected').click(function () {
 function deleteCookie(key){
 	let cookie = $.cookie('viewProds');
 	if(cookie == undefined) return;
-	let array = cookie.split('/');
+	let array = cookie.split('-');
 	
 	const idx = array.indexOf(key);
 	if(idx != -1) array.splice(idx,1);
-	$.cookie('viewProds',array.join('\/'));
+	$.cookie('viewProds',(array.join('-')));
 	
 }

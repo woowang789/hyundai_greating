@@ -18,7 +18,8 @@
     
     <main>
       <div class="countAndFilter">
-        <div class="count">전체상품 <span>110</span></div>
+        <div class="count">전체상품 <span></span></div>
+        <!-- 
         <div class="filter">
           <div class="soldoutRadio">
             <a href=""
@@ -34,6 +35,7 @@
             </select>
           </div>
           <div class="filterBtn"><i class="fa-solid fa-filter"></i> 필터</div>
+           -->
         </div>
       </div>
       <!--ITEMSLIT-->

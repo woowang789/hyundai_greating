@@ -33,6 +33,7 @@ public class ShowProductDetail implements Action{
 		ProductDetailVO detail =  productDao.getProductDetail(prodId);
 		List<CommentVO> comments = commentDao.getCommentList(Integer.toString(prodId));
 		
+		
 		request.setAttribute("comments", comments);
 	
 		// 쿠키 셋팅
@@ -52,13 +53,13 @@ public class ShowProductDetail implements Action{
 		List<String> list = new ArrayList<>();
 		if(value != null) {
 			list = Arrays
-					.stream(value.split("/")).collect(Collectors.toList());
+					.stream(value.split("-")).collect(Collectors.toList());
 			if(list.contains(prodId+"")) 
 				list.remove(prodId+"");
 		}
 		list.add(prodId+"");
 		
-		Cookie cookie = new Cookie("viewProds", list.stream().collect(Collectors.joining("/")));
+		Cookie cookie = new Cookie("viewProds", list.stream().collect(Collectors.joining("-")));
 		cookie.setMaxAge(60*60*24*7);
 		response.addCookie(cookie);
 	}

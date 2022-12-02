@@ -257,7 +257,7 @@
 	<div class="item__review">
 		<div class="review__head">
 			<div class='head__left'>
-				전체<span>??</span>
+				전체<span></span>
 			</div>
 			<div class='head__right'>※ 일부 효능/효과 관련 후기는 구매자의 주관적인 소견이며 개인별로
 				상이할 수 있습니다.</div>

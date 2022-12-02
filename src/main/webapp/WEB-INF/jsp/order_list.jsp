@@ -82,6 +82,7 @@
 			</div>
 			<div class="center__body">
 				<h1>주문내역</h1>
+				<!-- 
 				<div class="body__option">
 					<div class="option__status input__flex">
 						<div class="head">주문상태</div>
@@ -104,6 +105,7 @@
 					</div>
 					<div class="search__btn">조회</div>
 				</div>
+				 -->
 			</div>
 			<c:forEach var="entry" items="${orders}">
 				<ul class="order__list">

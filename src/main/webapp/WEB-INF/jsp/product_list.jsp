@@ -85,6 +85,7 @@
     </div>
     <div class="cate__divider"></div>
     <main>
+    <!-- 
       <div class="countAndFilter">
         <div class="filter__window">
           <div class="filter__close"><i class="fa-regular fa-x"></i></div>
@@ -163,10 +164,13 @@
           <div class="filterBtn"><i class="fa-solid fa-filter"></i> 필터</div>
         </div>
       </div>
+       -->
       <!--ITEMSLIT-->
       <ul class="itemList">
        
       </ul>
+      
+      <!-- 
       <div class="pagingArea">
         <ul class="paging">
           <li><a href="">1</a></li>
@@ -180,6 +184,7 @@
           <li><a href="">>></a></li>
         </ul>
       </div>
+       -->
     </main>
 
     <!-- Footer Fragnent -->

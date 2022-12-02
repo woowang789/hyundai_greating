@@ -33,9 +33,11 @@
 	        <input type="text" name='id' placeholder="아이디" />
 	        <input type="text" name='pwd' placeholder="비밀번호" />
 	      </div>
+	      <!--
 	      <div class="main__check">
 	        <i class="fa-regular fa-circle-check"></i><span>아이디 저장</span>
 	      </div>
+	       -->
 	      <input type="submit" value="로그인" class="main__signinBtn signin" />
 	      </form>
 	      <div class="main__signupBtn">회원가입</div>
