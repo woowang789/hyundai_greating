@@ -32,7 +32,7 @@
     </ul>
     <!-- BestBanner -->
     <div class="bestBanner">
-      <img src="../img/best_item_list/best_item_list_banner.jpeg" alt="" />
+      <img src="../img/best_item_list/best_item_list_banner.jpg" alt="" />
     </div>
     <main>
       <!--ITEMSLIT-->
