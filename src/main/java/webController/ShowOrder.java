@@ -1,4 +1,4 @@
-package webControllerV2;
+package webController;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,13 +17,13 @@ import dao.ProductDAO;
 import vo.OrderProductBeforeVO;
 
 
-public class ShowOrder implements Action{
+public class ShowOrder extends GetAction{
 	private ProductDAO prodDao = ProductDAO.getInstance();
 	private JSONParser parser = new JSONParser();
 	
 
 	@Override
-	public MyView execute(HttpServletRequest request, HttpServletResponse response)
+	public MyView process(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String prodsStr = request.getParameter("prods");
 		List<OrderProductBeforeVO> list = new ArrayList<>();

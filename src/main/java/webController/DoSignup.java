@@ -1,4 +1,4 @@
-package webControllerV2;
+package webController;
 
 import java.io.IOException;
 import java.util.Date;
@@ -12,12 +12,12 @@ import dao.UserDAO;
 import util.DateParser;
 import vo.UserVO;
 
-public class DoSignup implements Action{
+public class DoSignup extends PostAction{
 	private UserDAO userDao = UserDAO.getInstance();
 	
 	
 	@Override
-	public MyView execute(HttpServletRequest request, HttpServletResponse response)
+	public MyView process(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String name = request.getParameter("name").toString();
 		String id = request.getParameter("id").toString();

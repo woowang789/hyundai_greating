@@ -1,4 +1,4 @@
-package webControllerV2;
+package webController;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,11 +16,11 @@ import util.SessionUtil;
 import vo.OrderProductVO;
 
 
-public class ShowOrderList implements Action{
+public class ShowOrderList extends GetAction{
 	private OrderDAO orderDao = OrderDAO.getInstance();
 
 	@Override
-	public MyView execute(HttpServletRequest request, HttpServletResponse response)
+	public MyView process(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String userId = SessionUtil.getUserId(request);
 		List<OrderProductVO> list = orderDao.getOrderList(userId);

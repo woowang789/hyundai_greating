@@ -1,4 +1,4 @@
-package webControllerV2;
+package webController;
 
 import java.io.IOException;
 import java.net.URLDecoder;

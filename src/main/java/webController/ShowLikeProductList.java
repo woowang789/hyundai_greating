@@ -1,4 +1,4 @@
-package webControllerV2;
+package webController;
 
 import java.io.IOException;
 import java.util.List;
@@ -13,12 +13,12 @@ import util.SessionUtil;
 import vo.ProductVO;
 
 
-public class ShowLikeProductList implements Action{
+public class ShowLikeProductList extends GetAction{
 	private InterestDAO interestDao = InterestDAO.getInstance();
 	
 
 	@Override
-	public MyView execute(HttpServletRequest request, HttpServletResponse response)
+	public MyView process(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String userId = SessionUtil.getUserId(request).toString();
 		List<ProductVO> list = interestDao.getInterestProductList(userId);

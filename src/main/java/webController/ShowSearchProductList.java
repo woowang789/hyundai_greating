@@ -1,4 +1,4 @@
-package webControllerV2;
+package webController;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,11 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 import dao.ProductDAO;
 import vo.ProductVO;
 
-public class ShowSearchProductList implements Action{
+public class ShowSearchProductList extends GetAction{
 	private ProductDAO prodDao = ProductDAO.getInstance();
 
 	@Override
-	public MyView execute(HttpServletRequest request, HttpServletResponse response)
+	public MyView process(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String keyword = request.getParameter("keyword");
 		List<ProductVO> list = prodDao.getProductListByKeyWord(keyword);

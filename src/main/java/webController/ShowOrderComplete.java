@@ -1,4 +1,4 @@
-package webControllerV2;
+package webController;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -13,12 +13,12 @@ import util.SessionUtil;
 import vo.OrderVO;
 
 
-public class ShowOrderComplete implements Action{
+public class ShowOrderComplete extends GetAction{
 	private OrderDAO orderDao = OrderDAO.getInstance();
 	
 
 	@Override
-	public MyView execute(HttpServletRequest request, HttpServletResponse response)
+	public MyView process(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String userId = SessionUtil.getUserId(request);
 		long dataLong = Long.parseLong(request.getParameter("date"));

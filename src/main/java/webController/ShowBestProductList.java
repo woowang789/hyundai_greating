@@ -1,4 +1,4 @@
-package webControllerV2;
+package webController;
 
 import java.io.IOException;
 import java.util.List;
@@ -11,12 +11,12 @@ import dao.ProductDAO;
 import vo.ProductVO;
 
 
-public class ShowBestProductList implements Action{
+public class ShowBestProductList extends GetAction{
 	private ProductDAO prodDao = ProductDAO.getInstance();
 
 	
 	@Override
-	public MyView execute(HttpServletRequest request, HttpServletResponse response)
+	public MyView process(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		return new MyView("best_product_list");
 	}

@@ -1,4 +1,4 @@
-package webControllerV2;
+package webController;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,11 +13,11 @@ import util.CookieUtil;
 import vo.ProductVO;
 
 
-public class ShowViewProductList implements Action{
+public class ShowViewProductList extends GetAction{
 	private ProductDAO prodDao = ProductDAO.getInstance();
 
 	@Override
-	public MyView execute(HttpServletRequest request, HttpServletResponse response)
+	public MyView process(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String value = CookieUtil.getCookie(request, response, "viewProds");
 		List<ProductVO> list = new ArrayList<>();
