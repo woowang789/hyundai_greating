@@ -1,15 +1,37 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="vo.UserVO"%>
 <%@ page language="java"
     pageEncoding="UTF-8"%>
+    
+    
+    <%
+   		UserVO user = null;
+    	if(session.getAttribute("user") != null)
+    		user = (UserVO) session.getAttribute("user");
+   	%>
+
     
     <!-- Header -->
     <header>
       <div class="header__content">
         <div class="header__btn">
           <ul>
-            <li><a href="/v1/signin">로그인</a></li>
-            <li><a href="/v1/signup">회원가입</a></li>
-            <li><a href="">쿠폰/교환권</a></li>
-            <li><a href="">고객센터</a></li>
+          <% 
+          	if (user == null){
+          %>
+	            <li><a href="/v1/signin">로그인</a></li>
+	            <li><a href="/v1/signup">회원가입</a></li>
+           <%
+          	}else{
+          	%>
+          		<li><a href="/v1/orderList"><%=user.getName()%></a></li>
+          		<li><a href="/v1/signout">로그아웃</a></li>
+          		<li><a href="/v1/cart">장바구니</a></li>
+	            <li><a href="/v1/viewProductList">최근 본 상품</a></li>
+          		<li><a href="/v1/likeProductList">관심 상품</a></li>
+          	<%
+          	}
+          	%>
           </ul>
         </div>
         <div class="header__logo">
@@ -23,65 +45,23 @@
         <div class="hover__menu">
           <ul>
             <h3>건강마켓</h3>
-            <li>
-              <a href="/v1/itemList"><i></i>건강반찬</a>
-              <ul>
-                <li><a href="/v1/itemList">메인요리</a></li>
-                <li><a href="/v1/itemList">밀키트</a></li>
-                <li><a href="/v1/itemList">밑반찬</a></li>
-                <li><a href="/v1/itemList">나물</a></li>
-                <li><a href="/v1/itemList">소스/양념</a></li>
-                <li><a href="/v1/itemList">키즈</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="/v1/itemList"><i></i>진한 국/찌개</a>
-              <ul>
-                <li><a href="/v1/itemList">국</a></li>
-                <li><a href="/v1/itemList">찌개</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href=""><i></i>자연 담은 면</a>
-              <ul>
-                <li><a href="">국수</a></li>
-                <li><a href="">파스타</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href=""><i></i>영양가득 밥/죽</a>
-              <ul>
-                <li><a href="">밥</a></li>
-                <li><a href="">죽</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href=""><i></i>샐러드/샌드위치</a>
-              <ul>
-                <li><a href="">샐러드</a></li>
-                <li><a href="">샌드위치</a></li>
-                <li><a href="">브런치박스</a></li>
-              </ul>
-            </li>
           </ul>
         </div>
       </div>
       <div class="header__menu">
         <ul>
-          <li><a href="">브랜드 소개</a></li>
-          <li><a href="">케어식단</a></li>
-          <li><a href="/v1/bestItemList">베스트</a></li>
-          <li><a href="">할인</a></li>
-          <li><a href="">기획전</a></li>
-          <li><a href="">이벤트</a></li>
+          <li><a href="/v1/bestProductList">베스트</a></li>
+          <li><a href="/v1/discountProductList">할인</a></li>
         </ul>
       </div>
       <div class="header__search">
-        <input type="text" placeholder="검색어를 입력해주세요" />
-        <i class="fa-solid fa-magnifying-glass"></i>
+      	<form action="/v1/searchProductList">
+        <input type="text" name="keyword" placeholder="검색어를 입력해주세요" />
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
       </div>
       <div class="header__shoppingCart">
-        <i class="fa-solid fa-cart-shopping"></i>
+        <a href="/v1/cart"><i class="fa-solid fa-cart-shopping"></i></a>
       </div>
     </div>
     <div class="header__divider"></div>

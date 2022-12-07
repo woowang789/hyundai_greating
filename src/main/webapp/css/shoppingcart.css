@@ -19,7 +19,7 @@ main .main__content .price__range{
 }
 main .main__content .price__range p.head{
   font-weight: 700;
-  font-size: 1.45rem;
+  font-size: 1rem;
 }
 main .main__content .price__range .range__back{
   width: 310px;

@@ -3,7 +3,8 @@ header{
   width: 100%;
 }
 header .header__content{
-  min-width: 1100px;
+  width: 1100px;
+  margin :0 auto;
 }
 header .header__btn{
   padding:20px 0;
@@ -21,6 +22,9 @@ header .header__btn ul li {
 header .header__logo{
   text-align: center;
   margin-bottom: 25px;
+}
+.header__search button{
+	display: inline;
 }
 
 .header__bottom{
@@ -72,10 +76,14 @@ header .header__logo{
   padding: 10px;
   padding-left: 15px;
 }
+.header__bottom button{
+	border: none;
+	background-color: white;
+}
 .header__bottom .header__search i{
   cursor: pointer;
   position: absolute;
-  right: 13px;
+  right: 30px;
   top: 10px;
 }
 .header__bottom .header__shoppingCart i{

@@ -44,6 +44,7 @@ main .main__content .content__desc > p span{
   font-weight: 700;
 }
 main .main__content .content__btn{
+	cursor: pointer;
   margin: 0 auto;
   background-color: #918C01;
   width: 300px;

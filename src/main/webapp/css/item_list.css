@@ -82,6 +82,15 @@
 .cate__divider{
   border-top: 1px solid #ccc;
 }
+.discnt_rate {
+	color: orange;
+	font-weight: 700;
+	font-size: 1.1rem;
+}
+.origin_prcie{
+	text-decoration: line-through;
+}
+
 main{
   width: 1110px;
   margin: 0 auto;

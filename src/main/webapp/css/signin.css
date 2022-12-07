@@ -40,6 +40,7 @@ main .main__check span{
   font-size: 0.9rem;
 }
 main .main__signinBtn{
+  cursor: pointer;
   width: 100%;
   height: 60px;
   background-color: #918C01;
@@ -50,6 +51,7 @@ main .main__signinBtn{
   font-weight: 900;
 }
 main .main__signupBtn{
+  cursor: pointer;
   width: 100%;
   height: 60px;
   background-color: white;

@@ -8,17 +8,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/home.css" />
     <script src="/js/home.js" defer></script>
+    <script src="/js/banner.js" defer></script>
     <%@include file="/WEB-INF/component/style.jsp" %>
     <title>Home</title>
   </head>
   <body>
     <!-- HEADER Fragnent -->
-    <%@include file="/WEB-INF/component/header.jsp" %>
+    <jsp:include page="../component/header.jsp"></jsp:include>
     
     
-    <div class="banner">
-      <img src="/img/main/main_banner.jpeg" alt="" />
-    </div>
+ <div class="banner">
+    <div class="container">
+        <div class="img_wrap">
+            <ul class="rollimgs">
+               <li><img src="/img/main/main_banner.jpeg" alt=""></li>
+     			<li><img src="/img/main/main_banner2.jpg" alt=""></li>
+     			<li><img src="/img/main/main_banner3.jpg" alt=""></li>
+     			<li><img src="/img/main/main_banner4.jpg" alt=""></li>
+     			<li><img src="/img/main/main_banner5.jpg" alt=""></li>
+          	  </ul>
+         </div>
+      </div>
+  </div>
+
+  <div class="floatbanner">
+  	<ul>
+     	<li><a href="/v1/discountProductList"><img src="/img/main/main_float.png" alt=""></a></li>
+     </ul>
+  </div>
+
 
     <main>
       <!-- CATEGORYAREA-->
@@ -45,98 +63,7 @@
       </div>
       <!--ITEMSLIT-->
       <ul class="itemList">
-        <li>
-          <div class="item">
-            <div class="item__img">
-              <a href=""
-                ><img src="../img//main/main_item_img.jpeg" alt=""
-              /></a>
-              <div class="img__badge">냉장</div>
-            </div>
-            <div class="item__title">
-              <p>집에서 즐기는 베트남식 샌드위치</p>
-              <h1>부드러운 소불고기 반미 샌드</h1>
-            </div>
-            <div class="item__bottom">
-              <h1 class="item__price">2,900원</h1>
-              <div class="item__shoppingcart">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="item">
-            <div class="item__img">
-              <img src="../img//main/main_item_img.jpeg" alt="" />
-              <div class="img__badge">냉장</div>
-            </div>
-            <div class="item__title">
-              <p>집에서 즐기는 베트남식 샌드위치</p>
-              <h1>부드러운 소불고기 반미 샌드</h1>
-            </div>
-            <div class="item__bottom">
-              <h1 class="item__price">2,900원</h1>
-              <div class="item__shoppingcart">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="item">
-            <div class="item__img">
-              <img src="../img//main/main_item_img.jpeg" alt="" />
-              <div class="img__badge">냉장</div>
-            </div>
-            <div class="item__title">
-              <p>집에서 즐기는 베트남식 샌드위치</p>
-              <h1>부드러운 소불고기 반미 샌드</h1>
-            </div>
-            <div class="item__bottom">
-              <h1 class="item__price">2,900원</h1>
-              <div class="item__shoppingcart">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="item">
-            <div class="item__img">
-              <img src="../img//main/main_item_img.jpeg" alt="" />
-              <div class="img__badge">냉장</div>
-            </div>
-            <div class="item__title">
-              <p>집에서 즐기는 베트남식 샌드위치</p>
-              <h1>부드러운 소불고기 반미 샌드</h1>
-            </div>
-            <div class="item__bottom">
-              <h1 class="item__price">2,900원</h1>
-              <div class="item__shoppingcart">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="item">
-            <div class="item__img">
-              <img src="../img//main/main_item_img.jpeg" alt="" />
-              <div class="img__badge">냉장</div>
-            </div>
-            <div class="item__title">
-              <p>집에서 즐기는 베트남식 샌드위치</p>
-              <h1>부드러운 소불고기 반미 샌드</h1>
-            </div>
-            <div class="item__bottom">
-              <h1 class="item__price">2,900원</h1>
-              <div class="item__shoppingcart">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </div>
-            </div>
-          </div>
-        </li>
+       
       </ul>
       <div class="moreBtnArea">
         <a href="/v1/itemList"><div class="moreBtn">착한 간식/음료 전체보기 ></div></a>

@@ -3,25 +3,15 @@ package apiController.get;
 import java.util.List;
 import java.util.Map;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import apiController.ApiControllerInter;
+import apiController.ApiAction;
 import dao.ProductDAO;
-import dao.TestDao;
 import vo.ProductVO;
 
-public class GetProductList implements ApiControllerInter{
+public class GetProductList implements ApiAction{
 	private ProductDAO dao = ProductDAO.getInstance();
-	private TestDao test = TestDao.getInstance();
-	private ObjectMapper mapper = new ObjectMapper();
 
 	@Override
-	public void process(String body,Map<String,String> paramMap,Map<String, Object> model) {
+	public void execute(String body,Map<String,String> paramMap,Map<String, Object> model) {
 		String cateId = paramMap.get("cateId");
 		if(cateId == null) cateId= "50";
 		List<ProductVO> list = dao.getProductList(cateId);

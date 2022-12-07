@@ -15,23 +15,35 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import apiController.get.GetBestProductList;
+import apiController.get.GetDiscountProductList;
 import apiController.get.GetProductList;
+import apiController.post.CheckId;
+import apiController.post.InsertComment;
+import apiController.post.RemoveCartProduct;
+import apiController.post.ToggleInterest;
+import apiController.post.UpdateCartProduct;
 
 
 
 @WebServlet("/api/*")
 public class ApiFrontController extends HttpServlet {
 	private ObjectMapper mapper = new ObjectMapper();
-	private Map<String, ApiControllerInter> controllerMap = new ConcurrentHashMap<>();
+	private Map<String, ApiAction> controllerMap = new ConcurrentHashMap<>();
 	
 	public ApiFrontController() {
 		controllerMap.put("/api/productList", new GetProductList());
+		controllerMap.put("/api/bestProductList", new GetBestProductList());
+		controllerMap.put("/api/discountProductList", new GetDiscountProductList());
+		
+		controllerMap.put("/api/updateCart", new UpdateCartProduct());
+		controllerMap.put("/api/removeCart", new RemoveCartProduct());
+		controllerMap.put("/api/toggleInterest", new ToggleInterest());
+		controllerMap.put("/api/checkId", new CheckId());
+		
+		controllerMap.put("/api/insertComment", new InsertComment());
 	}
 
 
@@ -45,7 +57,7 @@ public class ApiFrontController extends HttpServlet {
 		Map<String,String> paramMap = createParamMap(request);
 		Map<String, Object> model = new HashMap<>();
 		
-		ApiControllerInter controllerInter = controllerMap.get(request.getRequestURI());
+		ApiAction controllerInter = controllerMap.get(request.getRequestURI());
 		
 		
 		if(controllerInter == null) {
@@ -56,7 +68,7 @@ public class ApiFrontController extends HttpServlet {
 			String bodyJson = getBodyJson(request);
 			
 			try {
-				controllerInter.process(bodyJson,paramMap,model);
+				controllerInter.execute(bodyJson,paramMap,model);
 				model.put("code", 200);
 				model.put("msg","succes");
 			} catch (Exception e) {
@@ -82,8 +94,6 @@ public class ApiFrontController extends HttpServlet {
 		         while ((line = br.readLine()) != null) {
 		        	 stringBuilder.append(line);
 		         }
-		     }else {
-		         System.out.println("body 없음");
 		     }
 		 } catch (IOException e) {
 		     e.printStackTrace();

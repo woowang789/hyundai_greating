@@ -13,7 +13,7 @@
   </head>
   <body>
     <!-- HEADER Fragnent -->
-    <%@include file="/WEB-INF/component/header.jsp" %>
+    <jsp:include page="../component/header.jsp"></jsp:include>
     
     <div class="cateWithImgArea">
       <h1 class="cateTitle">건강마켓</h1>
@@ -85,6 +85,7 @@
     </div>
     <div class="cate__divider"></div>
     <main>
+    <!-- 
       <div class="countAndFilter">
         <div class="filter__window">
           <div class="filter__close"><i class="fa-regular fa-x"></i></div>
@@ -163,105 +164,13 @@
           <div class="filterBtn"><i class="fa-solid fa-filter"></i> 필터</div>
         </div>
       </div>
+       -->
       <!--ITEMSLIT-->
       <ul class="itemList">
-        <li>
-          <div class="item">
-            <div class="item__img">
-              <a href="">
-                <img src="../img//main/main_item_img.jpeg" alt="" />
-              </a>
-              <div class="img__badge">냉장</div>
-            </div>
-            <div class="item__title">
-              <p>집에서 즐기는 베트남식 샌드위치</p>
-              <h1>부드러운 소불고기 반미 샌드</h1>
-            </div>
-            <div class="item__bottom">
-              <h1 class="item__price">2,900원</h1>
-              <div class="item__shoppingcart">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </div>
-            </div>
-            <div class="item__value">
-              <i class="fa-solid fa-award"></i>
-              <span>프리미엄 식재</span>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="item">
-            <div class="item__img">
-              <img src="../img//main/main_item_img.jpeg" alt="" />
-              <div class="img__badge">냉장</div>
-            </div>
-            <div class="item__title">
-              <p>집에서 즐기는 베트남식 샌드위치</p>
-              <h1>부드러운 소불고기 반미 샌드</h1>
-            </div>
-            <div class="item__bottom">
-              <h1 class="item__price">2,900원</h1>
-              <div class="item__shoppingcart">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="item">
-            <div class="item__img">
-              <img src="../img//main/main_item_img.jpeg" alt="" />
-              <div class="img__badge">냉장</div>
-            </div>
-            <div class="item__title">
-              <p>집에서 즐기는 베트남식 샌드위치</p>
-              <h1>부드러운 소불고기 반미 샌드</h1>
-            </div>
-            <div class="item__bottom">
-              <h1 class="item__price">2,900원</h1>
-              <div class="item__shoppingcart">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="item">
-            <div class="item__img">
-              <img src="../img//main/main_item_img.jpeg" alt="" />
-              <div class="img__badge">냉장</div>
-            </div>
-            <div class="item__title">
-              <p>집에서 즐기는 베트남식 샌드위치</p>
-              <h1>부드러운 소불고기 반미 샌드</h1>
-            </div>
-            <div class="item__bottom">
-              <h1 class="item__price">2,900원</h1>
-              <div class="item__shoppingcart">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="item">
-            <div class="item__img">
-              <img src="../img//main/main_item_img.jpeg" alt="" />
-              <div class="img__badge">냉장</div>
-            </div>
-            <div class="item__title">
-              <p>집에서 즐기는 베트남식 샌드위치</p>
-              <h1>부드러운 소불고기 반미 샌드</h1>
-            </div>
-            <div class="item__bottom">
-              <h1 class="item__price">2,900원</h1>
-              <div class="item__shoppingcart">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </div>
-            </div>
-          </div>
-        </li>
+       
       </ul>
+      
+      <!-- 
       <div class="pagingArea">
         <ul class="paging">
           <li><a href="">1</a></li>
@@ -275,6 +184,7 @@
           <li><a href="">>></a></li>
         </ul>
       </div>
+       -->
     </main>
 
     <!-- Footer Fragnent -->

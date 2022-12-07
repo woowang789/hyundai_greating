@@ -17,8 +17,16 @@ public class ProductVO {
 	private int marketPrice;
 	private int discountRate;
 	
+	private String prodImgUrl;
+	
 	private int stock;
 	private String grts;
 	
+	public void setProdImgUrl(String url) {
+		this.prodImgUrl = "http://localhost/image" + url;
+	}
 	
+	public void setThumbImgUrl (String thumbUrl) {
+		this.thumbImgUrl = "http://localhost/image"+thumbUrl;
+	}
 }

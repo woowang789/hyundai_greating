@@ -24,6 +24,9 @@ body {
   margin: 0 auto;
   line-height: 1;
 }
+button{
+  border: none;
+}
 ol,
 ul {
   list-style: none;
