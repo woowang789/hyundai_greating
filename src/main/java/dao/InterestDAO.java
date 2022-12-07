@@ -36,7 +36,6 @@ final public class InterestDAO {
 			count = cstmt.getInt(3);
 			
 		}catch (SQLException e) {
-			System.out.println("toggleInterest 업데이트 에러 발생");
 			e.printStackTrace();
 		}
 		return count==1;
@@ -53,7 +52,6 @@ final public class InterestDAO {
 			cstmt.executeUpdate();
 			
 		}catch (SQLException e) {
-			System.out.println("toggleInterest 업데이트 에러 발생");
 			e.printStackTrace();
 		}
 	}

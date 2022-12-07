@@ -14,7 +14,7 @@ public class ToggleInterest implements ApiAction {
 	private JSONParser parser = new JSONParser();
 
 	@Override
-	public void process(String body, Map<String, String> paramMap, Map<String, Object> model) throws ParseException {
+	public void execute(String body, Map<String, String> paramMap, Map<String, Object> model) throws ParseException {
 		JSONObject json = (JSONObject) parser.parse(body);
 		int prodId = 
 				Integer.parseInt(json.get("prodId").toString());

@@ -11,7 +11,7 @@ public class GetProductList implements ApiAction{
 	private ProductDAO dao = ProductDAO.getInstance();
 
 	@Override
-	public void process(String body,Map<String,String> paramMap,Map<String, Object> model) {
+	public void execute(String body,Map<String,String> paramMap,Map<String, Object> model) {
 		String cateId = paramMap.get("cateId");
 		if(cateId == null) cateId= "50";
 		List<ProductVO> list = dao.getProductList(cateId);

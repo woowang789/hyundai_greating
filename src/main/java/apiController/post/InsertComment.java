@@ -14,7 +14,7 @@ public class InsertComment implements ApiAction{
 	private JSONParser parser = new JSONParser();
 	private CommentDAO commentDAO = CommentDAO.getInstance();
 	@Override
-	public void process(String body, Map<String, String> paramMap, Map<String, Object> model) throws ParseException {
+	public void execute(String body, Map<String, String> paramMap, Map<String, Object> model) throws ParseException {
 		JSONObject json = (JSONObject) parser.parse(body);
 		String title = json.get("title").toString();
 		String text = json.get("text").toString();

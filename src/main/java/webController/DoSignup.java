@@ -33,7 +33,6 @@ public class DoSignup extends PostAction{
 		UserVO newUser = userDao.getUserById(id);
 		if(request.getSession(false) != null) 
 			request.getSession(false).invalidate();
-		System.out.println(newUser.getId());
 		HttpSession session = request.getSession();
 		session.setAttribute("user", newUser);
 

@@ -436,7 +436,6 @@ final public class ProductDAO {
 				vo.setDiscountRate(discntRate);
 				vo.setGrts(grts);
 				
-				System.out.println(prodName+" "+prodSubName);
 				list.add(vo);
 			}
 

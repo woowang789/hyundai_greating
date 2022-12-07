@@ -23,8 +23,6 @@ public class ShowOrderComplete extends GetAction{
 		String userId = SessionUtil.getUserId(request);
 		long dataLong = Long.parseLong(request.getParameter("date"));
 		OrderVO order = orderDao.getOrder(userId, new Date(dataLong));
-		System.out.println(order.getReceiverName());
-		System.out.println(order.getOrderProds().size()+"개의 품목");
 		request.setAttribute("order", order);
 		
 		return new MyView("order_complete");

@@ -15,7 +15,7 @@ public class CheckId implements ApiAction{
 	private UserDAO userDao = UserDAO.getInstance();
 
 	@Override
-	public void process(String body, Map<String, String> paramMap, Map<String, Object> model) throws ParseException {
+	public void execute(String body, Map<String, String> paramMap, Map<String, Object> model) throws ParseException {
 		JSONObject json = (JSONObject) parser.parse(body);
 		String id = json.get("userId").toString();
 		UserVO findUser = userDao.getUserById(id);

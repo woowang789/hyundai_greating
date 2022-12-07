@@ -24,7 +24,6 @@ public class ShowViewProductList extends GetAction{
 		if(value!= null) {
 			String[] arr =  value.split("-");
 			for(int i =arr.length-1;i>=0;i--) {
-				System.out.println(arr[i]);
 				ProductVO vo = prodDao.getProduct(Integer.parseInt(arr[i]));
 				if(vo != null)
 				list.add(vo);

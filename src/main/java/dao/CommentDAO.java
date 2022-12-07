@@ -35,7 +35,6 @@ final public class CommentDAO {
 			cstmt.setDate(6, orderDate);
 
 			cstmt.executeUpdate();
-			System.out.println("리뷰 insert ");
 			
 		} catch (SQLException e) {
 			e.printStackTrace();

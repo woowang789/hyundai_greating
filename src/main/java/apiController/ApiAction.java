@@ -8,5 +8,5 @@ import org.json.simple.parser.ParseException;
 
 public interface ApiAction {
 	
-	void process(String body, Map<String,String> paramMap,Map<String, Object> model) throws ParseException;
+	void execute(String body, Map<String,String> paramMap,Map<String, Object> model) throws ParseException;
 }

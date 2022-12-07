@@ -68,7 +68,7 @@ public class ApiFrontController extends HttpServlet {
 			String bodyJson = getBodyJson(request);
 			
 			try {
-				controllerInter.process(bodyJson,paramMap,model);
+				controllerInter.execute(bodyJson,paramMap,model);
 				model.put("code", 200);
 				model.put("msg","succes");
 			} catch (Exception e) {
@@ -94,8 +94,6 @@ public class ApiFrontController extends HttpServlet {
 		         while ((line = br.readLine()) != null) {
 		        	 stringBuilder.append(line);
 		         }
-		     }else {
-		         System.out.println("body 없음");
 		     }
 		 } catch (IOException e) {
 		     e.printStackTrace();

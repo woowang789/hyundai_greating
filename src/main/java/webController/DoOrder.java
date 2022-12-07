@@ -43,7 +43,6 @@ public class DoOrder extends PostAction{
 		String address = request.getParameter("rcv_addr1")+" "+
 				request.getParameter("rcv_addr2");
 		
-		System.out.println(rcvName+" "+address);
 		String jsonStr = URLDecoder.decode(request.getParameter("prods"),"UTF-8");
 		List<OrderProductInsertVO> list = new ArrayList<>();
 		try {

@@ -37,7 +37,6 @@ public class ShowOrder extends GetAction{
 				int qty = Integer.parseInt(o.get("qty").toString());
 				
 				OrderProductBeforeVO op = prodDao.getOrderProduct(optnId);
-				System.out.println(op.getOptnName()+" "+op.getStock());
 
 				op.setStock(qty);
 				list.add(op);

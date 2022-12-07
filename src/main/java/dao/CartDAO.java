@@ -87,7 +87,6 @@ final public class CartDAO {
 				cstmt.setInt(3, stock);
 				
 				cstmt.executeUpdate();
-				System.out.println("업데이트 완료");
 			}
 		});
 	}

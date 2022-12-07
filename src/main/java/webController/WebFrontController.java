@@ -54,7 +54,6 @@ public class WebFrontController extends HttpServlet {
         Action controller = controllerMap.get(requestURI);
         
         if ( controller == null) {
-        	System.out.println("NOT FOUND "+requestURI);
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }

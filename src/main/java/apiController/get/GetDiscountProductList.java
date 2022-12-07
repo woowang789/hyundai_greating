@@ -13,7 +13,7 @@ public class GetDiscountProductList implements ApiAction{
 	private ProductDAO dao = ProductDAO.getInstance();
 	
 	@Override
-	public void process(String body, Map<String, String> paramMap, Map<String, Object> model) throws ParseException {
+	public void execute(String body, Map<String, String> paramMap, Map<String, Object> model) throws ParseException {
 		String discntId = paramMap.get("discntId");
 		if(discntId == null) discntId= "50";
 		List<ProductVO> list = dao.getProductListByDiscnt(discntId);

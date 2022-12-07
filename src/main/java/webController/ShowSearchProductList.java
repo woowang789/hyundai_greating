@@ -21,7 +21,4 @@ public class ShowSearchProductList extends GetAction{
 		request.setAttribute("list", list);
 		return new MyView("search_product_list");
 	}
-	
-	
-
 }
