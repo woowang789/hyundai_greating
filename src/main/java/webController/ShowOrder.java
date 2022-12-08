@@ -16,6 +16,10 @@ import org.json.simple.parser.ParseException;
 import dao.ProductDAO;
 import vo.OrderProductBeforeVO;
 
+/**
+ * 
+ * @author 이세아
+ */
 
 public class ShowOrder extends GetAction{
 	private ProductDAO prodDao = ProductDAO.getInstance();
