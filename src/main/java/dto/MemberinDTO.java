@@ -5,6 +5,11 @@ import java.util.Date;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * 
+ * @author 이세아
+ */
+
 @Getter @Setter
 public class MemberinDTO {
 	

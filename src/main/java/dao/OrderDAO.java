@@ -14,7 +14,10 @@ import vo.CommentVO;
 import vo.OrderProductInsertVO;
 import vo.OrderProductVO;
 import vo.OrderVO;
-
+/**
+ * 
+ * @author 이세아
+ */
 final public class OrderDAO {
 	private OrderDAO() {
 	}

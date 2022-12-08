@@ -1,4 +1,8 @@
 package apiController.get;
+/**
+ * 
+ * @author 이세아
+ */
 
 import java.util.List;
 import java.util.Map;

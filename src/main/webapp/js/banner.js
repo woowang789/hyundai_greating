@@ -1,3 +1,9 @@
+/**
+ * 
+ * @author 이세아
+ */
+ 
+
 let banner = {
     rollId: null,
     interval: 2000,

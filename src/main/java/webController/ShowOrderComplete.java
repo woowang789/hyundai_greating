@@ -8,10 +8,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.OrderDAO;
-import util.DateParser;
 import util.SessionUtil;
 import vo.OrderVO;
 
+/**
+ * 
+ * @author 이세아
+ */
 
 public class ShowOrderComplete extends GetAction{
 	private OrderDAO orderDao = OrderDAO.getInstance();

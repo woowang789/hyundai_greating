@@ -7,6 +7,11 @@ import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * 
+ * @author 이세아
+ */
+
 @Setter @Getter
 public class OrderVO {
 	
