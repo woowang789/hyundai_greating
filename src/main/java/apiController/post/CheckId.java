@@ -10,6 +10,11 @@ import apiController.ApiAction;
 import dao.UserDAO;
 import vo.UserVO;
 
+/**
+ * 
+ * @author 왕종휘
+ */
+
 public class CheckId implements ApiAction{
 	private JSONParser parser = new JSONParser();
 	private UserDAO userDao = UserDAO.getInstance();

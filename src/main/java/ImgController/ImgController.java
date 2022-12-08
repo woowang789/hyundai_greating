@@ -12,6 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.IOUtils;
 
+/**
+ * 
+ * @author 왕종휘
+ */
+
 @WebServlet("/image/*")
 public class ImgController extends HttpServlet {
 
@@ -20,7 +25,7 @@ public class ImgController extends HttpServlet {
 		response.setContentType("image/jpeg");
 		String uri = request.getRequestURI();
 		String path = uri.substring("/image/".length()-1,uri.length());
-		String filePath = "C:/dev64/workspace/hyundai_greating/imgRepository";
+		String filePath = "C:/Users/codea/git/hyundai_greating/imgRepository";
 		filePath += path;
 		byte[] image = IOUtils.toByteArray(new FileInputStream(new File(filePath)));
 		response.getOutputStream().write(image);

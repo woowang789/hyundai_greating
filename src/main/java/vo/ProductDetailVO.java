@@ -7,6 +7,11 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * 
+ * @author 촤태승
+ */ 
+
 @Getter
 @Setter
 @ToString

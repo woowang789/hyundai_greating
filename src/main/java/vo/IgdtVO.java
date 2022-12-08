@@ -3,6 +3,11 @@ package vo;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * 
+ * @author 소규석
+ */ 
+
 @Getter @Setter
 public class IgdtVO {
 	private int id;

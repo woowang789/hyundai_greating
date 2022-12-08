@@ -10,6 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 import dao.ProductDAO;
 import vo.ProductVO;
 
+/**
+ * 
+ * @author 왕종휘
+ */ 
+
 public class ShowSearchProductList extends GetAction{
 	private ProductDAO prodDao = ProductDAO.getInstance();
 

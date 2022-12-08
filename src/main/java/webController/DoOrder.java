@@ -20,6 +20,11 @@ import dao.OrderDAO;
 import util.SessionUtil;
 import vo.OrderProductInsertVO;
 
+/**
+ * 
+ * @author 이세아
+ */
+
 public class DoOrder extends PostAction{
 	private OrderDAO orderDao = OrderDAO.getInstance();
 	private CartDAO cartDao = CartDAO.getInstance();

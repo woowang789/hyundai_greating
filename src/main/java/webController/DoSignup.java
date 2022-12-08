@@ -12,6 +12,11 @@ import dao.UserDAO;
 import util.DateParser;
 import vo.UserVO;
 
+/**
+ * 
+ * @author 왕종휘
+ */ 
+
 public class DoSignup extends PostAction{
 	private UserDAO userDao = UserDAO.getInstance();
 	

@@ -5,6 +5,11 @@ import javax.servlet.http.HttpSession;
 
 import vo.UserVO;
 
+/**
+ * 
+ * @author 왕종휘
+ */ 
+
 public class SessionUtil {
 	public static String getUserId(HttpServletRequest request) {
 		HttpSession session = request.getSession(false);

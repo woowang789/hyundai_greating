@@ -3,6 +3,11 @@ package util;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * 
+ * @author 왕종휘
+ */ 
+
 public class SHA256 {
 	private final static String mSalt = "test";
 	public static String encodeSha256(String source) {

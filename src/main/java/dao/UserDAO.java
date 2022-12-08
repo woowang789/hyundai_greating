@@ -12,6 +12,11 @@ import util.DBConnection;
 import util.SHA256;
 import vo.UserVO;
 
+/**
+ * 
+ * @author 왕종휘
+ */
+
 final public class UserDAO {
 	private static UserDAO dao = new UserDAO();
 	private UserDAO() {

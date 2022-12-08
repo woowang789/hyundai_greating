@@ -1,9 +1,12 @@
 package util;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * 
+ * @author 이세아
+ */
 public class DateParser {
 	private static SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	private static SimpleDateFormat df2 = new SimpleDateFormat("yyyy-MM-dd");

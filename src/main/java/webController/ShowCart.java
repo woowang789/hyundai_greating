@@ -11,6 +11,10 @@ import dao.CartDAO;
 import util.SessionUtil;
 import vo.CartProductVO;
 
+/**
+ * 
+ * @author 왕종휘
+ */ 
 
 public class ShowCart extends GetAction{
 	private CartDAO cartDao = CartDAO.getInstance();

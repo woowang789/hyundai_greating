@@ -12,6 +12,11 @@ import dao.UserDAO;
 import util.SHA256;
 import vo.UserVO;
 
+/**
+ * 
+ * @author 왕종휘
+ */ 
+
 public class DoSignin extends PostAction{
 	private UserDAO userDao = UserDAO.getInstance();
 	

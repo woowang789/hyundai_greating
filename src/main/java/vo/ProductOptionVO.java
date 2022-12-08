@@ -3,6 +3,11 @@ package vo;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * 
+ * @author 촤태승
+ */ 
+
 @Getter @Setter
 public class ProductOptionVO {
 

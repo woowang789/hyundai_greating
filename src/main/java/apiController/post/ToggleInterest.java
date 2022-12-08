@@ -9,6 +9,11 @@ import org.json.simple.parser.ParseException;
 import apiController.ApiAction;
 import dao.InterestDAO;
 
+/**
+ * 
+ * @author 왕종휘
+ */
+
 public class ToggleInterest implements ApiAction {
 	private InterestDAO interestDao = InterestDAO.getInstance();
 	private JSONParser parser = new JSONParser();

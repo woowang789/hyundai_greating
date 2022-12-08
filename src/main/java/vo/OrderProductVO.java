@@ -6,6 +6,11 @@ import java.sql.Date;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * 
+ * @author 이세아
+ */
+
 @Getter @Setter
 public class OrderProductVO {
 	private String userid;

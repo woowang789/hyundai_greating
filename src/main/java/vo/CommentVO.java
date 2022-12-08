@@ -5,6 +5,11 @@ import java.sql.Date;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * 
+ * @author 최태승
+ */
+
 @Getter @Setter
 public class CommentVO {
 	private int prodId;

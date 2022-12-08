@@ -10,6 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * 
+ * @author 왕종휘
+ */
+
 @WebServlet(urlPatterns = "/v1/*")
 public class WebFrontController extends HttpServlet {
 
@@ -21,7 +26,6 @@ public class WebFrontController extends HttpServlet {
         controllerMap.put("/v1/signin",new ShowSignin());
         controllerMap.put("/v1/signup", new ShowSignup());
         
-        //임시 테스트용, signup 완료 후 redirect로만 접근 가능해야 함
         controllerMap.put("/v1/signupComplete", new ShowSignupComplete());
         controllerMap.put("/v1/productList", new ShowProductList());
         controllerMap.put("/v1/productDetail", new ShowProductDetail());
@@ -30,7 +34,6 @@ public class WebFrontController extends HttpServlet {
         controllerMap.put("/v1/cart", new ShowCart());
         controllerMap.put("/v1/orderList", new ShowOrderList());
         
-      //임시 테스트용, order 완료 후 redirect로만 접근 가능해야 함
         controllerMap.put("/v1/orderComplete", new ShowOrderComplete());
         controllerMap.put("/v1/likeProductList", new ShowLikeProductList());
         controllerMap.put("/v1/viewProductList", new ShowViewProductList());

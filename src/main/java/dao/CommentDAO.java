@@ -12,6 +12,12 @@ import oracle.jdbc.OracleTypes;
 import util.DBConnection;
 import vo.CommentVO;
 
+/**
+ * 
+ * @author 최태승
+ */
+
+
 final public class CommentDAO {
 	private CommentDAO() {}
 	

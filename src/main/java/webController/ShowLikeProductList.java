@@ -12,6 +12,10 @@ import dao.InterestDAO;
 import util.SessionUtil;
 import vo.ProductVO;
 
+/**
+ * 
+ * @author 왕종휘
+ */ 
 
 public class ShowLikeProductList extends GetAction{
 	private InterestDAO interestDao = InterestDAO.getInstance();

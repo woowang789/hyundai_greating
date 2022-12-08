@@ -10,6 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 import dao.ProductDAO;
 import vo.ProductVO;
 
+/**
+ * 
+ * @author 왕종휘
+ */ 
 
 public class ShowBestProductList extends GetAction{
 	private ProductDAO prodDao = ProductDAO.getInstance();

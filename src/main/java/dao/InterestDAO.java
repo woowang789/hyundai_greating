@@ -11,6 +11,11 @@ import oracle.jdbc.internal.OracleTypes;
 import util.DBConnection;
 import vo.ProductVO;
 
+/**
+ * 
+ * @author 최태승
+ */
+
 final public class InterestDAO {
 	private InterestDAO() {}
 	
