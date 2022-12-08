@@ -11,6 +11,11 @@ import oracle.jdbc.internal.OracleTypes;
 import util.DBConnection;
 import vo.CartProductVO;
 
+/**
+ * 
+ * @author 소규석
+ */
+
 final public class CartDAO {
 
 	private CartDAO() {}

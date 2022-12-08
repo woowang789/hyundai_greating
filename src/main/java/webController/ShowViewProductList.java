@@ -12,6 +12,10 @@ import dao.ProductDAO;
 import util.CookieUtil;
 import vo.ProductVO;
 
+/**
+ * 
+ * @author 왕종휘
+ */ 
 
 public class ShowViewProductList extends GetAction{
 	private ProductDAO prodDao = ProductDAO.getInstance();

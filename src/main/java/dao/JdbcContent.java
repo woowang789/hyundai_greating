@@ -9,6 +9,11 @@ import javax.sql.DataSource;
 
 import util.DBConnection;
 
+/**
+ * 
+ * @author 왕종휘
+ */
+
 public class JdbcContent {
 	
 	public static void template(String query,Context context){

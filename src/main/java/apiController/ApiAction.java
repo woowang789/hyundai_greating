@@ -5,6 +5,10 @@ import java.util.Map;
 import org.json.simple.parser.ParseException;
 
 
+/**
+ * 
+ * @author 왕종휘
+ */
 
 public interface ApiAction {
 	

@@ -10,6 +10,11 @@ import org.json.simple.parser.ParseException;
 import apiController.ApiAction;
 import dao.CommentDAO;
 
+/**
+ * 
+ * @author 왕종휘
+ */
+
 public class InsertComment implements ApiAction{
 	private JSONParser parser = new JSONParser();
 	private CommentDAO commentDAO = CommentDAO.getInstance();

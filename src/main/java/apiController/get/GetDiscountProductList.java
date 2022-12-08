@@ -1,8 +1,4 @@
 package apiController.get;
-/**
- * 
- * @author 이세아
- */
 
 import java.util.List;
 import java.util.Map;
@@ -13,6 +9,10 @@ import apiController.ApiAction;
 import dao.ProductDAO;
 import vo.ProductVO;
 
+/**
+ * 
+ * @author 이세아
+ */
 public class GetDiscountProductList implements ApiAction{
 	private ProductDAO dao = ProductDAO.getInstance();
 	

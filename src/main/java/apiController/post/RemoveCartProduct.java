@@ -9,6 +9,11 @@ import org.json.simple.parser.ParseException;
 import apiController.ApiAction;
 import dao.CartDAO;
 
+/**
+ * 
+ * @author 왕종휘
+ */
+
 public class RemoveCartProduct implements ApiAction{
 	private CartDAO cartDao = CartDAO.getInstance();
 	private JSONParser parser = new JSONParser();

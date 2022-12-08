@@ -26,7 +26,10 @@ import apiController.post.RemoveCartProduct;
 import apiController.post.ToggleInterest;
 import apiController.post.UpdateCartProduct;
 
-
+/**
+ * 
+ * @author 왕종휘
+ */
 
 @WebServlet("/api/*")
 public class ApiFrontController extends HttpServlet {

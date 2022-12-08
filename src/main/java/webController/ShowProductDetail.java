@@ -19,6 +19,11 @@ import util.SessionUtil;
 import vo.CommentVO;
 import vo.ProductDetailVO;
 
+/**
+ * 
+ * @author 왕종휘
+ */ 
+
 public class ShowProductDetail extends GetAction{
 	private ProductDAO productDao = ProductDAO.getInstance();
 	private CommentDAO commentDao = CommentDAO.getInstance();

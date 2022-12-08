@@ -12,6 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.IOUtils;
 
+/**
+ * 
+ * @author 왕종휘
+ */
+
 @WebServlet("/image/*")
 public class ImgController extends HttpServlet {
 

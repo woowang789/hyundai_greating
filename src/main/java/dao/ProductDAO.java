@@ -17,6 +17,11 @@ import vo.ProductOptionVO;
 import vo.ProductVO;
 import vo.SellerVO;
 
+/**
+ * 
+ * @author 왕종휘
+ */
+
 final public class ProductDAO {
 	private static ProductDAO instance = new ProductDAO();
 

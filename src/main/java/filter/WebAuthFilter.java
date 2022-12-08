@@ -17,6 +17,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ * 
+ * @author 왕종휘
+ */
+
 @WebFilter("/v1/*")
 public class WebAuthFilter implements Filter{
 	private Set<String> authUrls;

@@ -9,6 +9,10 @@ import apiController.ApiAction;
 import dao.ProductDAO;
 import vo.ProductVO;
 
+/**
+ * 
+ * @author 왕종휘
+ */
 public class GetBestProductList implements ApiAction{
 	private ProductDAO dao = ProductDAO.getInstance();
 
