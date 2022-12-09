@@ -9,7 +9,7 @@ import lombok.ToString;
 
 /**
  * 
- * @author 촤태승
+ * @author 최태승
  */ 
 
 @Getter
